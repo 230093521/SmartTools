@@ -1,0 +1,3 @@
+include ':smartlib'
+include ':app'
+rootProject.name = "SmartTools"
