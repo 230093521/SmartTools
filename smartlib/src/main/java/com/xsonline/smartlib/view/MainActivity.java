@@ -10,13 +10,12 @@ import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.xsonline.smartlib.R;
+
 
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
