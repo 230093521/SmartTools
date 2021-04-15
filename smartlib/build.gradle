@@ -40,8 +40,6 @@ dependencies {
 }
 
 ext {
-    PUBLISH_GROUP_ID = "com.github.230093521"        //项目包名
     PUBLISH_ARTIFACT_ID = "smartlib"
-    PUBLISH_VERSION = 1.0                    //版本号
 }
 apply from: '../publish.gradle'
