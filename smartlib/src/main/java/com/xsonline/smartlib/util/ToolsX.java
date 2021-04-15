@@ -1,10 +1,7 @@
 package com.xsonline.smartlib.util;
 
-import android.content.Intent;
-import android.provider.MediaStore;
 
 import org.json.JSONObject;
-
 import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -12,6 +9,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 public class ToolsX {
+
     public static void testShow(){
         System.out.println("123");
     }
@@ -69,4 +67,5 @@ public class ToolsX {
         //打开图库
         //startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI), 200);
     }
+
 }
