@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#DDD"
     android:orientation="vertical"
-    >
+    tools:context=".activity.TinCheJiLuActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-             />
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:id="@+id/home_title"
@@ -93,7 +93,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                         />
+                        android:src="@drawable/ic_into" />
                 </LinearLayout>
 
                 <View
@@ -137,7 +137,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="center"
-                       />
+                        android:src="@drawable/ic_into" />
                 </LinearLayout>
 
                 <View
@@ -151,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="15dp"
-                    >
+                    android:background="@drawable/btn_bg_bule">
 
                     <ImageView
                         android:layout_width="30dp"
@@ -159,7 +159,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:padding="5dp"
-                         />
+                        android:src="@drawable/search" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -185,7 +185,7 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <com.xsonline.smartlib.ui.ListViewScrollView
+            <com.gzeic.smartcity.ui.ListViewScrollView
                 android:id="@+id/list_tcjl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -198,6 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:background="@drawable/btn_bg_bule"
                     android:paddingLeft="20dp"
                     android:paddingTop="10dp"
                     android:paddingRight="20dp"

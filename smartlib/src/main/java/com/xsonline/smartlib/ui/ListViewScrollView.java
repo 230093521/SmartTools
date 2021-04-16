@@ -26,7 +26,7 @@ public class ListViewScrollView extends ListView {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int ex = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE>>2,MeasureSpec.AT_MOST);
         super.onMeasure(widthMeasureSpec, ex);
+
     }
 
 }
-
