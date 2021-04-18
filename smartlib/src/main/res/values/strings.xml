@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">智慧城市</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">全部服务</string>
+    <string name="title_dang">智慧党建</string>
+    <string name="title_notifications">新闻</string>
+    <string name="title_my">我的</string>
 </resources>

@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\btn_checkbox_to_unchecked_box_inner_merged_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\btn_checkbox_to_unchecked_box_inner_merged_animation.xml"
     },
@@ -24,8 +28,16 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\btn_checkbox_to_unchecked_icon_null_animation.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\fragment_close_exit.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\c7fa5d50c109d29f0b83d8383aac163c\\fragment-1.2.4\\res\\anim\\fragment_close_exit.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\abc_tooltip_exit.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\abc_tooltip_exit.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\fragment_close_enter.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\c7fa5d50c109d29f0b83d8383aac163c\\fragment-1.2.4\\res\\anim\\fragment_close_enter.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
@@ -42,6 +54,10 @@
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\btn_checkbox_to_checked_box_inner_merged_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\btn_checkbox_to_checked_box_inner_merged_animation.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\nav_default_pop_enter_anim.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\0fae28d70b6e7978f211167ddcd5eb8b\\navigation-ui-2.3.5\\res\\anim\\nav_default_pop_enter_anim.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\btn_radio_to_on_mtrl_dot_group_animation.xml",
@@ -68,6 +84,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\abc_popup_enter.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\btn_radio_to_off_mtrl_ring_outer_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\btn_radio_to_off_mtrl_ring_outer_animation.xml"
     },
@@ -80,6 +100,14 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\abc_slide_out_top.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\fragment_open_enter.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\c7fa5d50c109d29f0b83d8383aac163c\\fragment-1.2.4\\res\\anim\\fragment_open_enter.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\fragment_fade_enter.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\c7fa5d50c109d29f0b83d8383aac163c\\fragment-1.2.4\\res\\anim\\fragment_fade_enter.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\btn_radio_to_on_mtrl_ring_outer_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\btn_radio_to_on_mtrl_ring_outer_animation.xml"
     },
@@ -88,11 +116,31 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\abc_slide_in_top.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\fragment_fade_exit.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\c7fa5d50c109d29f0b83d8383aac163c\\fragment-1.2.4\\res\\anim\\fragment_fade_exit.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\btn_checkbox_to_checked_box_outer_merged_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\btn_checkbox_to_checked_box_outer_merged_animation.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\nav_default_pop_exit_anim.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\0fae28d70b6e7978f211167ddcd5eb8b\\navigation-ui-2.3.5\\res\\anim\\nav_default_pop_exit_anim.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\nav_default_exit_anim.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\0fae28d70b6e7978f211167ddcd5eb8b\\navigation-ui-2.3.5\\res\\anim\\nav_default_exit_anim.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\nav_default_enter_anim.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\0fae28d70b6e7978f211167ddcd5eb8b\\navigation-ui-2.3.5\\res\\anim\\nav_default_enter_anim.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\anim\\fragment_open_exit.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\c7fa5d50c109d29f0b83d8383aac163c\\fragment-1.2.4\\res\\anim\\fragment_open_exit.xml"
     }
 ]

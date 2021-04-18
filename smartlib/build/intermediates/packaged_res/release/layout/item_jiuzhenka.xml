@@ -18,6 +18,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:src="@drawable/ic_icon"
                 android:layout_margin="10dp"
                 />
             <LinearLayout
@@ -42,7 +43,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="30dp"
                         android:layout_marginTop="10dp"
-                       />
+                        android:src="@drawable/ic_settings"/>
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="wrap_content"

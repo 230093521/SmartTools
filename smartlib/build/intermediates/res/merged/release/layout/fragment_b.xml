@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,33 +8,42 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_toStartOf="@id/home_search_base"
+            android:background="@drawable/edit_search_shape"
             android:orientation="horizontal"
-            android:padding="6dp">
-
-            <LinearLayout
+            >
+            <ImageView
+                android:id="@+id/iv_mei"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/home_edit_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:background="@null"
-                    android:hint="搜索服务"
-                    android:textSize="15sp" />
-            </LinearLayout>
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_search" />
+            <EditText
+                android:id="@+id/home_edit_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/iv_mei"
+                android:layout_toLeftOf="@+id/btn_sousuo"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:maxLines="1"
+                android:hint="搜索"
+                android:textSize="15sp"/>
+            <Button
+                android:id="@+id/btn_sousuo"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="搜索"
+                android:textColor="#FFF"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_sousuo"
+                />
         </RelativeLayout>
 
         <TextView

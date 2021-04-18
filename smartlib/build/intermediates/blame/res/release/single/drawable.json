@@ -1,5 +1,21 @@
 [
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ssp.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ssp.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\yindao2.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\yindao2.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_launcher_background.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ditie.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ditie.png"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_news_c.xml",
         "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_news_c.xml"
     },
@@ -10,6 +26,302 @@
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\djdt.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\djdt.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zhdj.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zhdj.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_edit.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_bule.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\btn_bule.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\title_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\title_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\search.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\search.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian6.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian6.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_suishoupai.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_suishoupai.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\21a6940de4e076c0bff701aa5d37ade0\\core-1.3.1\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\et_password.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\et_password.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian5.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian5.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_wxpay.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_wxpay.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_search.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dot_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dot_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\yindao3.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\yindao3.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\news_text_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\news_text_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\canyin.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\canyin.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dot_false.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dot_false.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_checked_mtrl.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_checked_mtrl.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_mtrl_chip_checked_black.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\ic_mtrl_chip_checked_black.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dot_true.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dot_true.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\radiod_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\radiod_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_into.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_into.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zzhd1.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zzhd1.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\gray_radius.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\5042b41de876fc3c6dbe5398de7ec1a8\\jetified-banner-1.4.10\\res\\drawable\\gray_radius.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ruzhu.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ruzhu.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\mtrl_tabs_default_indicator.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\mtrl_tabs_default_indicator.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_my_a.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_my_a.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\rbtn_a.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\rbtn_a.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\yindao5.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\yindao5.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zzhd3.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zzhd3.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_on_mtrl.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_on_mtrl.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian3.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian3.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_unchecked_mtrl.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_unchecked_mtrl.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\fba68e32de70f914dd271113829bab0a\\jetified-appcompat-resources-1.2.0\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\21a6940de4e076c0bff701aa5d37ade0\\core-1.3.1\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dyxx1.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dyxx1.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\huanjin.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\huanjin.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_dian.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_dian.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\text_red_shape.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\text_red_shape.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\cs.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\cs.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_my_24.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_my_24.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_pl.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_pl.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\21a6940de4e076c0bff701aa5d37ade0\\core-1.3.1\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_right.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_right.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\home_table_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\home_table_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_on_to_off_mtrl_animation.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_dinwei.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_dinwei.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\et_phone.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\et_phone.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material_anim.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_check_material_anim.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\jiangkang.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\jiangkang.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\radiob_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\radiob_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_notifications_black_24dp.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_off_mtrl.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_off_mtrl.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_mtrl_chip_checked_circle.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\ic_mtrl_chip_checked_circle.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\rbtn_d.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\rbtn_d.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_dashboard_black_24dp.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
@@ -24,16 +336,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_search_api_material.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_shui.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_shui.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_clear_material.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_icon.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_icon.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\radioa_selector.xml",
@@ -44,8 +352,16 @@
         "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_my.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_tile_bg.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\b5f667cd6fe44a03d4a621a2c9bc4bbd\\core-1.3.0\\res\\drawable\\notification_tile_bg.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\text_blue_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\text_blue_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\rbtn_c.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\rbtn_c.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\bg_black.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\bg_black.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_small_material.xml",
@@ -56,32 +372,36 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_off_to_on_mtrl_animation.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_sousuo.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\btn_sousuo.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\tooltip_frame_light.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\tooltip_frame_light.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian2.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian2.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dyxx3.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dyxx3.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\edit_search_shape.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\edit_search_shape.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\radioc_selector.xml",
         "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\radioc_selector.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_cab_background_top_material.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_tab_indicator_material.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\sf_bg.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\sf_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btnbg.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\btnbg.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
@@ -90,6 +410,18 @@
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dyxx.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dyxx.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_back.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\shenti.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\shenti.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\text_selector.xml",
@@ -101,39 +433,55 @@
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_icon_background.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\b5f667cd6fe44a03d4a621a2c9bc4bbd\\core-1.3.0\\res\\drawable\\notification_icon_background.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\21a6940de4e076c0bff701aa5d37ade0\\core-1.3.1\\res\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_checked_mtrl.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_checked_mtrl.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\shape_blue2.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\shape_blue2.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zhyl.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zhyl.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\rbtn_b.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\rbtn_b.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\bg_hui.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\bg_hui.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\tooltip_frame_dark.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\tooltip_frame_dark.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_track_material.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_checked_to_unchecked_mtrl_animation.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\radiod_selector.xml",
-        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\radiod_selector.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zzhd4.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zzhd4.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\fw_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\fw_selector.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\black_background.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\5042b41de876fc3c6dbe5398de7ec1a8\\jetified-banner-1.4.10\\res\\drawable\\black_background.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\gray_radius.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\5042b41de876fc3c6dbe5398de7ec1a8\\jetified-banner-1.4.10\\res\\drawable\\gray_radius.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_yuying.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_yuying.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\home_search_text_selector.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\home_search_text_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_settings.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_settings.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_voice_search_api_material.xml",
@@ -144,52 +492,72 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_my_a.xml",
-        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_my_a.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_on_mtrl.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_on_mtrl.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\shape_blue1.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\shape_blue1.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_tick_mark_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ditiexianlu.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ditiexianlu.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_unchecked_to_checked_mtrl_animation.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_unchecked_to_checked_mtrl_animation.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_checkbox_unchecked_mtrl.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_checkbox_unchecked_mtrl.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dang.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dang.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_add.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_add.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_menu_overflow_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_vector_test.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\fba68e32de70f914dd271113829bab0a\\jetified-appcompat-resources-1.2.0\\res\\drawable\\abc_vector_test.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ceshi.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ceshi.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_home_black_24dp.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_alipay.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_alipay.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\b5f667cd6fe44a03d4a621a2c9bc4bbd\\core-1.3.0\\res\\drawable\\notification_bg.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dyxx2.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dyxx2.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zhhb.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zhhb.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\bashi.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\bashi.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_dingdan.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_dingdan.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_home.xml",
@@ -200,59 +568,91 @@
         "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_news.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_bg_bule.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\btn_bg_bule.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\xunjian.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\xunjian.png"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material_anim.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_radio_material_anim.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\notification_bg_low.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\b5f667cd6fe44a03d4a621a2c9bc4bbd\\core-1.3.0\\res\\drawable\\notification_bg_low.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zzhd2.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zzhd2.jpg"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_mtrl_chip_close_circle.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\ic_mtrl_chip_close_circle.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_quan.xml",
         "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_quan.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_on_to_off_mtrl_animation.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zzhd5.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zzhd5.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\jyxc.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\jyxc.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian7.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian7.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\yuan_shape.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\yuan_shape.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zhushu.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zhushu.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\zzhd.png",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\zzhd.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\yindao4.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\yindao4.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_baseline_monetization_on_24.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_baseline_monetization_on_24.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\yindao1.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\yindao1.jpg"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\ic_quan_d.xml",
         "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\ic_quan_d.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material_anim.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_check_material_anim.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\radiob_selector.xml",
-        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\radiob_selector.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian1.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian1.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\mtrl_snackbar_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\2722e9bfd3446a24fd7d682b261a5086\\material-1.0.0\\res\\drawable\\mtrl_snackbar_background.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\no_banner.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\5042b41de876fc3c6dbe5398de7ec1a8\\jetified-banner-1.4.10\\res\\drawable\\no_banner.png"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\btn_radio_off_mtrl.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\btn_radio_off_mtrl.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-2\\files-2.1\\11070e08c3202cef84c44cc3e3c53565\\appcompat-1.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable\\dangjian4.jpg",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable\\dangjian4.jpg"
     }
 ]
