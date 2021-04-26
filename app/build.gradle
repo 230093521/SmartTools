@@ -1,9 +1,10 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
 
     defaultConfig {
+        applicationId "com.xsonline.smart"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
