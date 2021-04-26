@@ -14,7 +14,7 @@ import com.youth.banner.loader.ImageLoader;
 
 public abstract class BaseActivity extends AppCompatActivity {
     //getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
-    String TAG = "test";
+    public String TAG = "test";
     Tools tools;
     public String getServerIp(){
         SharedPreferences sharedPreferences = getSharedPreferences("address",MODE_PRIVATE);
@@ -49,7 +49,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         return sharedPreferences.getString(key, null);
     }
 
-    class GlideImageLoader extends ImageLoader {
+    public class GlideImageLoader extends ImageLoader {
         @Override
         public void displayImage(Context context, Object path, ImageView imageView) {
             Glide.with(context).load(path).into(imageView);

@@ -10,6 +10,7 @@ import okhttp3.RequestBody;
 
 
 public class Tools {
+
     public void sendPostRequest(JSONObject jsonObject, String url, Callback callback){
         MediaType mediaType = MediaType.parse("application/json;charset=utf-8");
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -45,6 +46,23 @@ public class Tools {
                 .get()
                 .build();
         okHttpClient.newCall(request).enqueue(callback);
+    }
+
+    public void sendFormData(){
+//        RequestBody fileBody = RequestBody.create(MediaType.parse("application/from-data"), file);
+//        MultipartBody multipartBody = new MultipartBody.Builder()
+//                .setType(MultipartBody.FORM)
+//                .addFormDataPart("cardId",shenfenzhenga)
+//                .addFormDataPart("names",xingmina)
+//                .addFormDataPart("userId","1")
+//                .addFormDataPart("tel",shoujihao2)
+//                .addFormDataPart("address",shenfenxinxi + shixinxi +diquxinxi +xiangxixinxi)
+//                .addFormDataPart("plates",chepai)
+//                .addFormDataPart("file", file.getName(), fileBody)
+//                .build();
+//        Request request = new Request.Builder().url(url).post(multipartBody).build();
+//        OkHttpClient okHttpClient = new OkHttpClient();
+//        okHttpClient.newCall(request).enqueue(callback);
     }
 
     public void sendPutRequestToken(JSONObject jsonObject, String url,String token, Callback callback){

@@ -16,13 +16,13 @@ import androidx.annotation.NonNull;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
+import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.WoDenLuActivity;
 import com.gzeic.smartcity01.WoDinDanActivity;
 import com.gzeic.smartcity01.WoFanKuiActivity;
 import com.gzeic.smartcity01.WoMiMaActivity;
 import com.gzeic.smartcity01.WoZiLiaoActivity;
 import com.gzeic.smartcity01.bean.MyDataBean;
-import com.xsonline.smartlib.R;
 
 import java.io.IOException;
 

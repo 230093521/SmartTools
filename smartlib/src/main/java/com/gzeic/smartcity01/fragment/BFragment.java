@@ -16,16 +16,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
-import com.gzeic.smartcity01.DiTieActivity;
+import com.gzeic.smartcity01.FuWuJieGuoActivity;
+import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.Tools.MyGridView;
+import com.gzeic.smartcity01.Tools.MyListView;
 import com.gzeic.smartcity01.bean.AllServiceBean;
 import com.gzeic.smartcity01.bean.OneServiceBean;
-import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.dcyc.DcycActivity;
+import com.gzeic.smartcity01.ditie.DiTieActivity;
+import com.gzeic.smartcity01.mzyy.MzActivity;
+import com.gzeic.smartcity01.shjf.ShActivity;
+import com.gzeic.smartcity01.tcc.TccActivity;
+import com.gzeic.smartcity01.wzcx.WzActivity;
+import com.gzeic.smartcity01.yyjc.YyjcActivity;
+import com.gzeic.smartcity01.zfz.ZfzActivity;
+import com.gzeic.smartcity01.zgz.ZgzActivity;
+import com.gzeic.smartcity01.zhbs.BaShiActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,7 +49,7 @@ public class BFragment extends BaseFragment {
     private EditText homeEditSearch;
     private TextView homeSearchBase;
     private ListView listServiceTitle;
-    private ListView listServiceAll;
+    private MyListView listServiceAll;
     List<AllServiceBean.RowsBean> beans;
     private List<OneServiceBean.DataBean> dataBeanList;
     private List<AllServiceBean.RowsBean> rowsBeanList;
@@ -55,8 +65,9 @@ public class BFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 String s = homeEditSearch.getText().toString();
+                putSP("fwjg", s);
                 homeEditSearch.setText("");
-                initServerName(s);
+                startActivity(new Intent(getContext(), FuWuJieGuoActivity.class));
             }
         });
 
@@ -78,13 +89,17 @@ public class BFragment extends BaseFragment {
                 final OneServiceBean oneServiceBean = new Gson().fromJson(json, OneServiceBean.class);
                 if (oneServiceBean.getCode() == 200) {
                     dataBeanList = oneServiceBean.getData();
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            listServiceTitle.setAdapter(new MyTitleAdapter(dataBeanList));
-                            getAllService();
-                        }
-                    });
+                    try {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                listServiceTitle.setAdapter(new MyTitleAdapter(dataBeanList));
+                                getAllService();
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -111,12 +126,16 @@ public class BFragment extends BaseFragment {
                 final AllServiceBean allServiceBean = new Gson().fromJson(json, AllServiceBean.class);
                 if (allServiceBean.getCode() == 200) {
                     rowsBeanList = allServiceBean.getRows();
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            listServiceAll.setAdapter(new MyServiceAllTitle(dataBeanList, rowsBeanList));
-                        }
-                    });
+                    try {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                listServiceAll.setAdapter(new MyServiceAllTitle(dataBeanList, rowsBeanList));
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -133,7 +152,7 @@ public class BFragment extends BaseFragment {
         homeEditSearch = (EditText) view.findViewById(R.id.home_edit_search);
         homeSearchBase = (TextView) view.findViewById(R.id.home_search_base);
         listServiceTitle = (ListView) view.findViewById(R.id.list_service_title);
-        listServiceAll = (ListView) view.findViewById(R.id.list_service_all);
+        listServiceAll = (MyListView) view.findViewById(R.id.list_service_all);
         btnSousuo = (Button) view.findViewById(R.id.btn_sousuo);
     }
 
@@ -205,16 +224,14 @@ public class BFragment extends BaseFragment {
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = LayoutInflater.from(getContext()).inflate(R.layout.item_service, null);
             TextView textView = view.findViewById(R.id.service_all_title);
-            RecyclerView recyclerView = view.findViewById(R.id.rl_service);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true);
-            recyclerView.setLayoutManager(linearLayoutManager);
+            MyGridView myGridView = view.findViewById(R.id.rl_service);
             beans = new ArrayList<>();
             for (AllServiceBean.RowsBean bean : rowsBeanList) {
                 if (bean.getServiceType().equals(dataBeanList.get(i).getDictValue())) {
                     beans.add(bean);
                 }
             }
-            recyclerView.setAdapter(new MyAdapter(beans));
+            myGridView.setAdapter(new MyAdapter(beans));
 //            Log.i(TAG, "getView: " + rowsBeanList.get(i).getImgUrl());
             final OneServiceBean.DataBean dataBean = (OneServiceBean.DataBean) getItem(i);
             textView.setText(dataBean.getDictLabel());
@@ -242,10 +259,10 @@ public class BFragment extends BaseFragment {
         final List<OneServiceBean.DataBean> dataBeanList2 = new ArrayList<>();
         int code = 0;
         for (AllServiceBean.RowsBean rowsBean : rowsBeanList) {
-            if (rowsBean.getServiceName().contains(name)){
+            if (rowsBean.getServiceName().contains(name)) {
                 rowsBeanList2.add(rowsBean);
                 code = Integer.parseInt(rowsBean.getServiceType());
-                Log.i(TAG, "initServerName: "+name+rowsBean.getServiceName()+"code"+code);
+                Log.i(TAG, "initServerName: " + name + rowsBean.getServiceName() + "code" + code);
             }
         }
         getActivity().runOnUiThread(new Runnable() {
@@ -257,74 +274,102 @@ public class BFragment extends BaseFragment {
     }
 
 
-
-    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    class MyAdapter extends BaseAdapter {
         List<AllServiceBean.RowsBean> list;
 
         public MyAdapter(List<AllServiceBean.RowsBean> list) {
             this.list = list;
         }
 
-        @NonNull
         @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(LayoutInflater.from(getContext()).inflate(R.layout.item_fuwu2, parent, false));
+        public int getCount() {
+            return list.size();
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        public Object getItem(int position) {
+            return list.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_fuwu2, null);
+            ViewHolder holder = new ViewHolder(convertView);
+            final AllServiceBean.RowsBean rowsBean = list.get(position);
             holder.fw_text.setText(list.get(position).getServiceName());
             Glide.with(getContext()).load("http://" + getServerIp() + list.get(position).getImgUrl()).error(R.mipmap.ic_launcher).into(holder.fw_image);
             holder.fw_ll.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AllServiceBean.RowsBean bean = list.get(position);
 //                    showToast(bean.getServiceName());
                     //根据ID跳转对应服务
-                    switch (bean.getId()){
-//                        case 7://生活缴费
-//                            startActivity(new Intent(getContext(), LivePayActivity.class));
-//                            break;
+                    switch (rowsBean.getId()) {
+                        case 7://生活缴费
+                            startActivity(new Intent(getContext(), ShActivity.class));
+                            break;
                         case 2://城市地铁
                             startActivity(new Intent(getContext(), DiTieActivity.class));
                             break;
-//                        case 5://门诊预约
-//                            startActivity(new Intent(getContext(), MenZhengActivity.class));
-//                            break;
-//                        case 3://智慧巴士
-//                            startActivity(new Intent(getContext(), BaShiActivity.class));
-//                            break;
-//                        case 17://停车场
-//                            startActivity(new Intent(getContext(), TinCheChangActivity.class));
-//                            break;
-//                        case 9://违章查询
-//                            startActivity(new Intent(getContext(), WeiZhangActivity.class));
-//                            break;
+                        case 25://预约检车
+                            startActivity(new Intent(getContext(), YyjcActivity.class));
+                            break;
+                        case 24://堵车移车
+                            startActivity(new Intent(getContext(), DcycActivity.class));
+                            break;
+                        case 23://找房子
+                            startActivity(new Intent(getContext(), ZfzActivity.class));
+                            break;
+                        case 4://找工作
+                            startActivity(new Intent(getContext(), ZgzActivity.class));
+                            break;
+                        case 5://门诊预约
+                            startActivity(new Intent(getContext(), MzActivity.class));
+                            break;
+                        case 3://智慧巴士
+                            startActivity(new Intent(getContext(), BaShiActivity.class));
+                            break;
+                        case 16://停车场
+                            startActivity(new Intent(getContext(), TccActivity.class));
+                            break;
+                        case 9://违章查询
+                            startActivity(new Intent(getContext(), WzActivity.class));
+                            break;
+//                                    case 20://智慧党建
+//                                        startActivity(new Intent(getContext(), ZHDJActivity.class));
+//                                        break;
+//                                    case 21://智慧养老
+//                                        startActivity(new Intent(getContext(), YangLaoActivity.class));
+//                                        break;
+//                                    case 22://智慧环保
+//                                        startActivity(new Intent(getContext(), WeiZhangActivity.class));
+//                                        break;
                         default:
                             break;
                     }
                     Log.i(TAG, list.get(position).toString());
                 }
             });
-
+            return convertView;
         }
 
-        @Override
-        public int getItemCount() {
-            return list.size();
-        }
+        class ViewHolder {
+            public View rootView;
+            public ImageView fw_image;
+            public TextView fw_text;
+            public LinearLayout fw_ll;
 
-        class ViewHolder extends RecyclerView.ViewHolder {
-            LinearLayout fw_ll;
-            ImageView fw_image;
-            TextView fw_text;
-
-            public ViewHolder(@NonNull View itemView) {
-                super(itemView);
-                fw_image = itemView.findViewById(R.id.fw_image);
-                fw_ll = itemView.findViewById(R.id.fw_ll);
-                fw_text = itemView.findViewById(R.id.fw_text);
+            public ViewHolder(View rootView) {
+                this.rootView = rootView;
+                this.fw_image = (ImageView) rootView.findViewById(R.id.fw_image);
+                this.fw_text = (TextView) rootView.findViewById(R.id.fw_text);
+                this.fw_ll = (LinearLayout) rootView.findViewById(R.id.fw_ll);
             }
+
         }
     }
 }

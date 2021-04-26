@@ -22,12 +22,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
-import com.gzeic.smartcity01.XinWenActivity;
+import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.NewsBean;
 import com.gzeic.smartcity01.bean.NewsFlBean;
 import com.gzeic.smartcity01.bean.RowsBean;
 import com.gzeic.smartcity01.bean.RowsListBean;
-import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.xinwen.XinWenActivity;
 import com.youth.banner.Banner;
 
 import java.io.IOException;

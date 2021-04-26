@@ -24,8 +24,13 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public String getServerIp(){
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("address",MODE_PRIVATE);
-        String add = sharedPreferences.getString("add", null);
+        String add = null;
+        try {
+            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("address",MODE_PRIVATE);
+            add = sharedPreferences.getString("add", null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return add;
     }
 
@@ -41,12 +46,27 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void putSP(String key,String value){
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(key,MODE_PRIVATE);
-        sharedPreferences.edit().putString(key,value).apply();
+        try {
+            SharedPreferences sharedPreferences = getActivity().getSharedPreferences(key,MODE_PRIVATE);
+            sharedPreferences.edit().putString(key,value).apply();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String getToken(){
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("token",MODE_PRIVATE);
+        String token = sharedPreferences.getString("token", null);
+        return token;
     }
 
     public String getSP(String key){
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(key,MODE_PRIVATE);
+        SharedPreferences sharedPreferences = null;
+        try {
+            sharedPreferences = getActivity().getSharedPreferences(key,MODE_PRIVATE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return sharedPreferences.getString(key, null);
     }
 }

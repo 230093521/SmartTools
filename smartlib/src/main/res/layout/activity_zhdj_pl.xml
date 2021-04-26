@@ -97,7 +97,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="15sp"
             />
-        <com.gzeic.smartcity.ui.ListViewScrollView
+        <com.gzeic.smartcity01.Tools.ListViewScrollView
             android:id="@+id/pl_list"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"

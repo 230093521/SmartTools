@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">智慧城市</string>
-    <string name="title_home">首页</string>
-    <string name="title_dashboard">全部服务</string>
+    <string name="title_sy">首页</string>
+    <string name="title_b">全部服务</string>
     <string name="title_dang">智慧党建</string>
-    <string name="title_notifications">新闻</string>
-    <string name="title_my">我的</string>
+    <string name="title_shequ">智慧社区</string>
+    <string name="title_huanbao">智慧环保</string>
+    <string name="title_jzfp">精准扶贫</string>
+    <string name="title_zhyl">智慧养老</string>
+    <string name="title_d">新闻</string>
+    <string name="title_f">我的</string>
+
+    <string name="title_yyxz">预约须知</string>
+    <string name="title_ljyy">立即预约</string>
+    <string name="title_wdyy">我的预约</string>
+    <string name="title_clgl">车辆管理</string>
+    <string name="title_activity_test">MainActivity</string>
 </resources>

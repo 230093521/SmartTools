@@ -23,18 +23,27 @@ import androidx.annotation.NonNull;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
-import com.gzeic.smartcity01.DiTieActivity;
-
-import com.gzeic.smartcity01.XinWenActivity;
-import com.gzeic.smartcity01.XinWenZiXunActivity;
+import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.FwBean;
 import com.gzeic.smartcity01.bean.NewsBean;
 import com.gzeic.smartcity01.bean.NewsFlBean;
 import com.gzeic.smartcity01.bean.RowsBean;
 import com.gzeic.smartcity01.bean.RowsListBean;
 import com.gzeic.smartcity01.bean.ZtBean;
-import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.dcyc.DcycActivity;
+import com.gzeic.smartcity01.ditie.DiTieActivity;
+import com.gzeic.smartcity01.mzyy.MzActivity;
+import com.gzeic.smartcity01.shjf.ShActivity;
+import com.gzeic.smartcity01.tcc.TccActivity;
+import com.gzeic.smartcity01.wzcx.WzActivity;
+import com.gzeic.smartcity01.xinwen.XinWenActivity;
+import com.gzeic.smartcity01.xinwen.XinWenZiXunActivity;
+import com.gzeic.smartcity01.yyjc.YyjcActivity;
+import com.gzeic.smartcity01.zfz.ZfzActivity;
+import com.gzeic.smartcity01.zgz.ZgzActivity;
+import com.gzeic.smartcity01.zhbs.BaShiActivity;
 import com.youth.banner.Banner;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.io.IOException;
@@ -53,6 +62,7 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
     private List<ZtBean.RowsBean> ztlist;
     private List<NewsFlBean.DataBean> newFllist;
     private List<NewsBean.RowsBean> newsList;
+    List<RowsBean> lbrows;
     //    private  RecyclerView recyclerView;
     private GridView recyclerView2;
     ListView newsListView;
@@ -106,24 +116,32 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
                 final RowsListBean rowsListBean = new Gson().fromJson(json, RowsListBean.class);
                 if (rowsListBean.getCode() == 200) {
                     imageViews = new ArrayList<>();
-                    List<RowsBean> rows = rowsListBean.getRows();
-                    for (RowsBean rs : rows) {
+                    lbrows = rowsListBean.getRows();
+                    for (RowsBean rs : lbrows) {
                         imageViews.add("http://" + getServerIp() + rs.getImgUrl());
                         Log.e("ceshi", "http://" + getServerIp() + rs.getImgUrl());
                     }
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            initBanner();
-                        }
-                    });
+                    try {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                initBanner();
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            showToast(rowsListBean.getMsg());
-                        }
-                    });
+                    try {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast(rowsListBean.getMsg());
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -197,7 +215,16 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
             }
         });
         getNewsList(37);
-
+        banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int i) {
+                RowsBean rowsBean = lbrows.get(i);
+                String json = new Gson().toJson(rowsBean);
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("news", Context.MODE_PRIVATE);
+                sharedPreferences.edit().putString("news", json).apply();
+                getActivity().startActivity(new Intent(getContext(), XinWenActivity.class));
+            }
+        });
         return view;
     }
 
@@ -283,25 +310,37 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
                             public void onClick(View view) {
                                 FwBean.RowsBean rowsBean = fwlist.get(i);
                                 //根据ID跳转对应服务
-                                switch (rowsBean.getId()){
-//                                    case 7://生活缴费
-//                                        startActivity(new Intent(getContext(), LivePayActivity.class));
-//                                        break;
+                                switch (rowsBean.getId()) {
+                                    case 7://生活缴费
+                                        startActivity(new Intent(getContext(), ShActivity.class));
+                                        break;
                                     case 2://城市地铁
                                         startActivity(new Intent(getContext(), DiTieActivity.class));
                                         break;
-//                                    case 5://门诊预约
-//                                        startActivity(new Intent(getContext(), MenZhengActivity.class));
-//                                        break;
-//                                    case 3://智慧巴士
-//                                        startActivity(new Intent(getContext(), BaShiActivity.class));
-//                                        break;
-//                                    case 17://停车场
-//                                        startActivity(new Intent(getContext(), TinCheChangActivity.class));
-//                                        break;
-//                                    case 9://违章查询
-//                                        startActivity(new Intent(getContext(), WeiZhangActivity.class));
-//                                        break;
+                                    case 25://预约检车
+                                        startActivity(new Intent(getContext(), YyjcActivity.class));
+                                        break;
+                                    case 24://堵车移车
+                                        startActivity(new Intent(getContext(), DcycActivity.class));
+                                        break;
+                                    case 23://找房子
+                                        startActivity(new Intent(getContext(), ZfzActivity.class));
+                                        break;
+                                    case 4://找工作
+                                        startActivity(new Intent(getContext(), ZgzActivity.class));
+                                        break;
+                                    case 5://门诊预约
+                                        startActivity(new Intent(getContext(), MzActivity.class));
+                                        break;
+                                    case 3://智慧巴士
+                                        startActivity(new Intent(getContext(), BaShiActivity.class));
+                                        break;
+                                    case 16://停车场
+                                        startActivity(new Intent(getContext(), TccActivity.class));
+                                        break;
+                                    case 9://违章查询
+                                        startActivity(new Intent(getContext(), WzActivity.class));
+                                        break;
 //                                    case 20://智慧党建
 //                                        startActivity(new Intent(getContext(), ZHDJActivity.class));
 //                                        break;
@@ -329,19 +368,23 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
 
 
     public void initZt() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(0).getImgUrl()).error(R.drawable.ceshi).into(faZtImage1);
-                Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(1).getImgUrl()).error(R.drawable.ceshi).into(faZtImage2);
-                Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(2).getImgUrl()).error(R.drawable.ceshi).into(faZtImage3);
-                Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(3).getImgUrl()).error(R.drawable.ceshi).into(faZtImage4);
-                faZtText1.setText(ztlist.get(0).getContent());
-                faZtText2.setText(ztlist.get(1).getContent());
-                faZtText3.setText(ztlist.get(2).getContent());
-                faZtText4.setText(ztlist.get(3).getContent());
-            }
-        });
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(0).getImgUrl()).error(R.drawable.ceshi).into(faZtImage1);
+                    Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(1).getImgUrl()).error(R.drawable.ceshi).into(faZtImage2);
+                    Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(2).getImgUrl()).error(R.drawable.ceshi).into(faZtImage3);
+                    Glide.with(getContext()).load("http://" + getServerIp() + ztlist.get(3).getImgUrl()).error(R.drawable.ceshi).into(faZtImage4);
+                    faZtText1.setText(ztlist.get(0).getContent());
+                    faZtText2.setText(ztlist.get(1).getContent());
+                    faZtText3.setText(ztlist.get(2).getContent());
+                    faZtText4.setText(ztlist.get(3).getContent());
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void initNewsFl() {
@@ -450,7 +493,7 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
         faZtLl3.setOnClickListener(this);
         faZtLl4.setOnClickListener(this);
         gridview = view.findViewById(R.id.gridview);
-        btnSousuo =view.findViewById(R.id.btn_sousuo);
+        btnSousuo = view.findViewById(R.id.btn_sousuo);
     }
 
     @Override

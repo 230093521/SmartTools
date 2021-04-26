@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.gzeic.smartcity01.bean.LoginBean;
 import com.xsonline.smartlib.R;
 
@@ -60,9 +61,11 @@ public class WoDenLuActivity extends BaseActivity implements View.OnClickListene
             String password = etPassword.getText().toString();
             if (username.isEmpty()) {
                 showToast("请输入账号");
+                return;
             }
             if (password.isEmpty()) {
                 showToast("请输入密码");
+                return;
             }
             SharedPreferences sp = getSharedPreferences("user", MODE_PRIVATE);
             sp.edit().putString("username", username).putString("password", password).apply();
@@ -89,28 +92,33 @@ public class WoDenLuActivity extends BaseActivity implements View.OnClickListene
                 public void onResponse(Call call, Response response) throws IOException {
                     String json = response.body().string();
                     Log.i("ceshi", "onResponse: " + json);
-                    final LoginBean loginBean = new Gson().fromJson(json, LoginBean.class);
-                    if (loginBean.getCode() == 200) {
-                        SharedPreferences sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
-                        sharedPreferences.edit().putString("token", loginBean.getToken()).apply();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                startActivity(new Intent(WoDenLuActivity.this, MainActivity.class));
-                                showToast(loginBean.getMsg());
-                                finish();
-                            }
-                        });
+                    try {
+                        final LoginBean loginBean = new Gson().fromJson(json, LoginBean.class);
+                        if (loginBean.getCode() == 200) {
+                            SharedPreferences sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
+                            sharedPreferences.edit().putString("token", loginBean.getToken()).apply();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    startActivity(new Intent(WoDenLuActivity.this, MainActivity.class));
+                                    showToast(loginBean.getMsg());
+                                    finish();
+                                }
+                            });
 
-                    } else {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                showToast(loginBean.getMsg());
-                            }
-                        });
+                        } else {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    showToast(loginBean.getMsg());
+                                }
+                            });
 
+                        }
+                    } catch (JsonSyntaxException e) {
+                        e.printStackTrace();
                     }
+
                 }
             });
         }

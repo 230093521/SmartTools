@@ -85,7 +85,7 @@
             android:layout_height="match_parent"
             android:background="#FFF"
             android:orientation="vertical">
-            <ListView
+            <com.gzeic.smartcity01.Tools.MyListView
                 android:id="@+id/list_service_all"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
