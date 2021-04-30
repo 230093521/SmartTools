@@ -16,10 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
-import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.BaShiXianLuBean;
 import com.gzeic.smartcity01.bean.BashiBean;
 import com.gzeic.smartcity01.bean.BashiXqBean;
+import com.xsonline.smartlib.R;
 
 import java.io.IOException;
 import java.util.List;
@@ -50,6 +50,12 @@ public class BaShiXqActivity extends BaseActivity {
         recBashiXianlu.setLayoutManager(linearLayoutManager);
         String xianlu = getSP("xianlu");
         BashiBean.RowsBean rowsBean = new Gson().fromJson(xianlu, BashiBean.RowsBean.class);
+        metroBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         getTools().sendGetRequest("http://"+getServerIp()+"/userinfo/lines/"+rowsBean.getId(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

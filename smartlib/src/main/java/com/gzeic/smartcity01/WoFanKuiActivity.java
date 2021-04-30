@@ -98,6 +98,7 @@ public class WoFanKuiActivity extends BaseActivity implements View.OnClickListen
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                etFeedback.setText("");
                                 showToast("提交成功");
                             }
                         });

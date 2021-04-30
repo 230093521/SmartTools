@@ -1330,6 +1330,7 @@ int drawable ic_wxpay 0x0
 int drawable ic_yuying 0x0
 int drawable ic_zan 0x0
 int drawable ic_zhhb 0x0
+int drawable icon2 0x0
 int drawable jiangkang 0x0
 int drawable jyxc 0x0
 int drawable jzfp1 0x0
@@ -1491,6 +1492,7 @@ int id auto 0x0
 int id autoComplete 0x0
 int id autoCompleteToEnd 0x0
 int id autoCompleteToStart 0x0
+int id back 0x0
 int id bangfu 0x0
 int id banner 0x0
 int id bannerContainer 0x0
@@ -2031,6 +2033,7 @@ int id yanshizhaopian 0x0
 int id yiyuan_img 0x0
 int id yiyuan_name 0x0
 int id yiyuanpingfen 0x0
+int id yuanmima 0x0
 int id yue 0x0
 int id yuyin 0x0
 int id zan 0x0
@@ -2186,6 +2189,7 @@ int layout activity_zhdj_hdly 0x0
 int layout activity_zhdj_jyxc 0x0
 int layout activity_zhdj_pai 0x0
 int layout activity_zhdj_pl 0x0
+int layout activity_zhdj_ssp 0x0
 int layout activity_zhdj_xq 0x0
 int layout activity_zhdj_xx 0x0
 int layout banner 0x0
@@ -2269,6 +2273,7 @@ int mipmap ic_launcher 0x0
 int mipmap ic_launcher_round 0x0
 int navigation mobile_sy 0x0
 int raw city 0x0
+int raw video01 0x0
 int string abc_action_bar_home_description 0x0
 int string abc_action_bar_up_description 0x0
 int string abc_action_menu_overflow_description 0x0

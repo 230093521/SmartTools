@@ -2,6 +2,7 @@ package com.gzeic.smartcity01.zhdj;
 
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +11,14 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
-import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.Tools.ListViewScrollView;
+import com.xsonline.smartlib.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,7 @@ public class ZHDJDYXXXQActivity extends BaseActivity {
     private Button btnPl;
     private ListViewScrollView plList;
     private List<testZiyuan> ziyuanList;
-    private VideoView video;
+    private VideoView mVideoView;
     private TextView yuyin;
     MediaPlayer mediaPlayer;
     private TextView zhangjie;
@@ -42,22 +44,16 @@ public class ZHDJDYXXXQActivity extends BaseActivity {
         String dang = getSP("dang");
         ZHDJActivity.testnews testnews = new Gson().fromJson(dang, ZHDJActivity.testnews.class);
         initView();
-//        yuyin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if (mediaPlayer == null) {
-//                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.ceshi);
-//                    mediaPlayer.start();
-//                    showToast("播放音频中");
-//                } else {
-//                    if (!mediaPlayer.isPlaying()) {
-//                        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.ceshi);
-//                        mediaPlayer.start();
-//                        showToast("播放音频中");
-//                    }
-//                }
-//            }
-//        });
+        mVideoView.setVideoURI(Uri.parse("android.resource://"+getPackageName()+"/raw/video01"));
+        MediaController mc = new MediaController(ZHDJDYXXXQActivity.this);//Video是我类名，是你当前的类
+        mVideoView.setMediaController(mc);//设置VedioView与MediaController相关联
+        mVideoView.start();
+        yuyin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               mVideoView.start();
+            }
+        });
 
         zhangjie.setText("学习视频："+testnews.title);
 
@@ -137,7 +133,7 @@ public class ZHDJDYXXXQActivity extends BaseActivity {
         etPl = (EditText) findViewById(R.id.et_pl);
         btnPl = (Button) findViewById(R.id.btn_pl);
         plList = (ListViewScrollView) findViewById(R.id.pl_list);
-        video = (VideoView) findViewById(R.id.video);
+        mVideoView = (VideoView) findViewById(R.id.video);
         yuyin = (TextView) findViewById(R.id.yuyin);
         zhangjie = (TextView) findViewById(R.id.zhangjie);
     }

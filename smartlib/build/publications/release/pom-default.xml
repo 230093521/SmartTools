@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.230093521</groupId>
   <artifactId>smartlib</artifactId>
-  <version>1.1.8</version>
+  <version>1.1.9</version>
   <packaging>aar</packaging>
   <name>smartlib</name>
   <description>方便快捷的智慧工具，帮助程序员进行快速开发</description>

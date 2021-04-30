@@ -1,7 +1,9 @@
 package com.gzeic.smartcity01;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -17,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -72,7 +75,10 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
         tvSetSave = (TextView) findViewById(R.id.tv_set_save);
         Glide.with(getApplicationContext()).load("http://" + getServerIp() + dataBean.getAvatar()).error(R.mipmap.ic_launcher).into(ivIcon);
         etNickname.setText(dataBean.getNickName());
-        etZjh.setText(dataBean.getIdCard());
+        String idCard = dataBean.getIdCard();
+        char[] chars = idCard.toCharArray();
+        String idc = chars[0]+chars[1]+chars[2]+"***********"+chars[chars.length-4]+chars[chars.length-3]+chars[chars.length-2]+chars[chars.length-1];
+        etZjh.setText(idc);
         etPhone.setText(dataBean.getPhonenumber());
         if (dataBean.getSex().equals("0")) {
             sexNan.setChecked(true);
@@ -93,7 +99,11 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
         if (id == R.id.info_base) {
             finish();
         } else if (id == R.id.rl_icon) {//打开图库
-            startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI), 200);
+            if (ActivityCompat.checkSelfPermission(WoZiLiaoActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            } else {
+                startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI), 200);
+            }
         } else if (id == R.id.tv_set_save) {
             File file = null;
             if (imageUri != null) {
@@ -101,6 +111,7 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
             }
             Log.i(TAG, "onClick: " + imageUri);
             JSONObject jsonObject = new JSONObject();
+            int sex = 1;
             try {
                 jsonObject.put("userId", "1");
                 jsonObject.put("idCard", etZjh.getText().toString());
@@ -108,7 +119,6 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
                 jsonObject.put("nickName", etNickname.getText().toString());
                 jsonObject.put("email", dataBean.getEmail());
                 jsonObject.put("phonenumber", etPhone.getText().toString());
-                int sex = 1;
                 if (!sexNan.isChecked()) {
                     sex = 0;
                 }
@@ -121,6 +131,7 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
             SharedPreferences sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
             String token = sharedPreferences.getString("token", null);
             //保存请求
+            final int finalSex = sex;
             getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp() + "/system/user/updata", token, new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
@@ -131,6 +142,10 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
                 public void onResponse(Call call, Response response) throws IOException {
                     String json = response.body().string();
                     Log.i(TAG, "onResponse6666666666: " + json);
+                    MyDataBean myDataBean = new Gson().fromJson(json, MyDataBean.class);
+                    dataBean.setNickName(etNickname.getText().toString());
+                    dataBean.setSex("1");
+                    dataBean.setPhonenumber(etPhone.getText().toString());
                 }
             });
         }
@@ -139,16 +154,20 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.i(TAG, "onActivityResult: " + data.getData() + "    " + requestCode + "    " + resultCode);
         if (resultCode == RESULT_OK) {
-            imageUri = getRealPathFromURI(data.getData());
-            Log.i(TAG, "onActivityResult: " + imageUri);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Glide.with(getApplicationContext()).load(data.getData()).error(R.mipmap.ic_launcher).into(ivIcon);
-                }
-            });
+            try {
+                Log.i(TAG, "onActivityResult: " + data.getData() + "    " + requestCode + "    " + resultCode);
+                imageUri = getRealPathFromURI(data.getData());
+                Log.i(TAG, "onActivityResult: " + imageUri);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Glide.with(getApplicationContext()).load(data.getData()).error(R.mipmap.ic_launcher).into(ivIcon);
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

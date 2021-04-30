@@ -15,26 +15,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
-import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.NewsBean;
 import com.gzeic.smartcity01.bean.NewsFlBean;
 import com.gzeic.smartcity01.bean.RowsBean;
 import com.gzeic.smartcity01.bean.RowsListBean;
 import com.gzeic.smartcity01.xinwen.XinWenActivity;
+import com.xsonline.smartlib.R;
 import com.youth.banner.Banner;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -72,12 +68,16 @@ public class DFragment extends BaseFragment {
                     }
                     initBanner();
                 }else {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            showToast(rowsListBean.getMsg());
-                        }
-                    });
+                    try {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast(rowsListBean.getMsg());
+                            }
+                        });
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -100,101 +100,117 @@ public class DFragment extends BaseFragment {
         return view;
     }
     public void initBanner(){
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                banner.setImageLoader(new GlideImageLoader());
-                banner.setImages(imageViews);
-                banner.start();
-            }
-        });
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    banner.setImageLoader(new GlideImageLoader());
+                    banner.setImages(imageViews);
+                    banner.start();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //根据分类口令动态加载新闻列表
     public void initNewsFl() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                recyclerView2.setAdapter(new BaseAdapter() {
-                    class ViewHolder {
-                        public View rootView;
-                        public TextView newsfl_text;
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    recyclerView2.setAdapter(new BaseAdapter() {
+                        class ViewHolder {
+                            public View rootView;
+                            public TextView newsfl_text;
 
-                        public ViewHolder(View rootView) {
-                            this.rootView = rootView;
-                            this.newsfl_text = rootView.findViewById(R.id.newsfl_text);
-                        }
-                    }
-
-                    @Override
-                    public int getCount() {
-                        return newFllist.size();
-                    }
-
-                    @Override
-                    public Object getItem(int position) {
-                        return newFllist.get(position);
-                    }
-
-                    @Override
-                    public long getItemId(int position) {
-                        return position;
-                    }
-
-                    @Override
-                    public View getView(int position, View convertView, ViewGroup parent) {
-                        convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_newsfl, null);
-                        final NewsFlBean.DataBean dataBean = newFllist.get(position);
-                        ViewHolder viewHolder = new ViewHolder(convertView);
-                        viewHolder.newsfl_text.setText(dataBean.getDictLabel());
-                        viewHolder.newsfl_text.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                getNewsList(dataBean.getDictCode());
+                            public ViewHolder(View rootView) {
+                                this.rootView = rootView;
+                                this.newsfl_text = rootView.findViewById(R.id.newsfl_text);
                             }
-                        });
-                        return convertView;
-                    }
-                });
-            }
-        });
+                        }
+
+                        @Override
+                        public int getCount() {
+                            return newFllist.size();
+                        }
+
+                        @Override
+                        public Object getItem(int position) {
+                            return newFllist.get(position);
+                        }
+
+                        @Override
+                        public long getItemId(int position) {
+                            return position;
+                        }
+
+                        @Override
+                        public View getView(int position, View convertView, ViewGroup parent) {
+                            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_newsfl, null);
+                            final NewsFlBean.DataBean dataBean = newFllist.get(position);
+                            ViewHolder viewHolder = new ViewHolder(convertView);
+                            viewHolder.newsfl_text.setText(dataBean.getDictLabel());
+                            viewHolder.newsfl_text.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    getNewsList(dataBean.getDictCode());
+                                }
+                            });
+                            return convertView;
+                        }
+                    });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //根据分类口令动态加载新闻列表
     public void getNewsList(final int dictCode) {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Log.i("ceshi", "http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode);
-                getTools().sendGetRequest("http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode, new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.i("ceshi", "http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode);
+                    getTools().sendGetRequest("http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode, new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
 
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String json = response.body().string();
-                        Log.i("ceshi", "onResponse:测试 " + json);
-                        NewsBean newsBean = new Gson().fromJson(json, NewsBean.class);
-                        if (newsBean.getCode() == 200) {
-                            newsList = newsBean.getRows();
-                            Log.i("ceshi", "onResponse:测试 " + newsList.get(0).getContent());
-                            initNewList();
                         }
-                    }
-                });
-            }
-        });
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+                            String json = response.body().string();
+                            Log.i("ceshi", "onResponse:测试 " + json);
+                            NewsBean newsBean = new Gson().fromJson(json, NewsBean.class);
+                            if (newsBean.getCode() == 200) {
+                                newsList = newsBean.getRows();
+                                Log.i("ceshi", "onResponse:测试 " + newsList.get(0).getContent());
+                                initNewList();
+                            }
+                        }
+                    });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void initNewList() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                newsListView.setAdapter(new NewsAdapter(newsList));
-            }
-        });
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    newsListView.setAdapter(new NewsAdapter(newsList));
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     class NewsFlAdapter extends RecyclerView.Adapter<NewsFlAdapter.ViewHolder> {

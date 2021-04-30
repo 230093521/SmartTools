@@ -48,6 +48,7 @@ public class WangLuoActivity extends AppCompatActivity implements View.OnClickLi
                 SharedPreferences sharedPreferences = getSharedPreferences("address", MODE_PRIVATE);
                 sharedPreferences.edit().putString("add", s).apply();
                 Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
+                finish();
             }
         } else if (id == R.id.set_back) {//                startActivity(new Intent(SetNetworkActivity.this,GuideActivity.class));
             finish();

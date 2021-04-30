@@ -17,13 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
-import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.FwBean;
 import com.gzeic.smartcity01.bean.NewsBean;
 import com.gzeic.smartcity01.bean.NewsFlBean;
@@ -42,6 +39,7 @@ import com.gzeic.smartcity01.yyjc.YyjcActivity;
 import com.gzeic.smartcity01.zfz.ZfzActivity;
 import com.gzeic.smartcity01.zgz.ZgzActivity;
 import com.gzeic.smartcity01.zhbs.BaShiActivity;
+import com.xsonline.smartlib.R;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
@@ -63,7 +61,7 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
     private List<NewsFlBean.DataBean> newFllist;
     private List<NewsBean.RowsBean> newsList;
     List<RowsBean> lbrows;
-    //    private  RecyclerView recyclerView;
+    //private  RecyclerView recyclerView;
     private GridView recyclerView2;
     ListView newsListView;
     private LinearLayout faZtLl1;
@@ -241,125 +239,129 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
 
 
     public void initFw() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-//                recyclerView.setAdapter(new MyAdapter(fwlist));
-//                recyclerView.scrollToPosition(1);
-                boolean tablet = isTablet(getContext());
-                if (tablet) {
-                    ViewGroup.LayoutParams layoutParams = gridview.getLayoutParams();
-                    layoutParams.height = 200;
-                    gridview.setLayoutParams(layoutParams);
-                    gridview.setNumColumns(6);
-
-                }
-                gridview.setAdapter(new BaseAdapter() {
-                    class ViewHolder {
-                        public View rootView;
-                        public ImageView fw_image;
-                        public TextView fw_text;
-
-                        public ViewHolder(View rootView) {
-                            this.rootView = rootView;
-                            this.fw_image = (ImageView) rootView.findViewById(R.id.fw_image);
-                            this.fw_text = (TextView) rootView.findViewById(R.id.fw_text);
-                        }
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+    //                recyclerView.setAdapter(new MyAdapter(fwlist));
+    //                recyclerView.scrollToPosition(1);
+                    boolean tablet = isTablet(getContext());
+                    if (tablet) {
+                        ViewGroup.LayoutParams layoutParams = gridview.getLayoutParams();
+                        layoutParams.height = 200;
+                        gridview.setLayoutParams(layoutParams);
+                        gridview.setNumColumns(6);
 
                     }
+                    gridview.setAdapter(new BaseAdapter() {
+                        class ViewHolder {
+                            public View rootView;
+                            public ImageView fw_image;
+                            public TextView fw_text;
 
-                    @Override
-                    public int getCount() {
-                        return fwlist.size();
-                    }
-
-                    @Override
-                    public Object getItem(int i) {
-                        return fwlist.get(i);
-                    }
-
-                    @Override
-                    public long getItemId(int i) {
-                        return i;
-                    }
-
-                    @Override
-                    public View getView(final int i, View view, ViewGroup viewGroup) {
-                        view = LayoutInflater.from(getContext()).inflate(R.layout.item_fuwu, null);
-                        ViewHolder viewHolder = new ViewHolder(view);
-                        viewHolder.fw_text.setText(fwlist.get(i).getServiceName());
-                        if (fwlist.get(i).getImgUrl().contains("/")) {
-                            Glide.with(getContext()).load("http://" + getServerIp() + fwlist.get(i).getImgUrl()).error(R.mipmap.ic_launcher).into(viewHolder.fw_image);
-                        } else {
-                            switch (fwlist.get(i).getId()) {
-                                case 20://智慧党建
-                                    viewHolder.fw_image.setImageResource(R.drawable.zhdj);
-                                    break;
-                                case 21://智慧养老
-                                    viewHolder.fw_image.setImageResource(R.drawable.zhyl);
-                                    break;
-                                case 22://智慧环保
-                                    viewHolder.fw_image.setImageResource(R.drawable.zhhb);
-                                    break;
-                                default:
-                                    break;
+                            public ViewHolder(View rootView) {
+                                this.rootView = rootView;
+                                this.fw_image = (ImageView) rootView.findViewById(R.id.fw_image);
+                                this.fw_text = (TextView) rootView.findViewById(R.id.fw_text);
                             }
+
                         }
-                        viewHolder.rootView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                FwBean.RowsBean rowsBean = fwlist.get(i);
-                                //根据ID跳转对应服务
-                                switch (rowsBean.getId()) {
-                                    case 7://生活缴费
-                                        startActivity(new Intent(getContext(), ShActivity.class));
+
+                        @Override
+                        public int getCount() {
+                            return fwlist.size();
+                        }
+
+                        @Override
+                        public Object getItem(int i) {
+                            return fwlist.get(i);
+                        }
+
+                        @Override
+                        public long getItemId(int i) {
+                            return i;
+                        }
+
+                        @Override
+                        public View getView(final int i, View view, ViewGroup viewGroup) {
+                            view = LayoutInflater.from(getContext()).inflate(R.layout.item_fuwu, null);
+                            ViewHolder viewHolder = new ViewHolder(view);
+                            viewHolder.fw_text.setText(fwlist.get(i).getServiceName());
+                            if (fwlist.get(i).getImgUrl().contains("/")) {
+                                Glide.with(getContext()).load("http://" + getServerIp() + fwlist.get(i).getImgUrl()).error(R.mipmap.ic_launcher).into(viewHolder.fw_image);
+                            } else {
+                                switch (fwlist.get(i).getId()) {
+                                    case 20://智慧党建
+                                        viewHolder.fw_image.setImageResource(R.drawable.zhdj);
                                         break;
-                                    case 2://城市地铁
-                                        startActivity(new Intent(getContext(), DiTieActivity.class));
+                                    case 21://智慧养老
+                                        viewHolder.fw_image.setImageResource(R.drawable.zhyl);
                                         break;
-                                    case 25://预约检车
-                                        startActivity(new Intent(getContext(), YyjcActivity.class));
+                                    case 22://智慧环保
+                                        viewHolder.fw_image.setImageResource(R.drawable.zhhb);
                                         break;
-                                    case 24://堵车移车
-                                        startActivity(new Intent(getContext(), DcycActivity.class));
-                                        break;
-                                    case 23://找房子
-                                        startActivity(new Intent(getContext(), ZfzActivity.class));
-                                        break;
-                                    case 4://找工作
-                                        startActivity(new Intent(getContext(), ZgzActivity.class));
-                                        break;
-                                    case 5://门诊预约
-                                        startActivity(new Intent(getContext(), MzActivity.class));
-                                        break;
-                                    case 3://智慧巴士
-                                        startActivity(new Intent(getContext(), BaShiActivity.class));
-                                        break;
-                                    case 16://停车场
-                                        startActivity(new Intent(getContext(), TccActivity.class));
-                                        break;
-                                    case 9://违章查询
-                                        startActivity(new Intent(getContext(), WzActivity.class));
-                                        break;
-//                                    case 20://智慧党建
-//                                        startActivity(new Intent(getContext(), ZHDJActivity.class));
-//                                        break;
-//                                    case 21://智慧养老
-//                                        startActivity(new Intent(getContext(), YangLaoActivity.class));
-//                                        break;
-//                                    case 22://智慧环保
-//                                        startActivity(new Intent(getContext(), WeiZhangActivity.class));
-//                                        break;
                                     default:
                                         break;
                                 }
                             }
-                        });
-                        return view;
-                    }
-                });
-            }
-        });
+                            viewHolder.rootView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    FwBean.RowsBean rowsBean = fwlist.get(i);
+                                    //根据ID跳转对应服务
+                                    switch (rowsBean.getId()) {
+                                        case 7://生活缴费
+                                            startActivity(new Intent(getContext(), ShActivity.class));
+                                            break;
+                                        case 2://城市地铁
+                                            startActivity(new Intent(getContext(), DiTieActivity.class));
+                                            break;
+                                        case 25://预约检车
+                                            startActivity(new Intent(getContext(), YyjcActivity.class));
+                                            break;
+                                        case 24://堵车移车
+                                            startActivity(new Intent(getContext(), DcycActivity.class));
+                                            break;
+                                        case 23://找房子
+                                            startActivity(new Intent(getContext(), ZfzActivity.class));
+                                            break;
+                                        case 4://找工作
+                                            startActivity(new Intent(getContext(), ZgzActivity.class));
+                                            break;
+                                        case 5://门诊预约
+                                            startActivity(new Intent(getContext(), MzActivity.class));
+                                            break;
+                                        case 3://智慧巴士
+                                            startActivity(new Intent(getContext(), BaShiActivity.class));
+                                            break;
+                                        case 16://停车场
+                                            startActivity(new Intent(getContext(), TccActivity.class));
+                                            break;
+                                        case 9://违章查询
+                                            startActivity(new Intent(getContext(), WzActivity.class));
+                                            break;
+    //                                    case 20://智慧党建
+    //                                        startActivity(new Intent(getContext(), ZHDJActivity.class));
+    //                                        break;
+    //                                    case 21://智慧养老
+    //                                        startActivity(new Intent(getContext(), YangLaoActivity.class));
+    //                                        break;
+    //                                    case 22://智慧环保
+    //                                        startActivity(new Intent(getContext(), WeiZhangActivity.class));
+    //                                        break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                            });
+                            return view;
+                        }
+                    });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static boolean isTablet(Context context) {
@@ -388,89 +390,101 @@ public class AFragment extends BaseFragment implements View.OnClickListener {
     }
 
     public void initNewsFl() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                recyclerView2.setAdapter(new BaseAdapter() {
-                    class ViewHolder {
-                        public View rootView;
-                        public TextView newsfl_text;
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    recyclerView2.setAdapter(new BaseAdapter() {
+                        class ViewHolder {
+                            public View rootView;
+                            public TextView newsfl_text;
 
-                        public ViewHolder(View rootView) {
-                            this.rootView = rootView;
-                            this.newsfl_text = rootView.findViewById(R.id.newsfl_text);
-                        }
-                    }
-
-                    @Override
-                    public int getCount() {
-                        return newFllist.size();
-                    }
-
-                    @Override
-                    public Object getItem(int position) {
-                        return newFllist.get(position);
-                    }
-
-                    @Override
-                    public long getItemId(int position) {
-                        return position;
-                    }
-
-                    @Override
-                    public View getView(int position, View convertView, ViewGroup parent) {
-                        convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_newsfl, null);
-                        final NewsFlBean.DataBean dataBean = newFllist.get(position);
-                        ViewHolder viewHolder = new ViewHolder(convertView);
-                        viewHolder.newsfl_text.setText(dataBean.getDictLabel());
-                        viewHolder.newsfl_text.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                getNewsList(dataBean.getDictCode());
+                            public ViewHolder(View rootView) {
+                                this.rootView = rootView;
+                                this.newsfl_text = rootView.findViewById(R.id.newsfl_text);
                             }
-                        });
-                        return convertView;
-                    }
-                });
-            }
-        });
+                        }
+
+                        @Override
+                        public int getCount() {
+                            return newFllist.size();
+                        }
+
+                        @Override
+                        public Object getItem(int position) {
+                            return newFllist.get(position);
+                        }
+
+                        @Override
+                        public long getItemId(int position) {
+                            return position;
+                        }
+
+                        @Override
+                        public View getView(int position, View convertView, ViewGroup parent) {
+                            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_newsfl, null);
+                            final NewsFlBean.DataBean dataBean = newFllist.get(position);
+                            ViewHolder viewHolder = new ViewHolder(convertView);
+                            viewHolder.newsfl_text.setText(dataBean.getDictLabel());
+                            viewHolder.newsfl_text.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    getNewsList(dataBean.getDictCode());
+                                }
+                            });
+                            return convertView;
+                        }
+                    });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //根据分类口令动态加载新闻列表
     public void getNewsList(final int dictCode) {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Log.i("ceshi", "http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode);
-                getTools().sendGetRequest("http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode, new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Log.i("ceshi", "http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode);
+                    getTools().sendGetRequest("http://" + getServerIp() + "/press/press/list?pageNum=1&pageSize=10&pressCategory=" + dictCode, new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
 
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String json = response.body().string();
-                        Log.i("ceshi", "onResponse:测试 " + json);
-                        NewsBean newsBean = new Gson().fromJson(json, NewsBean.class);
-                        if (newsBean.getCode() == 200) {
-                            newsList = newsBean.getRows();
-                            Log.i("ceshi", "onResponse:测试 " + newsList.get(0).getContent());
-                            initNewList();
                         }
-                    }
-                });
-            }
-        });
+
+                        @Override
+                        public void onResponse(Call call, Response response) throws IOException {
+                            String json = response.body().string();
+                            Log.i("ceshi", "onResponse:测试 " + json);
+                            NewsBean newsBean = new Gson().fromJson(json, NewsBean.class);
+                            if (newsBean.getCode() == 200) {
+                                newsList = newsBean.getRows();
+                                Log.i("ceshi", "onResponse:测试 " + newsList.get(0).getContent());
+                                initNewList();
+                            }
+                        }
+                    });
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void initNewList() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                newsListView.setAdapter(new NewsAdapter(newsList));
-            }
-        });
+        try {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    newsListView.setAdapter(new NewsAdapter(newsList));
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -1331,6 +1331,7 @@ drawable ic_wxpay
 drawable ic_yuying
 drawable ic_zan
 drawable ic_zhhb
+drawable icon2
 drawable jiangkang
 drawable jyxc
 drawable jzfp1
@@ -1492,6 +1493,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back
 id bangfu
 id banner
 id bannerContainer
@@ -2032,6 +2034,7 @@ id yanshizhaopian
 id yiyuan_img
 id yiyuan_name
 id yiyuanpingfen
+id yuanmima
 id yue
 id yuyin
 id zan
@@ -2187,6 +2190,7 @@ layout activity_zhdj_hdly
 layout activity_zhdj_jyxc
 layout activity_zhdj_pai
 layout activity_zhdj_pl
+layout activity_zhdj_ssp
 layout activity_zhdj_xq
 layout activity_zhdj_xx
 layout banner
@@ -2270,6 +2274,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation mobile_sy
 raw city
+raw video01
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

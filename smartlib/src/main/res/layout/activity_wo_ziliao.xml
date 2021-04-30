@@ -138,6 +138,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="10dp"
             android:text="52222222222222222"
+            android:enabled="false"
             android:textSize="13sp"
             android:textColor="#252525"
             />

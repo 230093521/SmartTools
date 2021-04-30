@@ -6,6 +6,20 @@
     android:orientation="vertical"
     android:background="#DFDEDE"
     >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:text="智慧城市"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -95,13 +109,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#CCCCCC"/>
-                <GridView
+                <com.gzeic.smartcity01.Tools.MyGridView
                     android:id="@+id/gridview"
                     android:layout_width="match_parent"
                     android:numColumns="5"
                     android:stretchMode="columnWidth"
-                    android:layout_height="90dp">
-                </GridView>
+                    android:layout_height="wrap_content">
+                </com.gzeic.smartcity01.Tools.MyGridView>
             </LinearLayout>
 
             <TextView

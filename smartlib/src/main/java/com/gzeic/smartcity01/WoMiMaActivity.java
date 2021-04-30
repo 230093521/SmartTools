@@ -28,6 +28,7 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
     private EditText newPass1;
     private EditText newPass2;
     private TextView tvSetSave;
+    private EditText yuanmima;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
         tvSetSave = (TextView) findViewById(R.id.tv_set_save);
         tvSetSave.setOnClickListener(this);
         passBase.setOnClickListener(this);
+        yuanmima = (EditText) findViewById(R.id.yuanmima);
     }
 
     @Override
@@ -58,26 +60,31 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
             String name = myDataBean.getData().getUserName();
             String pass1 = newPass1.getText().toString();
             String pass2 = newPass2.getText().toString();
+            if (yuanmima.getText().toString().isEmpty()) {
+                showToast("原密码不能为空");
+                return;
+            }
             if (!pass1.equals(pass2)) {
                 showToast("两次输入密码不一致");
                 return;
             }
+
             putPass("2", name, pass2);
         }
     }
 
-    public void putPass(String userId,String username,String password){
+    public void putPass(String userId, String username, String password) {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("userId",userId);
-            jsonObject.put("userName",username);
-            jsonObject.put("password",password);
+            jsonObject.put("userId", userId);
+            jsonObject.put("userName", username);
+            jsonObject.put("password", password);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        SharedPreferences sharedPreferences = getSharedPreferences("token",MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
         String token = sharedPreferences.getString("token", null);
-        getTools().sendPutRequestToken(jsonObject, "http://"+getServerIp()+"/system/user/resetPwd", token, new Callback() {
+        getTools().sendPutRequestToken(jsonObject, "http://" + getServerIp() + "/system/user/resetPwd", token, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -86,8 +93,13 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String json = response.body().string();
-                Log.i(TAG, "onResponse: "+json);
-
+                Log.i(TAG, "onResponse: " + json);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        showToast("修改完成");
+                    }
+                });
             }
         });
 
