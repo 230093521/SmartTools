@@ -38,12 +38,12 @@ public class ShJfActivity extends BaShiActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_sh_jf);
         initView();
         final String fy = getSP("fy");
         final String huhao = getSP("huhao");
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/electricity/list?doorNo=" + "125" + "&userId=3", getToken(), new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/electricity/list?doorNo=" + "125" + "&userId="+getUserdata().getUserId(), getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -93,8 +93,12 @@ public class ShJfActivity extends BaShiActivity {
             @Override
             public void onClick(View view) {
                 if (fy.equals("001")) {
-                    shuifeis.setElectricityMoney(jine.getText().toString());
-                    putSP("feiyong", new Gson().toJson(shuifeis));
+                    try {
+                        shuifeis.setElectricityMoney(jine.getText().toString());
+                        putSP("feiyong", new Gson().toJson(shuifeis));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     dianfeis.setElectricityMoney(jine.getText().toString());
                     putSP("feiyong", new Gson().toJson(dianfeis));
@@ -120,8 +124,5 @@ public class ShJfActivity extends BaShiActivity {
         btnLogin = (Button) findViewById(R.id.btn_login);
         homeTitle = (TextView) findViewById(R.id.home_title);
         feitu = (ImageView) findViewById(R.id.feitu);
-
-
-
     }
 }

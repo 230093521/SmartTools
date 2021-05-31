@@ -29,7 +29,7 @@ public class SqWuYeActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_sq_wuye);
         initView();
     }

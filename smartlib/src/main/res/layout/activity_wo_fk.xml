@@ -11,7 +11,7 @@
         android:id="@+id/home_toprl"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
 
         <ImageView
             android:id="@+id/iv_base"
@@ -31,7 +31,42 @@
             android:text="意见反馈"
             android:textColor="#FFF" />
     </RelativeLayout>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="标题"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:textColor="#424242" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:padding="6dp">
+        <EditText
+            android:id="@+id/et_feedback_biaoti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_search_shape"
+            android:hint="请输入标题"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:gravity="left|top"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="15sp" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="内容"
+        android:layout_marginStart="20dp"
+        android:textSize="16sp"
+        android:textColor="#424242" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -47,12 +82,13 @@
             android:inputType="textMultiLine"
             android:padding="10dp"
             android:gravity="left|top"
+            android:maxLength="150"
             android:textSize="15sp" />
         <TextView
             android:id="@+id/tv_zishu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0/105"
+            android:text="0/150"
             android:textColor="#9C9C9C"
             android:layout_margin="10dp"
             android:layout_alignParentEnd="true"
@@ -60,18 +96,16 @@
             />
     </RelativeLayout>
 
-    <TextView
+    <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:text="提交"
         android:gravity="center"
         android:textColor="#FFF"
         android:background="@drawable/btn_bule"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         />

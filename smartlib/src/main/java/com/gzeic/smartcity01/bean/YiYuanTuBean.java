@@ -5,23 +5,21 @@ import java.util.List;
 public class YiYuanTuBean {
 
     /**
-     * total : 3
-     * rows : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":1,"imgUrl":"/profile/2020/10/27/h1.jpg","hospitalId":1},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":2,"imgUrl":"/profile/2020/10/27/h2.jpg","hospitalId":1},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":3,"imgUrl":"/profile/2020/10/27/h3.jpg","hospitalId":1}]
+     * msg : 操作成功
      * code : 200
-     * msg : 查询成功
+     * data : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":1,"imgUrl":"/prod-api/profile/upload/image/2021/05/11/921ee654-d6c3-4876-8450-16ac272e18df.jpg","hospitalId":1},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":2,"imgUrl":"/prod-api/profile/upload/image/2021/05/11/4d41e85e-9099-4de6-b3c5-5e97123b1734.jpg","hospitalId":1},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":3,"imgUrl":"/prod-api/profile/upload/image/2021/05/11/32b46ab7-a004-4c81-abb5-4f6a87d1fd76.jpg","hospitalId":1}]
      */
 
-    private int total;
-    private int code;
     private String msg;
-    private List<RowsBean> rows;
+    private int code;
+    private List<DataDTO> data;
 
-    public int getTotal() {
-        return total;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public int getCode() {
@@ -32,23 +30,15 @@ public class YiYuanTuBean {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public List<DataDTO> getData() {
+        return data;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setData(List<DataDTO> data) {
+        this.data = data;
     }
 
-    public List<RowsBean> getRows() {
-        return rows;
-    }
-
-    public void setRows(List<RowsBean> rows) {
-        this.rows = rows;
-    }
-
-    public static class RowsBean {
+    public static class DataDTO {
         /**
          * searchValue : null
          * createBy : null
@@ -58,7 +48,7 @@ public class YiYuanTuBean {
          * remark : null
          * params : {}
          * id : 1
-         * imgUrl : /profile/2020/10/27/h1.jpg
+         * imgUrl : /prod-api/profile/upload/image/2021/05/11/921ee654-d6c3-4876-8450-16ac272e18df.jpg
          * hospitalId : 1
          */
 
@@ -68,7 +58,7 @@ public class YiYuanTuBean {
         private Object updateBy;
         private Object updateTime;
         private Object remark;
-        private ParamsBean params;
+        private ParamsDTO params;
         private int id;
         private String imgUrl;
         private int hospitalId;
@@ -121,11 +111,11 @@ public class YiYuanTuBean {
             this.remark = remark;
         }
 
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
         }
 
@@ -153,7 +143,7 @@ public class YiYuanTuBean {
             this.hospitalId = hospitalId;
         }
 
-        public static class ParamsBean {
+        public static class ParamsDTO {
         }
     }
 }

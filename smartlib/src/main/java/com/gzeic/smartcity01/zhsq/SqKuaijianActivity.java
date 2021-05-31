@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.zhdj.ZHDJSuiShouPaiActivity;
 
 public class SqKuaijianActivity extends BaseActivity {
 
@@ -24,7 +25,7 @@ public class SqKuaijianActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_sq_kuaijian);
         initView();
         metroBase.setOnClickListener(new View.OnClickListener() {

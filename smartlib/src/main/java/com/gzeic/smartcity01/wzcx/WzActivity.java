@@ -10,20 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.RowsBean;
 import com.gzeic.smartcity01.bean.RowsListBean;
 import com.youth.banner.Banner;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -42,45 +38,45 @@ public class WzActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_wz);
         initView();
 
-        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/rotation/list?pageNum=1&pageSize=10&type=45", new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String json = response.body().string();
-                final RowsListBean rowsListBean = new Gson().fromJson(json, RowsListBean.class);
-                if (rowsListBean.getCode() == 200) {
-                    imageViews = new ArrayList<>();
-                    List<RowsBean> rows = rowsListBean.getRows();
-                    for (RowsBean rs : rows) {
-                        imageViews.add("http://"+getServerIp() + rs.getImgUrl());
-                        Log.e("ceshi", "http://"+ getServerIp()+ rs.getImgUrl());
-                    }
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            banner.setImageLoader(new GlideImageLoader());
-                            banner.setImages(imageViews);
-                            banner.start();
-                        }
-                    });
-                } else {
-                   runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            showToast(rowsListBean.getMsg());
-                        }
-                    });
-                }
-            }
-        });
+//        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/rotation/list?pageNum=1&pageSize=10&type=45", new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                String json = response.body().string();
+//                final RowsListBean rowsListBean = new Gson().fromJson(json, RowsListBean.class);
+//                if (rowsListBean.getCode() == 200) {
+//                    imageViews = new ArrayList<>();
+//                    List<RowsBean> rows = rowsListBean.getRows();
+//                    for (RowsBean rs : rows) {
+//                        imageViews.add("http://"+getServerIp() + rs.getImgUrl());
+//                        Log.e("ceshi", "http://"+ getServerIp()+ rs.getImgUrl());
+//                    }
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            banner.setImageLoader(new GlideImageLoader());
+//                            banner.setImages(imageViews);
+//                            banner.start();
+//                        }
+//                    });
+//                } else {
+//                   runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            showToast(rowsListBean.getMsg());
+//                        }
+//                    });
+//                }
+//            }
+//        });
 
         metroBase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +91,7 @@ public class WzActivity extends BaseActivity {
                 if (paihao.getText().length()<1||fadongji.getText().length()<1){
                     showToast("请输入完整信息");
                 }else {
+                    putSP("wzcx",chelei.getText().toString()+"|"+fadongji.getText().toString()+"|"+paizilei.getText().toString()+" "+paihao.getText().toString());
                     startActivity(new Intent(WzActivity.this, WzJgActivity.class));
                 }
 
@@ -112,7 +109,6 @@ public class WzActivity extends BaseActivity {
                 showList2(view);
             }
         });
-
     }
 
 

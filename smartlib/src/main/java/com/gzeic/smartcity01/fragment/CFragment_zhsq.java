@@ -17,8 +17,8 @@ import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.Tools.ListViewScrollView;
-import com.gzeic.smartcity01.zhsq.SqCheliangActivity;
 import com.gzeic.smartcity01.zhsq.SqDtActivity;
+import com.gzeic.smartcity01.zhsq.SqCheliangActivity;
 import com.gzeic.smartcity01.zhsq.SqKuaijianActivity;
 import com.gzeic.smartcity01.zhsq.SqShejiaoActivity;
 import com.gzeic.smartcity01.zhsq.SqTuiguangActivity;
@@ -100,7 +100,7 @@ public class CFragment_zhsq extends BaseFragment implements View.OnClickListener
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_news_time, null);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_xw_sj, null);
                 final ShowTestData showTestData = showTestDataList.get(position);
                 ViewHolder viewHolder = new ViewHolder(convertView);
                 viewHolder.news_title.setText(showTestData.title);

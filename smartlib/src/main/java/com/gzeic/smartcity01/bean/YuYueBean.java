@@ -3,9 +3,10 @@ package com.gzeic.smartcity01.bean;
 import java.util.List;
 
 public class YuYueBean {
+
     /**
-     * total : 11
-     * rows : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":1,"orderNo":"1603537663212","patientName":"张三","divisionId":null,"typesId":"1","moeny":"5","startime":"2020-10-24 18:38","reservedStatus":null,"categoryName":"胸外科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":9,"orderNo":"1603537611111","patientName":"陈萍萍","divisionId":null,"typesId":"3","moeny":"532","startime":"2020-10-24 18:38","reservedStatus":null,"categoryName":"肛肠科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":15,"orderNo":"1602323232331","patientName":"张","divisionId":null,"typesId":"1","moeny":"5","startime":"2020-10-24 18:38","reservedStatus":null,"categoryName":"胸外科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":16,"orderNo":"1656674584761","patientName":"李四","divisionId":null,"typesId":"2","moeny":"5","startime":"2020-10-27 12:01","reservedStatus":null,"categoryName":"儿科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":17,"orderNo":"1656342556761","patientName":"李四","divisionId":null,"typesId":"2","moeny":"37","startime":"2020-10-27 12:01","reservedStatus":null,"categoryName":"消化内科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":18,"orderNo":"1603801496731","patientName":"李四","divisionId":null,"typesId":"1","moeny":"6","startime":"2020-10-27 12:01","reservedStatus":null,"categoryName":"神经内科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":24,"orderNo":"1608280995382","patientName":"李小溪","divisionId":null,"typesId":"1","moeny":"6","startime":"2020-12-18 12:01","reservedStatus":null,"categoryName":"神经内科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":25,"orderNo":"1608378262104","patientName":"李小溪","divisionId":null,"typesId":"1","moeny":"6","startime":"2020-12-19 12:01","reservedStatus":null,"categoryName":"神经内科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":26,"orderNo":"1608379873501","patientName":"李小溪","divisionId":null,"typesId":"2","moeny":"5","startime":"2020-12-19 12:01","reservedStatus":null,"categoryName":"骨科","userId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":27,"orderNo":"1608381735194","patientName":"李小溪","divisionId":null,"typesId":"1","moeny":"6","startime":"2020-12-18 12:01","reservedStatus":null,"categoryName":"神经内科","userId":null}]
+     * total : 10
+     * rows : [{"id":1,"orderNo":"1603537663212","patientName":"王大卫","categoryId":5,"type":"1","money":5,"reserveTime":"2021-06-02 09:00","status":"1","categoryName":"胸外科","userId":2}]
      * code : 200
      * msg : 查询成功
      */
@@ -13,7 +14,7 @@ public class YuYueBean {
     private int total;
     private int code;
     private String msg;
-    private List<RowsBean> rows;
+    private List<RowsDTO> rows;
 
     public int getTotal() {
         return total;
@@ -39,108 +40,38 @@ public class YuYueBean {
         this.msg = msg;
     }
 
-    public List<RowsBean> getRows() {
+    public List<RowsDTO> getRows() {
         return rows;
     }
 
-    public void setRows(List<RowsBean> rows) {
+    public void setRows(List<RowsDTO> rows) {
         this.rows = rows;
     }
 
-    public static class RowsBean {
+    public static class RowsDTO {
         /**
-         * searchValue : null
-         * createBy : null
-         * createTime : null
-         * updateBy : null
-         * updateTime : null
-         * remark : null
-         * params : {}
          * id : 1
          * orderNo : 1603537663212
-         * patientName : 张三
-         * divisionId : null
-         * typesId : 1
-         * moeny : 5
-         * startime : 2020-10-24 18:38
-         * reservedStatus : null
+         * patientName : 王大卫
+         * categoryId : 5
+         * type : 1
+         * money : 5
+         * reserveTime : 2021-06-02 09:00
+         * status : 1
          * categoryName : 胸外科
-         * userId : null
+         * userId : 2
          */
 
-        private Object searchValue;
-        private Object createBy;
-        private Object createTime;
-        private Object updateBy;
-        private Object updateTime;
-        private Object remark;
-        private ParamsBean params;
         private int id;
         private String orderNo;
         private String patientName;
-        private Object divisionId;
-        private String typesId;
-        private String moeny;
-        private String startime;
-        private Object reservedStatus;
+        private int categoryId;
+        private String type;
+        private int money;
+        private String reserveTime;
+        private String status;
         private String categoryName;
-        private Object userId;
-
-        public Object getSearchValue() {
-            return searchValue;
-        }
-
-        public void setSearchValue(Object searchValue) {
-            this.searchValue = searchValue;
-        }
-
-        public Object getCreateBy() {
-            return createBy;
-        }
-
-        public void setCreateBy(Object createBy) {
-            this.createBy = createBy;
-        }
-
-        public Object getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(Object createTime) {
-            this.createTime = createTime;
-        }
-
-        public Object getUpdateBy() {
-            return updateBy;
-        }
-
-        public void setUpdateBy(Object updateBy) {
-            this.updateBy = updateBy;
-        }
-
-        public Object getUpdateTime() {
-            return updateTime;
-        }
-
-        public void setUpdateTime(Object updateTime) {
-            this.updateTime = updateTime;
-        }
-
-        public Object getRemark() {
-            return remark;
-        }
-
-        public void setRemark(Object remark) {
-            this.remark = remark;
-        }
-
-        public ParamsBean getParams() {
-            return params;
-        }
-
-        public void setParams(ParamsBean params) {
-            this.params = params;
-        }
+        private int userId;
 
         public int getId() {
             return id;
@@ -166,44 +97,44 @@ public class YuYueBean {
             this.patientName = patientName;
         }
 
-        public Object getDivisionId() {
-            return divisionId;
+        public int getCategoryId() {
+            return categoryId;
         }
 
-        public void setDivisionId(Object divisionId) {
-            this.divisionId = divisionId;
+        public void setCategoryId(int categoryId) {
+            this.categoryId = categoryId;
         }
 
-        public String getTypesId() {
-            return typesId;
+        public String getType() {
+            return type;
         }
 
-        public void setTypesId(String typesId) {
-            this.typesId = typesId;
+        public void setType(String type) {
+            this.type = type;
         }
 
-        public String getMoeny() {
-            return moeny;
+        public int getMoney() {
+            return money;
         }
 
-        public void setMoeny(String moeny) {
-            this.moeny = moeny;
+        public void setMoney(int money) {
+            this.money = money;
         }
 
-        public String getStartime() {
-            return startime;
+        public String getReserveTime() {
+            return reserveTime;
         }
 
-        public void setStartime(String startime) {
-            this.startime = startime;
+        public void setReserveTime(String reserveTime) {
+            this.reserveTime = reserveTime;
         }
 
-        public Object getReservedStatus() {
-            return reservedStatus;
+        public String getStatus() {
+            return status;
         }
 
-        public void setReservedStatus(Object reservedStatus) {
-            this.reservedStatus = reservedStatus;
+        public void setStatus(String status) {
+            this.status = status;
         }
 
         public String getCategoryName() {
@@ -214,15 +145,12 @@ public class YuYueBean {
             this.categoryName = categoryName;
         }
 
-        public Object getUserId() {
+        public int getUserId() {
             return userId;
         }
 
-        public void setUserId(Object userId) {
+        public void setUserId(int userId) {
             this.userId = userId;
-        }
-
-        public static class ParamsBean {
         }
     }
 }

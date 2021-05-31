@@ -6,7 +6,7 @@ public class ZgzGsBean {
     /**
      * msg : 操作成功
      * code : 200
-     * data : {"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":1,"companyName":"新型技术公司","introductory":"根据发布的第二份年度十大新兴技术报告，物联网是一种新兴技术，为创造新的业务和收入提供了最大的机会。\n报告中提到的10项技术根据每家为IT公司和其他商业技术公司创建的近期业务和财务机会进行排名。\n"}
+     * data : {"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":1,"companyId":3,"professionId":1,"contacts":"张先生","name":"软件开发","obligation":"负责软件的设计开发测试以及上线","address":"大连市万达广场","need":"工作经验1-2年","salary":"5000","companyName":null,"professionName":null}
      */
 
     private String msg;
@@ -47,10 +47,16 @@ public class ZgzGsBean {
          * remark : null
          * params : {}
          * id : 1
-         * companyName : 新型技术公司
-         * introductory : 根据发布的第二份年度十大新兴技术报告，物联网是一种新兴技术，为创造新的业务和收入提供了最大的机会。
-         报告中提到的10项技术根据每家为IT公司和其他商业技术公司创建的近期业务和财务机会进行排名。
-
+         * companyId : 3
+         * professionId : 1
+         * contacts : 张先生
+         * name : 软件开发
+         * obligation : 负责软件的设计开发测试以及上线
+         * address : 大连市万达广场
+         * need : 工作经验1-2年
+         * salary : 5000
+         * companyName : null
+         * professionName : null
          */
 
         private Object searchValue;
@@ -61,8 +67,16 @@ public class ZgzGsBean {
         private Object remark;
         private ParamsDTO params;
         private int id;
-        private String companyName;
-        private String introductory;
+        private int companyId;
+        private int professionId;
+        private String contacts;
+        private String name;
+        private String obligation;
+        private String address;
+        private String need;
+        private String salary;
+        private Object companyName;
+        private Object professionName;
 
         public Object getSearchValue() {
             return searchValue;
@@ -128,20 +142,84 @@ public class ZgzGsBean {
             this.id = id;
         }
 
-        public String getCompanyName() {
+        public int getCompanyId() {
+            return companyId;
+        }
+
+        public void setCompanyId(int companyId) {
+            this.companyId = companyId;
+        }
+
+        public int getProfessionId() {
+            return professionId;
+        }
+
+        public void setProfessionId(int professionId) {
+            this.professionId = professionId;
+        }
+
+        public String getContacts() {
+            return contacts;
+        }
+
+        public void setContacts(String contacts) {
+            this.contacts = contacts;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getObligation() {
+            return obligation;
+        }
+
+        public void setObligation(String obligation) {
+            this.obligation = obligation;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+
+        public String getNeed() {
+            return need;
+        }
+
+        public void setNeed(String need) {
+            this.need = need;
+        }
+
+        public String getSalary() {
+            return salary;
+        }
+
+        public void setSalary(String salary) {
+            this.salary = salary;
+        }
+
+        public Object getCompanyName() {
             return companyName;
         }
 
-        public void setCompanyName(String companyName) {
+        public void setCompanyName(Object companyName) {
             this.companyName = companyName;
         }
 
-        public String getIntroductory() {
-            return introductory;
+        public Object getProfessionName() {
+            return professionName;
         }
 
-        public void setIntroductory(String introductory) {
-            this.introductory = introductory;
+        public void setProfessionName(Object professionName) {
+            this.professionName = professionName;
         }
 
         public static class ParamsDTO {

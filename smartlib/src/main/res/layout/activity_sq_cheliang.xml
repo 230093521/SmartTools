@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
 
         <ImageView
             android:id="@+id/metro_base"
@@ -44,7 +44,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#2196F3"
+                    android:textColor="#5F8BFA"
                     android:text="车牌号：京1234"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#2196F3"
+                    android:textColor="#5F8BFA"
                     android:text="车牌号：京88888"/>
                 <TextView
                     android:layout_width="wrap_content"

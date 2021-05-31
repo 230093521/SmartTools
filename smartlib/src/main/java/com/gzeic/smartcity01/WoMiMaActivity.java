@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.gzeic.smartcity01.bean.MyDataBean;
+import com.gzeic.smartcity01.bean.UsersBean;
 import com.xsonline.smartlib.R;
 
 import org.json.JSONException;
@@ -23,7 +25,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WoMiMaActivity extends BaseActivity implements View.OnClickListener {
-
+    UsersBean.UserDTO dataBean;
     private ImageView passBase;
     private EditText newPass1;
     private EditText newPass2;
@@ -33,9 +35,10 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_wo_mima);
         initView();
+        dataBean = getUserdata();
     }
 
     private void initView() {
@@ -54,10 +57,6 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
         if (id == R.id.pass_base) {
             finish();
         } else if (id == R.id.tv_set_save) {
-            SharedPreferences sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE);
-            String userdata = sharedPreferences.getString("userdata", null);
-            MyDataBean myDataBean = new Gson().fromJson(userdata, MyDataBean.class);
-            String name = myDataBean.getData().getUserName();
             String pass1 = newPass1.getText().toString();
             String pass2 = newPass2.getText().toString();
             if (yuanmima.getText().toString().isEmpty()) {
@@ -68,23 +67,19 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
                 showToast("两次输入密码不一致");
                 return;
             }
-
-            putPass("2", name, pass2);
+            putPass(yuanmima.getText().toString(), pass2);
         }
     }
 
-    public void putPass(String userId, String username, String password) {
+    public void putPass(String oldpwd, String password) {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("userId", userId);
-            jsonObject.put("userName", username);
-            jsonObject.put("password", password);
+            jsonObject.put("newPassword", password);
+            jsonObject.put("oldPassword", oldpwd);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        SharedPreferences sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
-        String token = sharedPreferences.getString("token", null);
-        getTools().sendPutRequestToken(jsonObject, "http://" + getServerIp() + "/system/user/resetPwd", token, new Callback() {
+        getTools().sendPutRequestToken(jsonObject, "http://" + getServerIp() + "/system/user/resetPwd", getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -94,12 +89,27 @@ public class WoMiMaActivity extends BaseActivity implements View.OnClickListener
             public void onResponse(Call call, Response response) throws IOException {
                 String json = response.body().string();
                 Log.i(TAG, "onResponse: " + json);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        showToast("修改完成");
+                try {
+                    final MyDataBean myDataBean = new Gson().fromJson(json, MyDataBean.class);
+                    if (myDataBean.getCode()==200){
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast("修改完成");
+                            }
+                        });
+                    }else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast(myDataBean.getMsg());
+                            }
+                        });
                     }
-                });
+                } catch (JsonSyntaxException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 

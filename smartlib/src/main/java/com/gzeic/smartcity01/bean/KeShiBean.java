@@ -3,9 +3,10 @@ package com.gzeic.smartcity01.bean;
 import java.util.List;
 
 public class KeShiBean {
+
     /**
-     * total : 8
-     * rows : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":3,"did":1,"categoryName":"神经内科","money":"6"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":4,"did":1,"categoryName":"耳喉鼻科","money":"5"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":5,"did":1,"categoryName":"胸外科","money":"5"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":12,"did":1,"categoryName":"心血管内科","money":"100"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":13,"did":1,"categoryName":"妇产科","money":"9"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":14,"did":1,"categoryName":"口腔科","money":"89"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":17,"did":1,"categoryName":"麻醉科","money":"240"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":19,"did":1,"categoryName":"消化内科","money":"37"}]
+     * total : 10
+     * rows : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":6,"type":"2","categoryName":"骨科","money":5},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":7,"type":"2","categoryName":"儿科","money":5},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":8,"type":"2","categoryName":"内分泌科","money":6},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":9,"type":"2","categoryName":"肛肠科","money":10},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":10,"type":"2","categoryName":"皮肤专科","money":11},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":11,"type":"2","categoryName":"呼吸内科","money":33},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":15,"type":"2","categoryName":"传染病科","money":1000},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":16,"type":"2","categoryName":"放射科","money":200},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":18,"type":"2","categoryName":"病理科","money":30},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":20,"type":"2","categoryName":"中医科","money":22}]
      * code : 200
      * msg : 查询成功
      */
@@ -13,7 +14,7 @@ public class KeShiBean {
     private int total;
     private int code;
     private String msg;
-    private List<RowsBean> rows;
+    private List<RowsDTO> rows;
 
     public int getTotal() {
         return total;
@@ -39,15 +40,15 @@ public class KeShiBean {
         this.msg = msg;
     }
 
-    public List<RowsBean> getRows() {
+    public List<RowsDTO> getRows() {
         return rows;
     }
 
-    public void setRows(List<RowsBean> rows) {
+    public void setRows(List<RowsDTO> rows) {
         this.rows = rows;
     }
 
-    public static class RowsBean {
+    public static class RowsDTO {
         /**
          * searchValue : null
          * createBy : null
@@ -56,10 +57,10 @@ public class KeShiBean {
          * updateTime : null
          * remark : null
          * params : {}
-         * id : 3
-         * did : 1
-         * categoryName : 神经内科
-         * money : 6
+         * id : 6
+         * type : 2
+         * categoryName : 骨科
+         * money : 5
          */
 
         private Object searchValue;
@@ -68,11 +69,11 @@ public class KeShiBean {
         private Object updateBy;
         private Object updateTime;
         private Object remark;
-        private ParamsBean params;
+        private ParamsDTO params;
         private int id;
-        private int did;
+        private String type;
         private String categoryName;
-        private String money;
+        private int money;
 
         public Object getSearchValue() {
             return searchValue;
@@ -122,11 +123,11 @@ public class KeShiBean {
             this.remark = remark;
         }
 
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
         }
 
@@ -138,12 +139,12 @@ public class KeShiBean {
             this.id = id;
         }
 
-        public int getDid() {
-            return did;
+        public String getType() {
+            return type;
         }
 
-        public void setDid(int did) {
-            this.did = did;
+        public void setType(String type) {
+            this.type = type;
         }
 
         public String getCategoryName() {
@@ -154,15 +155,15 @@ public class KeShiBean {
             this.categoryName = categoryName;
         }
 
-        public String getMoney() {
+        public int getMoney() {
             return money;
         }
 
-        public void setMoney(String money) {
+        public void setMoney(int money) {
             this.money = money;
         }
 
-        public static class ParamsBean {
+        public static class ParamsDTO {
         }
     }
 }

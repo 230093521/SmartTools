@@ -98,7 +98,7 @@
                                 android:id="@+id/fpal"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#673AB7"
+                                android:background="#FDD876"
                                 android:padding="15dp"
                                 android:src="@drawable/ic_anli" />
                         </androidx.cardview.widget.CardView>
@@ -127,7 +127,7 @@
                                 android:id="@+id/cqcm"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#2196F3"
+                                android:background="#5F8BFA"
                                 android:padding="15dp"
                                 android:src="@drawable/ic_cunqing" />
                         </androidx.cardview.widget.CardView>

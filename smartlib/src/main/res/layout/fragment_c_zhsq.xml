@@ -6,20 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        android:layout_height="40dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#FFF"
-            android:text="智慧社区"
-            android:textSize="15sp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            />
-    </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -129,7 +115,7 @@
                                 android:id="@+id/shejiao"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#E91E63"
+                                android:background="#DC78F8"
                                 android:padding="15dp"
                                 android:src="@drawable/ic_shejiao" />
                         </androidx.cardview.widget.CardView>
@@ -187,7 +173,7 @@
                                 android:id="@+id/cheliang"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#2196F3"
+                                android:background="#5F8BFA"
                                 android:padding="15dp"
                                 android:src="@drawable/cheliang" />
                         </androidx.cardview.widget.CardView>

@@ -2,15 +2,16 @@ package com.gzeic.smartcity01.bean;
 
 public class BashiXqBean {
 
+
     /**
      * msg : 操作成功
      * code : 200
-     * data : {"searchValue":null,"createBy":null,"createTime":"2020-10-05 11:23:32","updateBy":null,"updateTime":"2020-10-21 11:23:35","remark":null,"endTime":"19：45","params":{},"id":1,"name":"一号线","first":"光谷金融街","end":"南湖大厦","startTime":"6:30","price":8,"mileage":"20"}
+     * data : {"searchValue":null,"createBy":null,"createTime":"2020-10-05 11:23:32","updateBy":null,"updateTime":"2020-10-21 11:23:35","remark":null,"params":{},"id":1,"name":"一号线","first":"光谷金融街","end":"南湖大厦","startTime":"6:30","endTime":"19:45","price":8,"mileage":"20"}
      */
 
     private String msg;
     private int code;
-    private DataBean data;
+    private DataDTO data;
 
     public String getMsg() {
         return msg;
@@ -28,15 +29,15 @@ public class BashiXqBean {
         this.code = code;
     }
 
-    public DataBean getData() {
+    public DataDTO getData() {
         return data;
     }
 
-    public void setData(DataBean data) {
+    public void setData(DataDTO data) {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataDTO {
         /**
          * searchValue : null
          * createBy : null
@@ -44,14 +45,14 @@ public class BashiXqBean {
          * updateBy : null
          * updateTime : 2020-10-21 11:23:35
          * remark : null
-         * endTime : 19：45
          * params : {}
          * id : 1
          * name : 一号线
          * first : 光谷金融街
          * end : 南湖大厦
          * startTime : 6:30
-         * price : 8.0
+         * endTime : 19:45
+         * price : 8
          * mileage : 20
          */
 
@@ -61,14 +62,14 @@ public class BashiXqBean {
         private Object updateBy;
         private String updateTime;
         private Object remark;
-        private String endTime;
-        private ParamsBean params;
+        private ParamsDTO params;
         private int id;
         private String name;
         private String first;
         private String end;
         private String startTime;
-        private double price;
+        private String endTime;
+        private int price;
         private String mileage;
 
         public Object getSearchValue() {
@@ -119,19 +120,11 @@ public class BashiXqBean {
             this.remark = remark;
         }
 
-        public String getEndTime() {
-            return endTime;
-        }
-
-        public void setEndTime(String endTime) {
-            this.endTime = endTime;
-        }
-
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
         }
 
@@ -175,11 +168,19 @@ public class BashiXqBean {
             this.startTime = startTime;
         }
 
-        public double getPrice() {
+        public String getEndTime() {
+            return endTime;
+        }
+
+        public void setEndTime(String endTime) {
+            this.endTime = endTime;
+        }
+
+        public int getPrice() {
             return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(int price) {
             this.price = price;
         }
 
@@ -191,7 +192,7 @@ public class BashiXqBean {
             this.mileage = mileage;
         }
 
-        public static class ParamsBean {
+        public static class ParamsDTO {
         }
     }
 }

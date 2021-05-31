@@ -16,7 +16,7 @@ public class YlPtjcActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_yl_ptjc);
         initView();
         metroBase.setOnClickListener(new View.OnClickListener() {

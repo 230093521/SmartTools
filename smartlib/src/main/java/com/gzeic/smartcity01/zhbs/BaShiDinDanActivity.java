@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.bean.UsersBean;
 
 import java.util.Calendar;
 
@@ -30,17 +31,24 @@ public class BaShiDinDanActivity extends BaseActivity {
     private EditText xcdd;
     private Button btnNext;
     Calendar calendar;
+    UsersBean.UserDTO userdata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_ba_shi_din_dan);
         initView();
-        name.setText("宋哥");
-        phone.setText("158888888888");
+        userdata = getUserdata();
+        name.setText(userdata.getNickName());
+        phone.setText(userdata.getPhonenumber());
         calendar = Calendar.getInstance();
-
+        metroBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         riqi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +82,10 @@ public class BaShiDinDanActivity extends BaseActivity {
                 }else if(xcdd.getText().length()<1){
                     showToast("请输入正确下车地点");
                 }else {
+                    putSP("ccrxm",name.getText().toString());
+                    putSP("ccrsjh",phone.getText().toString());
+                    putSP("scdd",scdd.getText().toString());
+                    putSP("xcdd",xcdd.getText().toString());
                     startActivity(new Intent(BaShiDinDanActivity.this,BaShiQueRenActivity.class));
                 }
             }

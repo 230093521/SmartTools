@@ -19,7 +19,7 @@ public class HbFenleiActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_hb_fenlei);
         initView();
 
@@ -33,7 +33,7 @@ public class HbFenleiActivity extends BaseActivity {
         fenlei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HbFenleiActivity.this, HbXinxiActivity.class));
+                startActivity(new Intent(HbFenleiActivity.this,HbXinxiActivity.class));
             }
         });
     }

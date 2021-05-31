@@ -1,7 +1,5 @@
 package com.gzeic.smartcity01.bean;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
 
 public class NewsFlBean {
@@ -9,12 +7,12 @@ public class NewsFlBean {
     /**
      * msg : 操作成功
      * code : 200
-     * data : [{"searchValue":null,"createBy":"admin","createTime":"2020-10-12 15:43:58","updateBy":null,"updateTime":null,"remark":null,"params":{},"dictCode":36,"dictSort":0,"dictLabel":"时政","dictValue":"1","dictType":"press_category","cssClass":null,"listClass":null,"isDefault":"N","status":"0","default":false},{"searchValue":null,"createBy":"admin","createTime":"2020-10-12 15:44:14","updateBy":null,"updateTime":null,"remark":null,"params":{},"dictCode":37,"dictSort":1,"dictLabel":"基层","dictValue":"2","dictType":"press_category","cssClass":null,"listClass":null,"isDefault":"N","status":"0","default":false},{"searchValue":null,"createBy":"admin","createTime":"2020-10-12 15:44:23","updateBy":null,"updateTime":null,"remark":null,"params":{},"dictCode":38,"dictSort":2,"dictLabel":"广播","dictValue":"3","dictType":"press_category","cssClass":null,"listClass":null,"isDefault":"N","status":"0","default":false},{"searchValue":null,"createBy":"admin","createTime":"2020-10-12 15:48:33","updateBy":null,"updateTime":null,"remark":null,"params":{},"dictCode":39,"dictSort":3,"dictLabel":"电视","dictValue":"4","dictType":"press_category","cssClass":null,"listClass":null,"isDefault":"N","status":"0","default":false},{"searchValue":null,"createBy":"admin","createTime":"2020-10-12 15:48:49","updateBy":null,"updateTime":null,"remark":null,"params":{},"dictCode":40,"dictSort":4,"dictLabel":"旅游","dictValue":"5","dictType":"press_category","cssClass":null,"listClass":null,"isDefault":"N","status":"0","default":false},{"searchValue":null,"createBy":"admin","createTime":"2020-10-12 15:49:06","updateBy":null,"updateTime":null,"remark":null,"params":{},"dictCode":41,"dictSort":5,"dictLabel":"视频","dictValue":"6","dictType":"press_category","cssClass":null,"listClass":null,"isDefault":"N","status":"0","default":false}]
+     * data : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":9,"appType":"smart_city","name":"今日要闻","sort":1,"status":"Y","parentId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":17,"appType":"smart_city","name":"专题聚焦","sort":5,"status":"Y","parentId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":19,"appType":"smart_city","name":"政策解读","sort":7,"status":"Y","parentId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":20,"appType":"smart_city","name":"经济发展","sort":8,"status":"Y","parentId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":21,"appType":"smart_city","name":"文化旅游","sort":9,"status":"Y","parentId":null},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":22,"appType":"smart_city","name":"科技创新","sort":10,"status":"Y","parentId":null}]
      */
 
     private String msg;
     private int code;
-    private List<DataBean> data;
+    private List<DataDTO> data;
 
     public String getMsg() {
         return msg;
@@ -32,53 +30,44 @@ public class NewsFlBean {
         this.code = code;
     }
 
-    public List<DataBean> getData() {
+    public List<DataDTO> getData() {
         return data;
     }
 
-    public void setData(List<DataBean> data) {
+    public void setData(List<DataDTO> data) {
         this.data = data;
     }
 
-    public static class DataBean implements Comparable<DataBean>{
+    public static class DataDTO {
         /**
          * searchValue : null
-         * createBy : admin
-         * createTime : 2020-10-12 15:43:58
+         * createBy : null
+         * createTime : null
          * updateBy : null
          * updateTime : null
          * remark : null
          * params : {}
-         * dictCode : 36
-         * dictSort : 0
-         * dictLabel : 时政
-         * dictValue : 1
-         * dictType : press_category
-         * cssClass : null
-         * listClass : null
-         * isDefault : N
-         * status : 0
-         * default : false
+         * id : 9
+         * appType : smart_city
+         * name : 今日要闻
+         * sort : 1
+         * status : Y
+         * parentId : null
          */
 
         private Object searchValue;
-        private String createBy;
-        private String createTime;
+        private Object createBy;
+        private Object createTime;
         private Object updateBy;
         private Object updateTime;
         private Object remark;
-        private ParamsBean params;
-        private int dictCode;
-        private int dictSort;
-        private String dictLabel;
-        private String dictValue;
-        private String dictType;
-        private Object cssClass;
-        private Object listClass;
-        private String isDefault;
+        private ParamsDTO params;
+        private int id;
+        private String appType;
+        private String name;
+        private int sort;
         private String status;
-        @SerializedName("default")
-        private boolean defaultX;
+        private Object parentId;
 
         public Object getSearchValue() {
             return searchValue;
@@ -88,19 +77,19 @@ public class NewsFlBean {
             this.searchValue = searchValue;
         }
 
-        public String getCreateBy() {
+        public Object getCreateBy() {
             return createBy;
         }
 
-        public void setCreateBy(String createBy) {
+        public void setCreateBy(Object createBy) {
             this.createBy = createBy;
         }
 
-        public String getCreateTime() {
+        public Object getCreateTime() {
             return createTime;
         }
 
-        public void setCreateTime(String createTime) {
+        public void setCreateTime(Object createTime) {
             this.createTime = createTime;
         }
 
@@ -128,76 +117,44 @@ public class NewsFlBean {
             this.remark = remark;
         }
 
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
         }
 
-        public int getDictCode() {
-            return dictCode;
+        public int getId() {
+            return id;
         }
 
-        public void setDictCode(int dictCode) {
-            this.dictCode = dictCode;
+        public void setId(int id) {
+            this.id = id;
         }
 
-        public int getDictSort() {
-            return dictSort;
+        public String getAppType() {
+            return appType;
         }
 
-        public void setDictSort(int dictSort) {
-            this.dictSort = dictSort;
+        public void setAppType(String appType) {
+            this.appType = appType;
         }
 
-        public String getDictLabel() {
-            return dictLabel;
+        public String getName() {
+            return name;
         }
 
-        public void setDictLabel(String dictLabel) {
-            this.dictLabel = dictLabel;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public String getDictValue() {
-            return dictValue;
+        public int getSort() {
+            return sort;
         }
 
-        public void setDictValue(String dictValue) {
-            this.dictValue = dictValue;
-        }
-
-        public String getDictType() {
-            return dictType;
-        }
-
-        public void setDictType(String dictType) {
-            this.dictType = dictType;
-        }
-
-        public Object getCssClass() {
-            return cssClass;
-        }
-
-        public void setCssClass(Object cssClass) {
-            this.cssClass = cssClass;
-        }
-
-        public Object getListClass() {
-            return listClass;
-        }
-
-        public void setListClass(Object listClass) {
-            this.listClass = listClass;
-        }
-
-        public String getIsDefault() {
-            return isDefault;
-        }
-
-        public void setIsDefault(String isDefault) {
-            this.isDefault = isDefault;
+        public void setSort(int sort) {
+            this.sort = sort;
         }
 
         public String getStatus() {
@@ -208,21 +165,15 @@ public class NewsFlBean {
             this.status = status;
         }
 
-        public boolean isDefaultX() {
-            return defaultX;
+        public Object getParentId() {
+            return parentId;
         }
 
-        public void setDefaultX(boolean defaultX) {
-            this.defaultX = defaultX;
+        public void setParentId(Object parentId) {
+            this.parentId = parentId;
         }
 
-        @Override
-        public int compareTo(DataBean dataBean) {
-            return dataBean.getDictCode()-this.getDictCode();
-        }
-
-
-        public static class ParamsBean {
+        public static class ParamsDTO {
         }
     }
 }

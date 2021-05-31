@@ -7,7 +7,7 @@ public class BashiBean {
 
     /**
      * total : 4
-     * rows : [{"searchValue":null,"createBy":null,"createTime":"2020-10-05 11:23:32","updateBy":null,"updateTime":"2020-10-21 11:23:35","remark":null,"endTime":"19：45","params":{},"id":1,"name":"一号线","first":"光谷金融街","end":"南湖大厦","startTime":"6:30","price":8,"mileage":"20"},{"searchValue":null,"createBy":null,"createTime":"2020-10-13 12:28:57","updateBy":null,"updateTime":"2020-10-22 12:29:00","remark":null,"endTime":"21：45","params":{},"id":2,"name":"二号线","first":"光谷金融街","end":"万达广场","startTime":"6:30","price":8,"mileage":"22"},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 16:57:07","updateBy":null,"updateTime":"2020-10-27 16:57:21","remark":null,"endTime":"22：00","params":{},"id":3,"name":"三号线","first":"香炉礁","end":"金石沙滩","startTime":"6：30","price":9,"mileage":"30"},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 16:59:03","updateBy":null,"updateTime":"2020-10-27 16:59:06","remark":null,"endTime":"23：00","params":{},"id":4,"name":"十二号线","first":"河口","end":"辛寨子","startTime":"5：30","price":12,"mileage":"40"}]
+     * rows : [{"searchValue":null,"createBy":null,"createTime":"2020-10-05 11:23:32","updateBy":null,"updateTime":"2020-10-21 11:23:35","remark":null,"params":{},"id":1,"name":"一号线","first":"光谷金融街","end":"南湖大厦","startTime":"6:30","endTime":"19:45","price":8,"mileage":"20"},{"searchValue":null,"createBy":null,"createTime":"2020-10-13 12:28:57","updateBy":null,"updateTime":"2020-10-22 12:29:00","remark":null,"params":{},"id":2,"name":"二号线","first":"光谷金融街","end":"万达广场","startTime":"6:30","endTime":"21:45","price":8,"mileage":"22"},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 16:57:07","updateBy":null,"updateTime":"2020-10-27 16:57:21","remark":null,"params":{},"id":3,"name":"三号线","first":"香炉礁","end":"金石沙滩","startTime":"6:30","endTime":"22:00","price":9,"mileage":"30"},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 16:59:03","updateBy":null,"updateTime":"2020-10-27 16:59:06","remark":null,"params":{},"id":4,"name":"十二号线","first":"河口","end":"辛寨子","startTime":"5:30","endTime":"23:00","price":12,"mileage":"40"}]
      * code : 200
      * msg : 查询成功
      */
@@ -15,7 +15,7 @@ public class BashiBean {
     private int total;
     private int code;
     private String msg;
-    private List<RowsBean> rows;
+    private List<RowsDTO> rows;
 
     public int getTotal() {
         return total;
@@ -41,15 +41,15 @@ public class BashiBean {
         this.msg = msg;
     }
 
-    public List<RowsBean> getRows() {
+    public List<RowsDTO> getRows() {
         return rows;
     }
 
-    public void setRows(List<RowsBean> rows) {
+    public void setRows(List<RowsDTO> rows) {
         this.rows = rows;
     }
 
-    public static class RowsBean {
+    public static class RowsDTO {
         /**
          * searchValue : null
          * createBy : null
@@ -57,14 +57,14 @@ public class BashiBean {
          * updateBy : null
          * updateTime : 2020-10-21 11:23:35
          * remark : null
-         * endTime : 19：45
          * params : {}
          * id : 1
          * name : 一号线
          * first : 光谷金融街
          * end : 南湖大厦
          * startTime : 6:30
-         * price : 8.0
+         * endTime : 19:45
+         * price : 8
          * mileage : 20
          */
 
@@ -74,14 +74,14 @@ public class BashiBean {
         private Object updateBy;
         private String updateTime;
         private Object remark;
-        private String endTime;
-        private ParamsBean params;
+        private ParamsDTO params;
         private int id;
         private String name;
         private String first;
         private String end;
         private String startTime;
-        private double price;
+        private String endTime;
+        private int price;
         private String mileage;
 
         public Object getSearchValue() {
@@ -132,19 +132,11 @@ public class BashiBean {
             this.remark = remark;
         }
 
-        public String getEndTime() {
-            return endTime;
-        }
-
-        public void setEndTime(String endTime) {
-            this.endTime = endTime;
-        }
-
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
         }
 
@@ -188,11 +180,19 @@ public class BashiBean {
             this.startTime = startTime;
         }
 
-        public double getPrice() {
+        public String getEndTime() {
+            return endTime;
+        }
+
+        public void setEndTime(String endTime) {
+            this.endTime = endTime;
+        }
+
+        public int getPrice() {
             return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(int price) {
             this.price = price;
         }
 
@@ -204,7 +204,7 @@ public class BashiBean {
             this.mileage = mileage;
         }
 
-        public static class ParamsBean {
+        public static class ParamsDTO {
         }
     }
 }

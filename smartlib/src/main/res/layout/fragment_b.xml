@@ -45,6 +45,8 @@
                 android:layout_toLeftOf="@+id/btn_sousuo"
                 android:layout_centerVertical="true"
                 android:background="@null"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
                 android:maxLines="1"
                 android:hint="搜索"
                 android:textSize="15sp"/>
@@ -84,13 +86,95 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="#D5EDEDED"
+            android:background="#F7FCFF"
             android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/quanbufuwu"
+                android:layout_width="100dp"
+                android:padding="5dp"
+                android:background="@drawable/btn_fang"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全部服务"
+                    android:textColor="#5E5E5E"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="#B1B1B1"
+                />
+            <RelativeLayout
+                android:id="@+id/shenghuofuwu"
+                android:layout_width="100dp"
+                android:padding="5dp"
+                android:background="@drawable/btn_fang"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生活服务"
+                    android:textColor="#5E5E5E"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="#B1B1B1"
+                />
+            <RelativeLayout
+                android:id="@+id/bianmingfuwu"
+                android:layout_width="100dp"
+                android:padding="5dp"
+                android:background="@drawable/btn_fang"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="便民服务"
+                    android:textColor="#5E5E5E"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="#B1B1B1"
+                />
+            <RelativeLayout
+                android:id="@+id/chezhufuwu"
+                android:layout_width="100dp"
+                android:padding="5dp"
+                android:background="@drawable/btn_fang"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车主服务"
+                    android:textColor="#5E5E5E"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="#B1B1B1"
+                />
             <ListView
                 android:id="@+id/list_service_title"
                 android:layout_width="150dp"
                 android:background="#FFF"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -98,10 +182,12 @@
             android:layout_height="match_parent"
             android:background="#FFF"
             android:orientation="vertical">
-            <com.gzeic.smartcity01.Tools.MyListView
+            <GridView
                 android:id="@+id/list_service_all"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"
+                android:numColumns="3"
+                />
         </LinearLayout>
         <View
             android:layout_width="match_parent"

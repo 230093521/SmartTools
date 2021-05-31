@@ -23,7 +23,6 @@ import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.Tools.ListViewScrollView;
 import com.gzeic.smartcity01.bean.YycheliangBean;
 import com.gzeic.smartcity01.bean.YyddBean;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -53,6 +52,64 @@ public class JCBFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_jc_b, container, false);
         initView(view);
+        showData();
+        didian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),YyjcDdActivity.class));
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String time = getSP("jcsj");
+                String didian = getSP("didian");
+                YyddBean.RowsDTO rowsDTO = new Gson().fromJson(didian, YyddBean.RowsDTO.class);
+                String addressId = String.valueOf(rowsDTO.getId());
+                YycheliangBean.RowsDTO rowsDTO1 = yycheliangBeanRows.get(num);
+                String carId = String.valueOf(rowsDTO1.getId());
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("userId",getUserdata().getUserId());
+                    jsonObject.put("carId",carId);
+                    jsonObject.put("aptTime",time);
+                    jsonObject.put("addressId",addressId);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp()+"/userinfo/apt", getToken(), new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String string = response.body().string();
+                        final YyddBean yyddBean = new Gson().fromJson(string, YyddBean.class);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast(yyddBean.getMsg());
+                                YyjcActivity activity = (YyjcActivity) getActivity();
+                                activity.setSelect(3);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog(getActivity(),Calendar.getInstance(Locale.CHINA));
+            }
+        });
+        return view;
+    }
+
+
+    public void showData(){
         getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/cars/list?userId=1&pageNum=1&pageSize=10", getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -75,64 +132,13 @@ public class JCBFragment extends BaseFragment {
                 }
             }
         });
-
-        didian.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(),YyjcDdActivity.class));
-            }
-        });
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String time = getSP("jcsj");
-                String didian = getSP("didian");
-                YyddBean.RowsDTO rowsDTO = new Gson().fromJson(didian, YyddBean.RowsDTO.class);
-                String addressId = String.valueOf(rowsDTO.getId());
-                YycheliangBean.RowsDTO rowsDTO1 = yycheliangBeanRows.get(num);
-                String carId = String.valueOf(rowsDTO1.getId());
-                JSONObject jsonObject = new JSONObject();
-                try {
-                    jsonObject.put("userId","1");
-                    jsonObject.put("carId",carId);
-                    jsonObject.put("aptTime",time);
-                    jsonObject.put("addressId",addressId);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp()+"/userinfo/apt", getToken(), new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String string = response.body().string();
-                        final YyddBean yyddBean = new Gson().fromJson(string, YyddBean.class);
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                showToast(yyddBean.getMsg());
-                            }
-                        });
-                    }
-                });
-            }
-        });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDialog(getActivity(),Calendar.getInstance(Locale.CHINA));
-            }
-        });
-        return view;
     }
 
 
     @Override
     public void onResume() {
         super.onResume();
+        showData();
         String didian2 = getSP("didian");
         if (didian2!=null){
             if (!didian2.isEmpty()){
@@ -146,7 +152,6 @@ public class JCBFragment extends BaseFragment {
                 button.setText(time);
             }
         }
-
     }
 
     /**
@@ -239,7 +244,7 @@ public class JCBFragment extends BaseFragment {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_jccl, null);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_yyjc_cl, null);
             ViewHolder viewHolder = new ViewHolder(convertView);
             YycheliangBean.RowsDTO rowsDTO = yycheliangBeanRows.get(position);
             viewHolder.chejia.setText(rowsDTO.getMainNum());

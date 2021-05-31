@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 
@@ -22,7 +23,7 @@ public class ZHDJHDLYActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj_hdly);
         initView();
         ivBase.setOnClickListener(new View.OnClickListener() {

@@ -28,7 +28,7 @@ public class YyjcActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_yyjc);
         initView();
         rbBtn1.setChecked(true);
@@ -69,7 +69,7 @@ public class YyjcActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         }
     }
 
-    private void setSelect(int x) {
+    public void setSelect(int x) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if (fragment1 != null) {
@@ -93,6 +93,7 @@ public class YyjcActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                     rbBtn1.setChecked(true);
                     fragmentTransaction.show(fragment1);
                 }
+                rbBtn1.setChecked(true);
                 break;
             case 2:
                 if (fragment2 == null) {
@@ -102,6 +103,7 @@ public class YyjcActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                     rbBtn2.setChecked(true);
                     fragmentTransaction.show(fragment2);
                 }
+                rbBtn2.setChecked(true);
                 break;
             case 3:
                 if (fragment3 == null) {
@@ -111,6 +113,7 @@ public class YyjcActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                     rbBtn3.setChecked(true);
                     fragmentTransaction.show(fragment3);
                 }
+                rbBtn3.setChecked(true);
                 break;
             case 4:
                 if (fragment4 == null) {
@@ -120,6 +123,7 @@ public class YyjcActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                     rbBtn4.setChecked(true);
                     fragmentTransaction.show(fragment4);
                 }
+                rbBtn4.setChecked(true);
                 break;
         }
         fragmentTransaction.commit();

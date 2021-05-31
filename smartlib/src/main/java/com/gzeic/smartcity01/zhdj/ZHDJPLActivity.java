@@ -33,7 +33,7 @@ public class ZHDJPLActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj_pl);
         String dang = getSP("dang");
         ZHDJActivity.testnews testnews = new Gson().fromJson(dang, ZHDJActivity.testnews.class);
@@ -99,7 +99,7 @@ public class ZHDJPLActivity extends BaseActivity {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_comment, null);
+            view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_xw_pl, null);
             ViewHolder viewHolder = new ViewHolder(view);
             viewHolder.plx_image.setImageResource(R.drawable.ic_icon);
             viewHolder.plx_nickname.setText(ziyuanList.get(i).getName());

@@ -33,7 +33,7 @@ public class ZfzXqActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zfz_xq);
         initView();
         String zfzxq = getSP("zfzxq");
@@ -48,21 +48,8 @@ public class ZfzXqActivity extends BaseActivity {
         Glide.with(ZfzXqActivity.this).load("http://"+getServerIp()+rowsDTO.getPic()).into(newsImage);
         mianji.setText(String.valueOf(rowsDTO.getAreaSize()));
         jiage.setText(rowsDTO.getPrice());
-        jianjie.setText(rowsDTO.getDesc());
-        switch (rowsDTO.getHouseType()) {
-            case "1":
-                leixin.setText("二手");
-                break;
-            case "2":
-                leixin.setText("租房");
-                break;
-            case "3":
-                leixin.setText("楼盘");
-                break;
-            case "4":
-                leixin.setText("中介");
-                break;
-        }
+        jianjie.setText(rowsDTO.getDescription());
+        leixin.setText(rowsDTO.getHouseType());
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

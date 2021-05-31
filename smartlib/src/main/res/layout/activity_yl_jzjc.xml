@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"

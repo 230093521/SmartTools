@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"
@@ -209,7 +209,7 @@
                 android:text="餐饮记录"
                 android:textStyle="bold"
                 android:maxLines="1"
-                android:textColor="#03A9F4"
+                android:textColor="#5F8BFA"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 />

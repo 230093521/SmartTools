@@ -1,7 +1,6 @@
 package com.gzeic.smartcity01.mzyy;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,13 +28,13 @@ public class MzJzkpActivity extends BaseActivity {
     private ImageView metroBase;
     private ListView listCard;
     private RelativeLayout addJiuzhen;
-    List<KaPianBean.RowsBean> rows;
-    KaPianBean.RowsBean rowsBean;
+    List<KaPianBean.RowsDTO> rows;
+//    KaPianBean.RowsBean rowsBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_mz_jzkp);
         initView();
         inintlist();
@@ -45,11 +44,10 @@ public class MzJzkpActivity extends BaseActivity {
                 finish();
             }
         });
-
     }
 
     private void inintlist() {
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/patient/list?pageNum=1&pageSize=10?userId=1", getToken(), new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/hospital/patient/list", getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -99,24 +97,26 @@ public class MzJzkpActivity extends BaseActivity {
 
                                 @Override
                                 public View getView(int i, View view, ViewGroup viewGroup) {
-                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_jiuzhenka, null);
+                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_mz_jzk, null);
                                     ViewHolder viewHolder = new ViewHolder(view);
-                                    rowsBean = rows.get(i);
-                                    viewHolder.name.setText(rowsBean.getName());
-                                    viewHolder.idcard.setText(rowsBean.getCardId());
-                                    viewHolder.phone.setText(rowsBean.getTel());
+//                                    rowsBean = rows.get(i);
+                                    final KaPianBean.RowsDTO rowsBeansss = rows.get(i);
+                                    viewHolder.name.setText(rowsBeansss.getName());
+                                    viewHolder.idcard.setText(rowsBeansss.getCardId());
+                                    viewHolder.phone.setText(rowsBeansss.getTel());
                                     viewHolder.setcard.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            putSP("kapian",new Gson().toJson(rowsBean));
+                                            putSP("kapian",new Gson().toJson(rowsBeansss));
                                             putSP("jiemian","001");
-                                            startActivity(new Intent(MzJzkpActivity.this, MzJzxxActivity.class));
+                                            startActivity(new Intent(MzJzkpActivity.this, MzJzkxxActivity.class));
                                         }
                                     });
                                     viewHolder.rootView.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            putSP("kapian",new Gson().toJson(rowsBean));
+                                            putSP("kapian",new Gson().toJson(rowsBeansss));
+                                            putSP("jiemian","002");
                                             startActivity(new Intent(MzJzkpActivity.this, MzGhActivity.class));
                                         }
                                     });
@@ -140,15 +140,15 @@ public class MzJzkpActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 putSP("jiemian","002");
-                putSP("kapian",new Gson().toJson(rowsBean));
-                startActivity(new Intent(MzJzkpActivity.this, MzJzxxActivity.class));
+//                putSP("kapian",new Gson().toJson(rowsBean));
+                startActivity(new Intent(MzJzkpActivity.this, MzJzkxxActivity.class));
             }
         });
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onResume() {
+        super.onResume();
         inintlist();
     }
 }

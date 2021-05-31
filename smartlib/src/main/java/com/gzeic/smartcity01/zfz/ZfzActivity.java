@@ -48,7 +48,7 @@ public class ZfzActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zfz);
         initView();
         metroBase.setOnClickListener(new View.OnClickListener() {
@@ -68,29 +68,46 @@ public class ZfzActivity extends BaseActivity {
         aBanner.setImageLoader(new GlideImageLoader());
         aBanner.setImages(imglist);
         aBanner.start();
-        showFz("1");
+        showFz("二手");
+        ershou.setTextColor(Color.parseColor("#FF0000"));
         ershou.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFz("1");
+                showFz("二手");
+                ershou.setTextColor(Color.parseColor("#FF0000"));
+                zhufang.setTextColor(Color.parseColor("#5A5A5A"));
+                loupan.setTextColor(Color.parseColor("#5A5A5A"));
+                zhongjie.setTextColor(Color.parseColor("#5A5A5A"));
             }
         });
         zhufang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFz("2");
+                showFz("租房");
+                ershou.setTextColor(Color.parseColor("#5A5A5A"));
+                zhufang.setTextColor(Color.parseColor("#FF0000"));
+                loupan.setTextColor(Color.parseColor("#5A5A5A"));
+                zhongjie.setTextColor(Color.parseColor("#5A5A5A"));
             }
         });
         loupan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFz("3");
+                showFz("楼盘");
+                ershou.setTextColor(Color.parseColor("#5A5A5A"));
+                zhufang.setTextColor(Color.parseColor("#5A5A5A"));
+                loupan.setTextColor(Color.parseColor("#FF0000"));
+                zhongjie.setTextColor(Color.parseColor("#5A5A5A"));
             }
         });
         zhongjie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showFz("4");
+                showFz("中介");
+                ershou.setTextColor(Color.parseColor("#5A5A5A"));
+                zhufang.setTextColor(Color.parseColor("#5A5A5A"));
+                loupan.setTextColor(Color.parseColor("#5A5A5A"));
+                zhongjie.setTextColor(Color.parseColor("#FF0000"));
             }
         });
         btnSousuo.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +125,7 @@ public class ZfzActivity extends BaseActivity {
     }
 
     public void showFz(String types) {
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/housing/list?pageNum=1&pageSize=10&houseType="+types,getToken(), new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/house/housing/list?houseType="+types,getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -132,7 +149,7 @@ public class ZfzActivity extends BaseActivity {
     }
 
     public void showSouSuo(String text) {
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/housing/list?pageNum=1&pageSize=10&sourceName=" + text, getToken(),new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/house/housing/list?sourceName=" + text, getToken(),new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -192,12 +209,12 @@ public class ZfzActivity extends BaseActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(ZfzActivity.this).inflate(R.layout.item_zfzfy, null);
+            convertView = LayoutInflater.from(ZfzActivity.this).inflate(R.layout.item_zfz_fy, null);
             final ZfzflBean.RowsDTO rowsDTO = zfzflBeanRows.get(position);
             ViewHolder viewHolder = new ViewHolder(convertView);
             viewHolder.mianji.setText(String.valueOf(rowsDTO.getAreaSize()));
             viewHolder.jiage.setText(rowsDTO.getPrice());
-            viewHolder.jianjie.setText(rowsDTO.getDesc());
+            viewHolder.jianjie.setText(rowsDTO.getDescription());
             viewHolder.title.setText(rowsDTO.getSourceName());
             Glide.with(ZfzActivity.this).load("http://"+getServerIp()+rowsDTO.getPic()).into(viewHolder.news_image);
             viewHolder.rootView.setOnClickListener(new View.OnClickListener() {

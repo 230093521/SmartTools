@@ -7,17 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.FeiYongBean;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -37,11 +33,11 @@ public class ShZfActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
 
         setContentView(R.layout.activity_sh_zf);
         initView();
-        feiyong = new Gson().fromJson(getSP("feiyong"), FeiYongBean.RowsBean.class);
+        feiyong = new Gson().fromJson(getSP("feiyong"),FeiYongBean.RowsBean.class);
         gs.setText(feiyong.getChargeUnit());
         huhao.setText("123");
         huming.setText(feiyong.getOwnerName());

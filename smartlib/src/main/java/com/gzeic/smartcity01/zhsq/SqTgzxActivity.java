@@ -16,7 +16,7 @@ public class SqTgzxActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_sq_tgzx);
         initView();
         ivBase.setOnClickListener(new View.OnClickListener() {

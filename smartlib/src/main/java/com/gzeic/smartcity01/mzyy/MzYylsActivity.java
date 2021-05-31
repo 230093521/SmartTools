@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
@@ -26,15 +25,19 @@ public class MzYylsActivity extends BaseActivity {
 
     private ImageView metroBase;
     private ListView list;
-    List<YuYueBean.RowsBean> rows;
+    List<YuYueBean.RowsDTO> rows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_mz_yyls);
         initView();
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/order/list?pageNum=1&pageSize=10&userId=1", getToken(), new Callback() {
+        getYyls();
+    }
+
+    private void getYyls() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/hospital/reservation/list", getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -88,19 +91,19 @@ public class MzYylsActivity extends BaseActivity {
 
                                 @Override
                                 public View getView(int i, View view, ViewGroup viewGroup) {
-                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_lishi, null);
+                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_mz_ls, null);
                                     ViewHolder viewHolder = new ViewHolder(view);
-                                    YuYueBean.RowsBean rowsBean = rows.get(i);
+                                    YuYueBean.RowsDTO rowsBean = rows.get(i);
                                     viewHolder.name.setText(rowsBean.getPatientName());
                                     viewHolder.danhao.setText(rowsBean.getOrderNo());
-                                    viewHolder.jine.setText(rowsBean.getMoeny());
+                                    viewHolder.jine.setText(rowsBean.getMoney()+"");
                                     viewHolder.keshilei.setText(rowsBean.getCategoryName());
-                                    if (rowsBean.getTypesId().equals("1")){
+                                    if (rowsBean.getType().equals("1")){
                                         viewHolder.menzhenglei.setText("专家号");
                                     }else {
                                         viewHolder.menzhenglei.setText("普通号");
                                     }
-                                    viewHolder.shijian.setText(rowsBean.getStartime());
+                                    viewHolder.shijian.setText(rowsBean.getReserveTime());
                                     return view;
                                 }
                             });
@@ -110,6 +113,7 @@ public class MzYylsActivity extends BaseActivity {
                 }
             }
         });
+
     }
 
     private void initView() {

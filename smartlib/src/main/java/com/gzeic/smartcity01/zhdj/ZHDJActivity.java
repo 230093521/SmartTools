@@ -35,7 +35,7 @@ public class ZHDJActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj);
         initView();
         banner.setImageLoader(new GlideImageLoader());
@@ -122,7 +122,7 @@ public class ZHDJActivity extends BaseActivity {
 
             @Override
             public View getView(final int i, View view, ViewGroup viewGroup) {
-                view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_news, null);
+                view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_xw, null);
                 ViewHolder viewHolder = new ViewHolder(view);
                 viewHolder.news_image.setImageResource(ziyuanlist.get(i).getZiyuan());
                 viewHolder.news_title.setText(ziyuanlist.get(i).title);

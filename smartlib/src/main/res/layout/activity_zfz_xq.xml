@@ -14,7 +14,7 @@
             android:id="@+id/home_toprl"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="#03A9F4">
+            android:background="#5F8BFA">
 
             <ImageView
                 android:id="@+id/news_base"
@@ -51,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#CDE6EA"
+            android:background="#E0F1FF"
             android:paddingBottom="20dp"
             android:orientation="vertical">
 
@@ -158,17 +158,12 @@
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/news_ll_pl"
-        android:background="#8F8F8F" />
-
     <RelativeLayout
         android:id="@+id/news_ll_pl"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        android:background="#FFF"
         android:orientation="horizontal">
 
         <Button

@@ -8,14 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.Tools.ListViewScrollView;
 import com.youth.banner.Banner;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class ZHDJDYXXActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj_xx);
         initView();
         banner.setImageLoader(new BaseActivity.GlideImageLoader());
@@ -41,10 +40,12 @@ public class ZHDJDYXXActivity extends BaseActivity {
         banner.setImages(viewlist);
         banner.start();
         ziyuanlist = new ArrayList<>();
-        ziyuanlist.add(new ZHDJActivity.testnews("党员学习课程1", "党员学习课程党员学习课程党员学习课程党员学习课程党员学习课程", R.drawable.dyxx1));
-        ziyuanlist.add(new ZHDJActivity.testnews("党员学习课程2", "党员学习课程党员学习课程党员学习课程党员学习课程党员学习课程", R.drawable.dyxx2));
-        ziyuanlist.add(new ZHDJActivity.testnews("党员学习课程3", "党员学习课程党员学习课程党员学习课程党员学习课程党员学习课程", R.drawable.dyxx3));
-        ziyuanlist.add(new ZHDJActivity.testnews("党员学习课程", "党员学习课程党员学习课程党员学习课程党员学习课程党员学习课程", R.drawable.dyxx3));
+        ziyuanlist.add(new ZHDJActivity.testnews("党史故事100讲", "以党的发展历程为顺序，以党的重大事件为线索，以不同时期的典型事例、历史人物、精彩故事为主干，全景式回顾党的伟大历程和辉煌成就。", R.drawable.dyxx1));
+        ziyuanlist.add(new ZHDJActivity.testnews("百炼成钢：中国共产党的100年", "该片站在中国共产党成立100周年的历史高度，撷取中国革命、建设、改革历程中的重要事件，用历史故事的形式，形象展示百年大党的光辉历程和伟大成就，以小入口折射大主题，以小故事揭示大道理，生动回答中国共产党为什么“能”、马克思主义为什么“行”、中国特色社会主义为什么“好”等重大问题。", R.drawable.dyxx2));
+        ziyuanlist.add(new ZHDJActivity.testnews("全省城市社区榜样", "发现榜样学习榜样——全省城市社区榜样", R.drawable.dyxx3));
+        ziyuanlist.add(new ZHDJActivity.testnews("应急管理应知应会系列微视频", "每一起生产安全事故的发生，每一条鲜活生命的伤亡，都是一张张悲痛万分的面孔，都是一段段痛入骨髓的记忆，都是一个个支离破损的家庭。安全生产是红线，是底线，是生命线。", R.drawable.dyxx3));
+        ziyuanlist.add(new ZHDJActivity.testnews("“中共党史公开课”网络课程", "为了向广大党员干部和全社会提供更多优质、系统的党史学习资源，更好服务、推动党史学习教育深入开展，中央党校（国家行政学院）录制8讲“中共党史公开课”系列网络课程。\n" +
+                "\n", R.drawable.dyxx3));
 
         xxlist.setAdapter(new BaseAdapter() {
             class ViewHolder {
@@ -79,7 +80,7 @@ public class ZHDJDYXXActivity extends BaseActivity {
 
             @Override
             public View getView(final int i, View view, ViewGroup viewGroup) {
-                view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_news, null);
+                view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_xw_kpsbj, null);
                 ViewHolder viewHolder = new ViewHolder(view);
                 viewHolder.news_image.setImageResource(ziyuanlist.get(i).getZiyuan());
                 viewHolder.news_title.setText(ziyuanlist.get(i).title);

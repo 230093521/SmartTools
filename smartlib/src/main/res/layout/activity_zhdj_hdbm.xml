@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="姓名"
-                android:textColor="#673AB7"
+                android:textColor="@color/colorPrimary"
                 />
             <TextView
                 android:id="@+id/name"
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="活动名称"
-                android:textColor="#673AB7"
+                android:textColor="@color/colorPrimary"
                 />
             <TextView
                 android:id="@+id/keshi"
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="出发地"
-                android:textColor="#673AB7"
+                android:textColor="@color/colorPrimary"
                 />
             <TextView
                 android:id="@+id/zhuanjia"
@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="目的地"
-                android:textColor="#673AB7"
+                android:textColor="@color/colorPrimary"
                 />
             <TextView
                 android:id="@+id/jine"
@@ -134,11 +134,6 @@
         android:background="#FFF"
         android:orientation="vertical"
         android:layout_height="wrap_content">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#AAAAAA"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -148,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="选择日期"
-                android:textColor="#673AB7"
+                android:textColor="@color/colorPrimary"
                 />
             <TextView
                 android:id="@+id/riqi"
@@ -174,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="选择时间"
-                android:textColor="#673AB7"
+                android:textColor="@color/colorPrimary"
                 />
             <TextView
                 android:id="@+id/shijian"
@@ -203,30 +198,22 @@
             android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content">
-            <TextView
+            <Button
                 android:id="@+id/quxiao"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_bg_bule"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_bule"
                 android:text="取消"
                 android:textColor="#FFF"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
                 />
-            <TextView
+            <Button
                 android:id="@+id/queding"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:background="@drawable/btn_bg_bule"
+                android:layout_height="35dp"
+                android:background="@drawable/btn_bule"
                 android:text="确定"
+                android:layout_marginStart="30dp"
                 android:textColor="#FFF"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
                 />
         </LinearLayout>
     </RelativeLayout>

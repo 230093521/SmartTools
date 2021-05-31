@@ -70,6 +70,8 @@
                     android:text="昵称"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -95,6 +97,8 @@
                     android:text="昵称"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -121,6 +125,8 @@
                     android:text="昵称"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -146,6 +152,8 @@
                     android:text="昵称"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -215,6 +223,8 @@
                     android:text="昵称"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -241,6 +251,8 @@
                     android:text="52222222222222222"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -267,6 +279,8 @@
                     android:text="133333333333"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -293,6 +307,8 @@
                     android:text="133333333333"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </RelativeLayout>
             <View
@@ -319,6 +335,9 @@
                     android:text="133333333333"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
+
                     />
             </RelativeLayout>
             <View
@@ -345,6 +364,10 @@
                     android:text="133333333333"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </LinearLayout>
             <View
@@ -371,6 +394,10 @@
                     android:text="133333333333"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </LinearLayout>
             <View
@@ -397,6 +424,10 @@
                     android:text="133333333333"
                     android:textSize="13sp"
                     android:textColor="#252525"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/shape_edit_bai"
+                    android:layout_centerVertical="true"
                     />
             </LinearLayout>
             <View

@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"
@@ -29,23 +29,54 @@
             android:text="违章列表"
             android:textColor="#FFF" />
     </RelativeLayout>
-    <androidx.cardview.widget.CardView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="20dp">
-        <RelativeLayout
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             >
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerInParent="true"
-                android:text="暂无违章记录！"/>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                app:cardCornerRadius="20dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:text="暂无违章记录！" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.gzeic.smartcity01.Tools.ListViewScrollView
+                android:id="@+id/weizhanglist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"/>
+            <Button
+                android:id="@+id/chakangenduo"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="查看更多"
+                android:textColor="#FFF"
+                android:background="@drawable/btn_bule"
+                android:gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                />
+        </LinearLayout>
+    </ScrollView>
+
 
 
 </LinearLayout>

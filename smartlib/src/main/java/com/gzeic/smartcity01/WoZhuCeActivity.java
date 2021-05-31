@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.bean.RegBean;
@@ -28,11 +30,16 @@ public class WoZhuCeActivity extends BaseActivity implements View.OnClickListene
     private EditText regPassword;
     private Button regLoginBtn;
     private Button regRegBtn;
+    private RelativeLayout rlRl1;
+    private EditText regEmail;
+    private EditText regShenfen;
+    private RadioButton nan;
+    private RadioButton nv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#2196F3"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_wo_zhuce);
         initView();
     }
@@ -46,6 +53,11 @@ public class WoZhuCeActivity extends BaseActivity implements View.OnClickListene
         regRegBtn = (Button) findViewById(R.id.reg_reg_btn);
         regLoginBtn.setOnClickListener(this);
         regRegBtn.setOnClickListener(this);
+        rlRl1 = (RelativeLayout) findViewById(R.id.rl_rl1);
+        regEmail = (EditText) findViewById(R.id.reg_email);
+        regShenfen = (EditText) findViewById(R.id.reg_shenfen);
+        nan = (RadioButton) findViewById(R.id.nan);
+        nv = (RadioButton) findViewById(R.id.nv);
     }
 
     @Override
@@ -58,29 +70,49 @@ public class WoZhuCeActivity extends BaseActivity implements View.OnClickListene
             String nickName = regNickname.getText().toString();
             String phoneNumber = regPhone.getText().toString();
             String password = regPassword.getText().toString();
+            String email = regEmail.getText().toString();
+            String shenfen = regShenfen.getText().toString();
+            String sex = "0";
+            if (nv.isChecked()){
+                sex = "1";
+            }
             if (userName.isEmpty()) {
                 showToast("用户名不能为空");
+                return;
             }
             if (nickName.isEmpty()) {
                 showToast("昵称不能为空");
+                return;
             }
             if (phoneNumber.isEmpty()) {
                 showToast("手机号不能为空");
+                return;
             }
             if (password.isEmpty()) {
                 showToast("密码不能为空");
+                return;
+            }
+            if (email.isEmpty()) {
+                showToast("邮箱不能为空");
+                return;
+            }
+            if (shenfen.isEmpty()) {
+                showToast("身份证号不能为空");
+                return;
             }
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.put("userName", userName);
                 jsonObject.put("nickName", nickName);
-                jsonObject.put("phoneNumber", phoneNumber);
-                jsonObject.put("sex", "1");
                 jsonObject.put("password", password);
+                jsonObject.put("phonenumber", phoneNumber);
+                jsonObject.put("sex", "1");
+                jsonObject.put("email", email);
+                jsonObject.put("idCard", shenfen);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            getTools().sendPostRequest(jsonObject, "http://" + getServerIp() + "/system/user/register", new Callback() {
+            getTools().sendPostRequest(jsonObject, "http://" + getServerIp() + "/prod-api/api/register", new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
                     showToast("请求失败");

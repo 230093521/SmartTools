@@ -2,7 +2,6 @@ package com.gzeic.smartcity01.tcc;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +13,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
 import androidx.cardview.widget.CardView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
@@ -25,7 +22,6 @@ import com.gzeic.smartcity01.bean.TinCheJiLuBean;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -40,7 +36,7 @@ public class TcjlActivity extends BaseActivity {
     private RelativeLayout sousuo;
     private ListView listTcjl;
     private TextView chakangengduo;
-    List<TinCheJiLuBean.RowsBean> rows;
+    List<TinCheJiLuBean.RowsDTO> rows;
     Calendar calendar = Calendar.getInstance();
     int num;
     private CardView jilu;
@@ -48,7 +44,7 @@ public class TcjlActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_tcjl);
         initView();
         num = 1;
@@ -183,7 +179,7 @@ public class TcjlActivity extends BaseActivity {
                                         this.shoufeijine = (TextView) rootView.findViewById(R.id.shoufeijine);
                                         this.ruchang = (TextView) rootView.findViewById(R.id.ruchang);
                                         this.chuchang = (TextView) rootView.findViewById(R.id.chuchang);
-                                        this.tinchechang = (TextView) rootView.findViewById(R.id.tinchechang);
+                                        this.tinchechang = (TextView) rootView.findViewById(R.id.yonghuming);
                                     }
 
                                 }
@@ -205,9 +201,9 @@ public class TcjlActivity extends BaseActivity {
 
                                 @Override
                                 public View getView(int i, View view, ViewGroup viewGroup) {
-                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_tcjl, null);
+                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_tc_jl, null);
                                     ViewHolder viewHolder = new ViewHolder(view);
-                                    TinCheJiLuBean.RowsBean rowsBean = rows.get(i);
+                                    TinCheJiLuBean.RowsDTO rowsBean = rows.get(i);
                                     viewHolder.chepai.setText(rowsBean.getPlateNumber());
                                     viewHolder.shoufeijine.setText("收费金额:"+rowsBean.getMonetary());
                                     viewHolder.tinchechang.setText(rowsBean.getParkName());

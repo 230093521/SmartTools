@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     android:orientation="vertical"
     >
     <RelativeLayout
@@ -31,7 +32,6 @@
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
                 android:layout_height="180dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,9 +71,9 @@
                                 android:id="@+id/xuexi"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#673AB7"
+                                android:background="@color/colorPrimary"
                                 android:padding="15dp"
-                                android:src="@drawable/dyxx" />
+                                android:src="@drawable/ic_xuexi_baise" />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -100,9 +100,9 @@
                                 android:id="@+id/huodong"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#FFEB3B"
+                                android:background="@color/colorPrimary"
                                 android:padding="15dp"
-                                android:src="@drawable/zzhd" />
+                                android:src="@drawable/ic_huodongbaise" />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -129,9 +129,9 @@
                                 android:id="@+id/liuyan"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#E91E63"
+                                android:background="@color/colorPrimary"
                                 android:padding="15dp"
-                                android:src="@drawable/jyxc" />
+                                android:src="@drawable/ic_fankui_baise" />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -158,9 +158,9 @@
                                 android:id="@+id/paizhao"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
-                                android:background="#8BC34A"
+                                android:background="@color/colorPrimary"
                                 android:padding="15dp"
-                                android:src="@drawable/ssp" />
+                                android:src="@drawable/ic_ssp_baise" />
                         </androidx.cardview.widget.CardView>
 
                         <TextView
@@ -184,94 +184,25 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
-
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="#FFF"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="最新动态" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#979797" />
-
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="#FFF"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="党务公开" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#979797" />
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="#FFF"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="宣传政策" />
-                </RelativeLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#979797" />
-
-                <RelativeLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="#FFF"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="服务人民" />
-                </RelativeLayout>
-
+                android:background="#FFF"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+                <GridView
+                    android:id="@+id/rec_newsfl"
+                    android:layout_width="match_parent"
+                    android:horizontalSpacing="3dp"
+                    android:numColumns="5"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
-
             <com.gzeic.smartcity01.Tools.ListViewScrollView
-                android:id="@+id/list_dongtai"
+                android:id="@+id/news_list"
+                android:background="#FFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="100dp"
-                android:layout_marginTop="5dp" />
-
+                />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

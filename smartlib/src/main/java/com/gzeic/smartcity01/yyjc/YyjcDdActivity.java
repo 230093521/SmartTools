@@ -33,7 +33,7 @@ public class YyjcDdActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_yyjc_dd);
         initView();
         String json = "{\n" +
@@ -126,7 +126,7 @@ public class YyjcDdActivity extends BaseActivity {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(YyjcDdActivity.this).inflate(R.layout.item_yyjc_didian, null);
+            convertView = LayoutInflater.from(YyjcDdActivity.this).inflate(R.layout.item_yyjc_dd, null);
             YyddBean.RowsDTO rowsDTO = yyddBeanRows.get(position);
             ViewHolder viewHolder = new ViewHolder(convertView);
             viewHolder.name.setText(rowsDTO.getPlaceName());

@@ -1,7 +1,6 @@
 package com.gzeic.smartcity01.tcc;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
@@ -35,7 +33,7 @@ public class TccActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_tcc);
         initView();
         num = 1;
@@ -94,7 +92,7 @@ public class TccActivity extends BaseActivity {
 
                                     public ViewHolder(View rootView) {
                                         this.rootView = rootView;
-                                        this.tinchechang = (TextView) rootView.findViewById(R.id.tinchechang);
+                                        this.tinchechang = (TextView) rootView.findViewById(R.id.yonghuming);
                                         this.gongli = (TextView) rootView.findViewById(R.id.gongli);
                                         this.kongwei = (TextView) rootView.findViewById(R.id.kongwei);
                                         this.weizhi = (TextView) rootView.findViewById(R.id.weizhi);
@@ -119,7 +117,7 @@ public class TccActivity extends BaseActivity {
 
                                 @Override
                                 public View getView(int i, View view, ViewGroup viewGroup) {
-                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_tinche, null);
+                                    view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_tc_tcc, null);
                                     ViewHolder viewHolder = new ViewHolder(view);
                                     final TinCheBean.RowsBean rowsBean = rows.get(i);
                                     viewHolder.weizhi.setText(rowsBean.getAddress());

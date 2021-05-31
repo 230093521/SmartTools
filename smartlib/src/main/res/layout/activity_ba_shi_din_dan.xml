@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA"
+        >
 
         <ImageView
             android:id="@+id/metro_base"
@@ -95,7 +96,6 @@
             android:layout_centerVertical="true"
             android:text="姓 名"
             android:textColor="#000" />
-
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"

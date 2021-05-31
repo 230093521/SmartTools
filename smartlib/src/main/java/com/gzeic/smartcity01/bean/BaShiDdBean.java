@@ -3,9 +3,11 @@ package com.gzeic.smartcity01.bean;
 import java.util.List;
 
 public class BaShiDdBean {
+
+
     /**
-     * total : 20
-     * rows : [{"searchValue":null,"createBy":null,"createTime":"2020-10-24 19:23:31","updateBy":null,"updateTime":"2020-12-03 15:56:33","remark":null,"params":{},"orderNum":"60353861","id":1,"path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"张三","userTel":"12345611","userId":1,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-24 19:25:36","updateBy":null,"updateTime":"2020-12-03 15:56:35","remark":null,"params":{},"orderNum":"60353873","id":2,"path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"张三","userTel":"12345611","userId":1,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-24 19:26:13","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60353877","id":3,"path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"张三","userTel":"12345611","userId":1,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 09:45:23","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60376312","id":4,"path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"张三","userTel":"12345611","userId":1,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 10:25:05","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60376550","id":5,"path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"张三","userTel":"12345611","userId":1,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 13:34:34","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60377687","id":6,"path":"一号线","start":"西安路","end":"万达广场","price":8,"userName":"吴霄12","userTel":"17767746537","userId":2,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 13:35:22","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60377692","id":7,"path":"一号线","start":"西安路","end":"万达广场","price":8,"userName":"吴霄12","userTel":"17767746537","userId":2,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 13:35:35","updateBy":null,"updateTime":"2020-10-27 15:27:59","remark":null,"params":{},"orderNum":"60377693","id":8,"path":"一号线","start":"西安路","end":"万达广场","price":8,"userName":"吴霄12","userTel":"17767746537","userId":2,"status":1},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 13:50:42","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60377784","id":10,"path":"一号线","start":"解放路","end":"南湖大厦","price":8,"userName":"吴霄12","userTel":"17767746537","userId":2,"status":0},{"searchValue":null,"createBy":null,"createTime":"2020-10-27 13:55:46","updateBy":null,"updateTime":null,"remark":null,"params":{},"orderNum":"60377814","id":11,"path":"二号线","start":"西安路","end":"万达广场","price":8,"userName":"吴霄12","userTel":"17767746537","userId":2,"status":0}]
+     * total : 2
+     * rows : [{"searchValue":null,"createBy":null,"createTime":"2021-05-18 16:01:54","updateBy":null,"updateTime":"2021-05-19 08:36:13","remark":null,"params":{},"id":28,"orderNum":"32491402","path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"test01","userTel":"18623323323","userId":1111122,"status":1,"paymentType":"电子支付","payTime":"2021-05-19 08:36:13"},{"searchValue":null,"createBy":null,"createTime":"2021-05-19 08:26:09","updateBy":null,"updateTime":"2021-05-19 09:07:48","remark":null,"params":{},"id":29,"orderNum":"22669095","path":"一号线","start":"泰德大厦","end":"大连北站","price":8,"userName":"test01","userTel":"18623323323","userId":1111122,"status":1,"paymentType":"","payTime":"2021-05-19 09:07:48"}]
      * code : 200
      * msg : 查询成功
      */
@@ -13,7 +15,7 @@ public class BaShiDdBean {
     private int total;
     private int code;
     private String msg;
-    private List<RowsBean> rows;
+    private List<RowsDTO> rows;
 
     public int getTotal() {
         return total;
@@ -39,33 +41,35 @@ public class BaShiDdBean {
         this.msg = msg;
     }
 
-    public List<RowsBean> getRows() {
+    public List<RowsDTO> getRows() {
         return rows;
     }
 
-    public void setRows(List<RowsBean> rows) {
+    public void setRows(List<RowsDTO> rows) {
         this.rows = rows;
     }
 
-    public static class RowsBean {
+    public static class RowsDTO {
         /**
          * searchValue : null
          * createBy : null
-         * createTime : 2020-10-24 19:23:31
+         * createTime : 2021-05-18 16:01:54
          * updateBy : null
-         * updateTime : 2020-12-03 15:56:33
+         * updateTime : 2021-05-19 08:36:13
          * remark : null
          * params : {}
-         * orderNum : 60353861
-         * id : 1
+         * id : 28
+         * orderNum : 32491402
          * path : 一号线
          * start : 泰德大厦
          * end : 大连北站
-         * price : 8.0
-         * userName : 张三
-         * userTel : 12345611
-         * userId : 1
+         * price : 8
+         * userName : test01
+         * userTel : 18623323323
+         * userId : 1111122
          * status : 1
+         * paymentType : 电子支付
+         * payTime : 2021-05-19 08:36:13
          */
 
         private Object searchValue;
@@ -74,17 +78,19 @@ public class BaShiDdBean {
         private Object updateBy;
         private String updateTime;
         private Object remark;
-        private ParamsBean params;
-        private String orderNum;
+        private ParamsDTO params;
         private int id;
+        private String orderNum;
         private String path;
         private String start;
         private String end;
-        private double price;
+        private int price;
         private String userName;
         private String userTel;
         private int userId;
         private int status;
+        private String paymentType;
+        private String payTime;
 
         public Object getSearchValue() {
             return searchValue;
@@ -134,20 +140,12 @@ public class BaShiDdBean {
             this.remark = remark;
         }
 
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
-        }
-
-        public String getOrderNum() {
-            return orderNum;
-        }
-
-        public void setOrderNum(String orderNum) {
-            this.orderNum = orderNum;
         }
 
         public int getId() {
@@ -156,6 +154,14 @@ public class BaShiDdBean {
 
         public void setId(int id) {
             this.id = id;
+        }
+
+        public String getOrderNum() {
+            return orderNum;
+        }
+
+        public void setOrderNum(String orderNum) {
+            this.orderNum = orderNum;
         }
 
         public String getPath() {
@@ -182,11 +188,11 @@ public class BaShiDdBean {
             this.end = end;
         }
 
-        public double getPrice() {
+        public int getPrice() {
             return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(int price) {
             this.price = price;
         }
 
@@ -222,7 +228,23 @@ public class BaShiDdBean {
             this.status = status;
         }
 
-        public static class ParamsBean {
+        public String getPaymentType() {
+            return paymentType;
+        }
+
+        public void setPaymentType(String paymentType) {
+            this.paymentType = paymentType;
+        }
+
+        public String getPayTime() {
+            return payTime;
+        }
+
+        public void setPayTime(String payTime) {
+            this.payTime = payTime;
+        }
+
+        public static class ParamsDTO {
         }
     }
 }

@@ -11,14 +11,11 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.viewpager.widget.ViewPager;
-
 import com.bumptech.glide.Glide;
 import com.xsonline.smartlib.R;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,7 +103,7 @@ public class YinDaoActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
-    class MyImageLoader extends ImageLoader {
+    class MyImageLoader extends ImageLoader{
         @Override
         public void displayImage(final Context context, final Object path, final ImageView imageView) {
             runOnUiThread(new Runnable() {

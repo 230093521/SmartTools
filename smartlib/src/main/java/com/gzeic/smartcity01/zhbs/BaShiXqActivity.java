@@ -13,13 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
+import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.BaShiXianLuBean;
 import com.gzeic.smartcity01.bean.BashiBean;
 import com.gzeic.smartcity01.bean.BashiXqBean;
-import com.xsonline.smartlib.R;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,26 +36,27 @@ public class BaShiXqActivity extends BaseActivity {
     private TextView gongli;
     private RecyclerView recBashiXianlu;
     private TextView btnNext;
-    BashiBean.RowsBean rowsBean;
-    List<BaShiXianLuBean.RowsBean> rows;
+    BashiBean.RowsDTO rowsBean;
+    List<BaShiXianLuBean.RowsDTO> rows;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_ba_shi_xq);
         initView();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL,true);
         recBashiXianlu.setLayoutManager(linearLayoutManager);
         String xianlu = getSP("xianlu");
-        BashiBean.RowsBean rowsBean = new Gson().fromJson(xianlu, BashiBean.RowsBean.class);
+        BashiBean.RowsDTO rowsBean = new Gson().fromJson(xianlu, BashiBean.RowsDTO.class);
         metroBase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        getTools().sendGetRequest("http://"+getServerIp()+"/userinfo/lines/"+rowsBean.getId(), new Callback() {
+
+        getTools().sendGetRequest("http://"+getServerIp()+"/prod-api/api/bus/line/"+rowsBean.getId(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -67,7 +67,7 @@ public class BaShiXqActivity extends BaseActivity {
                 String json = response.body().string();
                 BashiXqBean bashiXqBean = new Gson().fromJson(json, BashiXqBean.class);
                 if (bashiXqBean.getCode()==200){
-                    final BashiXqBean.DataBean data = bashiXqBean.getData();
+                    final BashiXqBean.DataDTO data = bashiXqBean.getData();
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -81,7 +81,7 @@ public class BaShiXqActivity extends BaseActivity {
             }
         });
 
-        getTools().sendGetRequest("http://"+getServerIp()+"/userinfo/busStop/list?pageNum=1&pageSize=10&linesId="+rowsBean.getId(), new Callback() {
+        getTools().sendGetRequest("http://"+getServerIp()+"/prod-api/api/bus/stop/list?linesId="+rowsBean.getId(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -107,7 +107,7 @@ public class BaShiXqActivity extends BaseActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BaShiXqActivity.this, BaShiDinDanActivity.class));
+                startActivity(new Intent(BaShiXqActivity.this,BaShiDinDanActivity.class));
             }
         });
 
@@ -118,7 +118,7 @@ public class BaShiXqActivity extends BaseActivity {
         @NonNull
         @Override
         public RecAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new RecAdapter.ViewHolder(LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_ditiexianlu,parent,false));
+            return new RecAdapter.ViewHolder(LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_dt_sxl,parent,false));
         }
 
         @Override

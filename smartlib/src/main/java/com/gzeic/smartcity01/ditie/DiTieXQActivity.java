@@ -41,19 +41,22 @@ public class DiTieXQActivity extends BaseActivity {
     DiTieXQBean diTieXQBean;
     DiTieXQBean.DataBean data;
     String stationsNumber;
+    private TextView title;
+    private ImageView ditu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_di_tie_x_q);
         initView();
         String ditiejson = getSP("ditie");
         rowsBean = new Gson().fromJson(ditiejson, DiTieBean.RowsBean.class);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL,true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, true);
         recDitieXianlu.setLayoutManager(linearLayoutManager);
+        title.setText(rowsBean.getLineName());
 
-        getTools().sendGetRequest("http://"+getServerIp()+"/metro/"+rowsBean.getLineId(), new Callback() {
+        getTools().sendGetRequest("http://" + getServerIp() + "/metro/" + rowsBean.getLineId(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -62,43 +65,49 @@ public class DiTieXQActivity extends BaseActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String json = response.body().string();
-                Log.i(TAG, "sendGetRequestOnResponse: "+json);
+                Log.i(TAG, "sendGetRequestOnResponse: " + json);
                 diTieXQBean = new Gson().fromJson(json, DiTieXQBean.class);
                 data = diTieXQBean.getData();
-                if (diTieXQBean.getCode()==200){
+                if (diTieXQBean.getCode() == 200) {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             String lineName = rowsBean.getLineName();
                             int i = lineName.indexOf("-");
-                            xianluname1.setText(String.valueOf(lineName.charAt(i-3))+String.valueOf(lineName.charAt(i-2))+String.valueOf(lineName.charAt(i-1)));
-                            xianluname2.setText(String.valueOf(lineName.charAt(i+1))+String.valueOf(lineName.charAt(i+2))+String.valueOf(lineName.charAt(i+3)));
-                            ditieTime.setText(rowsBean.getReachTime()+"分钟");
+                            xianluname1.setText(String.valueOf(lineName.charAt(i - 3)) + String.valueOf(lineName.charAt(i - 2)) + String.valueOf(lineName.charAt(i - 1)));
+                            xianluname2.setText(String.valueOf(lineName.charAt(i + 1)) + String.valueOf(lineName.charAt(i + 2)) + String.valueOf(lineName.charAt(i + 3)));
+                            ditieTime.setText(rowsBean.getReachTime() + "分钟");
                             stationsNumber = String.valueOf(data.getStationsNumber());
                             String[] split = stationsNumber.split("\\.");
                             int km = data.getKm();
-                            if (split[0]==null){
-                                ditiezhanshu.setText("0站/"+km+"km");
+                            if (split[0] == null) {
+                                ditiezhanshu.setText("0站/" + km + "km");
                             }
-                            ditiezhanshu.setText(split[0]+"站/"+km+"km");
+                            ditiezhanshu.setText("间隔" + split[0] + "站/剩余" + km + "km");
                             metroStepsList = data.getMetroStepsList();
                             recDitieXianlu.setAdapter(new RecAdapter());
-                            recDitieXianlu.scrollToPosition(metroStepsList.size()/2);
+                            recDitieXianlu.scrollToPosition(metroStepsList.size() / 2);
                         }
                     });
                 }
 
             }
         });
+        ditu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DiTieXQActivity.this,DiTieXianLuTuActivity.class));
+            }
+        });
 
     }
 
-    class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder>{
+    class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_ditiexianlu,parent,false));
+            return new ViewHolder(LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_dt_sxl, parent, false));
         }
 
         @Override
@@ -107,9 +116,9 @@ public class DiTieXQActivity extends BaseActivity {
             holder.textView.setText(name);
             String[] split = stationsNumber.split("\\.");
             int integer = Integer.parseInt(split[0]);
-            Log.e(TAG, "onBindViewHolder: "+integer +" "+metroStepsList.get(position).getId());
+            Log.e(TAG, "onBindViewHolder: " + integer + " " + metroStepsList.get(position).getId());
 
-            if (metroStepsList.get(position).getId()==metroStepsList.get(metroStepsList.size()/2).getId()){
+            if (metroStepsList.get(position).getId() == metroStepsList.get(metroStepsList.size() / 2).getId()) {
                 holder.imageView.setVisibility(View.VISIBLE);
             }
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -125,9 +134,10 @@ public class DiTieXQActivity extends BaseActivity {
             return metroStepsList.size();
         }
 
-        class ViewHolder extends RecyclerView.ViewHolder{
+        class ViewHolder extends RecyclerView.ViewHolder {
             TextView textView;
             CardView imageView;
+
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 textView = itemView.findViewById(R.id.ditiexianlu_name);
@@ -149,6 +159,8 @@ public class DiTieXQActivity extends BaseActivity {
                 finish();
             }
         });
+        title = (TextView) findViewById(R.id.title);
+        ditu = (ImageView) findViewById(R.id.ditu);
     }
 
 }

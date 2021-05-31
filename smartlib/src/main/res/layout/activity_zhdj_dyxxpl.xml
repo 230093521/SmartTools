@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDD"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
 
         <ImageView
             android:id="@+id/metro_base"
@@ -39,7 +39,7 @@
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:background="#FFF"
+                android:background="#EAEAEA"
                 android:orientation="vertical"
                 android:layout_margin="10dp"
                 android:layout_height="wrap_content">
@@ -58,7 +58,7 @@
                     android:layout_height="200dp"/>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.2dp"
                     android:background="#AEAEAE"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -82,6 +82,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_kclb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -120,11 +121,11 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="第一课：测试课程1"/>
+                        android:text="第一课"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.2dp"
                     android:layout_marginBottom="5dp"
                     android:background="#8F8F8F"/>
                 <LinearLayout
@@ -139,11 +140,11 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="第二课：测试课程2"/>
+                        android:text="第二课"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.2dp"
                     android:layout_marginBottom="5dp"
                     android:background="#8F8F8F"/>
 
@@ -159,11 +160,11 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="第三课：测试课程3"/>
+                        android:text="第三课"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.2dp"
                     android:layout_marginBottom="5dp"
                     android:background="#8F8F8F"/>
                 <LinearLayout
@@ -178,11 +179,11 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="第四课：测试课程4"/>
+                        android:text="第四课"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.2dp"
                     android:layout_marginBottom="5dp"
                     android:background="#8F8F8F"/>
                 <LinearLayout
@@ -197,11 +198,11 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:text="第五课：测试课程5"/>
+                        android:text="第五课"/>
                 </LinearLayout>
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="0.2dp"
                     android:layout_marginBottom="5dp"
                     android:background="#8F8F8F"/>
             </LinearLayout>
@@ -229,7 +230,7 @@
                     android:id="@+id/btn_pl"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:background="@drawable/btn_bule"
+                    android:background="@drawable/btn_sousuo"
                     android:text="评论"
                     android:layout_weight="1"
                     android:textColor="#FFF"

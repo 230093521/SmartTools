@@ -3,10 +3,9 @@ package com.gzeic.smartcity01.bean;
 import java.util.List;
 
 public class BaShiXianLuBean {
-
     /**
-     * total : 27
-     * rows : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"1","stepsId":"1","name":"光谷金融街","sequence":"1"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"1","stepsId":"2","name":"解放路","sequence":"2"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"1","stepsId":"3","name":"西安路","sequence":"3"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"1","stepsId":"4","name":"南湖大厦","sequence":"4"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"2","stepsId":"1","name":"光谷金融街","sequence":"1"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"2","stepsId":"3","name":"西安路","sequence":"2"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"2","stepsId":"4","name":"南湖大厦","sequence":"3"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"2","stepsId":"6","name":"万达广场","sequence":"4"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"3","stepsId":"21","name":"香炉礁站","sequence":"1"},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":"3","stepsId":"22","name":"金家街站","sequence":"2"}]
+     * total : 4
+     * rows : [{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":1,"stepsId":1,"name":"光谷金融街","sequence":1},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":1,"stepsId":2,"name":"解放路","sequence":2},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":1,"stepsId":3,"name":"西安路","sequence":3},{"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"linesId":1,"stepsId":4,"name":"南湖大厦","sequence":4}]
      * code : 200
      * msg : 查询成功
      */
@@ -14,7 +13,7 @@ public class BaShiXianLuBean {
     private int total;
     private int code;
     private String msg;
-    private List<RowsBean> rows;
+    private List<RowsDTO> rows;
 
     public int getTotal() {
         return total;
@@ -40,15 +39,15 @@ public class BaShiXianLuBean {
         this.msg = msg;
     }
 
-    public List<RowsBean> getRows() {
+    public List<RowsDTO> getRows() {
         return rows;
     }
 
-    public void setRows(List<RowsBean> rows) {
+    public void setRows(List<RowsDTO> rows) {
         this.rows = rows;
     }
 
-    public static class RowsBean {
+    public static class RowsDTO {
         /**
          * searchValue : null
          * createBy : null
@@ -69,11 +68,11 @@ public class BaShiXianLuBean {
         private Object updateBy;
         private Object updateTime;
         private Object remark;
-        private ParamsBean params;
-        private String linesId;
-        private String stepsId;
+        private ParamsDTO params;
+        private int linesId;
+        private int stepsId;
         private String name;
-        private String sequence;
+        private int sequence;
 
         public Object getSearchValue() {
             return searchValue;
@@ -123,27 +122,27 @@ public class BaShiXianLuBean {
             this.remark = remark;
         }
 
-        public ParamsBean getParams() {
+        public ParamsDTO getParams() {
             return params;
         }
 
-        public void setParams(ParamsBean params) {
+        public void setParams(ParamsDTO params) {
             this.params = params;
         }
 
-        public String getLinesId() {
+        public int getLinesId() {
             return linesId;
         }
 
-        public void setLinesId(String linesId) {
+        public void setLinesId(int linesId) {
             this.linesId = linesId;
         }
 
-        public String getStepsId() {
+        public int getStepsId() {
             return stepsId;
         }
 
-        public void setStepsId(String stepsId) {
+        public void setStepsId(int stepsId) {
             this.stepsId = stepsId;
         }
 
@@ -155,15 +154,15 @@ public class BaShiXianLuBean {
             this.name = name;
         }
 
-        public String getSequence() {
+        public int getSequence() {
             return sequence;
         }
 
-        public void setSequence(String sequence) {
+        public void setSequence(int sequence) {
             this.sequence = sequence;
         }
 
-        public static class ParamsBean {
+        public static class ParamsDTO {
         }
     }
 }

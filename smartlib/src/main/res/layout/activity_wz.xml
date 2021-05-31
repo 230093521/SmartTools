@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:text="违章首页"
+            android:text="违章查询"
             android:textColor="#FFF" />
     </RelativeLayout>
     <androidx.cardview.widget.CardView
@@ -140,7 +140,7 @@
                 android:id="@+id/chaxunbtn"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="车辆违章查询"
+                android:text="查询"
                 android:textColor="#FFF"
                 android:background="@drawable/btn_bule"
                 android:gravity="center"
@@ -148,16 +148,6 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="本服务由“违章查询”版权所有"
-                android:textSize="15sp"
-                android:textColor="#AEAEAE"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="30dp"
                 />
         </LinearLayout>
 

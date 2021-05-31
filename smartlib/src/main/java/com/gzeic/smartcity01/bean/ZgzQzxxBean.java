@@ -2,10 +2,11 @@ package com.gzeic.smartcity01.bean;
 
 public class ZgzQzxxBean {
 
+
     /**
      * msg : 操作成功
      * code : 200
-     * data : {"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":1,"mostEducation":"博士","education":"本科","address":"北京","experience":"1年","individualResume":"性格有点内向、乐观上进、有爱心并善于施教并行;对待工作认真负责，善于沟通、协调有较强的组织能力与团队精神;上进心强、勤于学习能不断进步自身的能力与综合素质。在未来的工作中，我将以充沛的精力，刻苦钻研的精神来努力工作，稳定地进步自己的工作能力，与公司同步发展。","money":"7000","positionId":"2","userId":1,"files":"/profile/2020/11/04/aa1cf589-43d4-4a5c-aa40-8b598b7a6368.docx","file":null}
+     * data : {"searchValue":null,"createBy":null,"createTime":null,"updateBy":null,"updateTime":null,"remark":null,"params":{},"id":2,"userId":2,"mostEducation":"博士","education":"大专","address":"北京","experience":"2年以上","individualResume":"热情随和，活波开朗，具有进取精神和团队精神，有较强的动手能力。良好协调沟通能力，适应力强，反应快、积极、灵活，爱创新!两年的会计经历锻炼了我细心的准则，以及冷静解决困难的能力。不过参加实践活动有限，社会经验相对缺乏，我相信通过立足于社会能不断提升发展自己。","money":"12000","positionId":2,"files":"/profile/2020/11/03/95474274-4c4d-467c-94a1-9959521abee4.docx","positionName":null,"userName":null}
      */
 
     private String msg;
@@ -45,17 +46,18 @@ public class ZgzQzxxBean {
          * updateTime : null
          * remark : null
          * params : {}
-         * id : 1
+         * id : 2
+         * userId : 2
          * mostEducation : 博士
-         * education : 本科
+         * education : 大专
          * address : 北京
-         * experience : 1年
-         * individualResume : 性格有点内向、乐观上进、有爱心并善于施教并行;对待工作认真负责，善于沟通、协调有较强的组织能力与团队精神;上进心强、勤于学习能不断进步自身的能力与综合素质。在未来的工作中，我将以充沛的精力，刻苦钻研的精神来努力工作，稳定地进步自己的工作能力，与公司同步发展。
-         * money : 7000
+         * experience : 2年以上
+         * individualResume : 热情随和，活波开朗，具有进取精神和团队精神，有较强的动手能力。良好协调沟通能力，适应力强，反应快、积极、灵活，爱创新!两年的会计经历锻炼了我细心的准则，以及冷静解决困难的能力。不过参加实践活动有限，社会经验相对缺乏，我相信通过立足于社会能不断提升发展自己。
+         * money : 12000
          * positionId : 2
-         * userId : 1
-         * files : /profile/2020/11/04/aa1cf589-43d4-4a5c-aa40-8b598b7a6368.docx
-         * file : null
+         * files : /profile/2020/11/03/95474274-4c4d-467c-94a1-9959521abee4.docx
+         * positionName : null
+         * userName : null
          */
 
         private Object searchValue;
@@ -66,16 +68,17 @@ public class ZgzQzxxBean {
         private Object remark;
         private ParamsDTO params;
         private int id;
+        private int userId;
         private String mostEducation;
         private String education;
         private String address;
         private String experience;
         private String individualResume;
         private String money;
-        private String positionId;
-        private int userId;
+        private int positionId;
         private String files;
-        private Object file;
+        private Object positionName;
+        private Object userName;
 
         public Object getSearchValue() {
             return searchValue;
@@ -141,6 +144,14 @@ public class ZgzQzxxBean {
             this.id = id;
         }
 
+        public int getUserId() {
+            return userId;
+        }
+
+        public void setUserId(int userId) {
+            this.userId = userId;
+        }
+
         public String getMostEducation() {
             return mostEducation;
         }
@@ -189,20 +200,12 @@ public class ZgzQzxxBean {
             this.money = money;
         }
 
-        public String getPositionId() {
+        public int getPositionId() {
             return positionId;
         }
 
-        public void setPositionId(String positionId) {
+        public void setPositionId(int positionId) {
             this.positionId = positionId;
-        }
-
-        public int getUserId() {
-            return userId;
-        }
-
-        public void setUserId(int userId) {
-            this.userId = userId;
         }
 
         public String getFiles() {
@@ -213,12 +216,20 @@ public class ZgzQzxxBean {
             this.files = files;
         }
 
-        public Object getFile() {
-            return file;
+        public Object getPositionName() {
+            return positionName;
         }
 
-        public void setFile(Object file) {
-            this.file = file;
+        public void setPositionName(Object positionName) {
+            this.positionName = positionName;
+        }
+
+        public Object getUserName() {
+            return userName;
+        }
+
+        public void setUserName(Object userName) {
+            this.userName = userName;
         }
 
         public static class ParamsDTO {

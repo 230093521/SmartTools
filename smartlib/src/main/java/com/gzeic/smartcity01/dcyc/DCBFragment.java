@@ -34,6 +34,7 @@ public class DCBFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_dc_b, container, false);
         initView(view);
         getjilu();
+
         return view;
     }
 
@@ -49,7 +50,35 @@ public class DCBFragment extends BaseFragment {
                 String string = response.body().string();
                 try {
                     NuoCheBean nuoCheBean = new Gson().fromJson(string, NuoCheBean.class);
+                    String json = "{\n" +
+                            "    \"total\": 2,\n" +
+                            "    \"rows\": [\n" +
+                            "        {\n" +
+                            "            \"searchValue\": null,\n" +
+                            "            \"createBy\": null,\n" +
+                            "            \"createTime\": null,\n" +
+                            "            \"updateBy\": null,\n" +
+                            "            \"updateTime\": null,\n" +
+                            "            \"remark\": null,\n" +
+                            "            \"params\": {},\n" +
+                            "            \"id\": 2,\n" +
+                            "            \"cardId\": \"423016199812141526\",\n" +
+                            "            \"names\": \"李四\",\n" +
+                            "            \"tel\": \"18546235454\",\n" +
+                            "            \"address\": \"高新区街道10号\",\n" +
+                            "            \"imgUrl\": \"/profile/2020/11/04/601a561d-da76-498d-8bff-9d133743755c.jpg\",\n" +
+                            "            \"plates\": \"辽FS1009\\t\",\n" +
+                            "            \"userId\": 1,\n" +
+                            "            \"file\": null\n" +
+                            "        }\n" +
+                            "    ],\n" +
+                            "    \"code\": 200,\n" +
+                            "    \"msg\": \"查询成功\"\n" +
+                            "}";
+                    NuoCheBean nuoCheBean1 = new Gson().fromJson(json, NuoCheBean.class);
                     final List<NuoCheBean.RowsDTO> nuoCheBeanRows = nuoCheBean.getRows();
+                    final List<NuoCheBean.RowsDTO> nuoCheBeanRows1 = nuoCheBean1.getRows();
+                    nuoCheBeanRows.addAll(nuoCheBeanRows1);
                     if (nuoCheBean.getCode() == 200) {
                       getActivity().runOnUiThread(new Runnable() {
                           @Override
@@ -89,7 +118,7 @@ public class DCBFragment extends BaseFragment {
 
                                   @Override
                                   public View getView(int position, View convertView, ViewGroup parent) {
-                                      convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_ncjl, null);
+                                      convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_dcyc_ncjl, null);
                                       ViewHolder viewHolder = new ViewHolder(convertView);
                                       NuoCheBean.RowsDTO rowsDTO = nuoCheBeanRows.get(position);
                                       viewHolder.chepai.setText(rowsDTO.getPlates());
@@ -105,7 +134,6 @@ public class DCBFragment extends BaseFragment {
                 } catch (JsonSyntaxException e) {
                     e.printStackTrace();
                 }
-
             }
         });
     }

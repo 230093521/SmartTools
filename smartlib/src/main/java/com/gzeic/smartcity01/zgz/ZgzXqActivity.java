@@ -1,6 +1,7 @@
 package com.gzeic.smartcity01.zgz;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,9 @@ import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.ZgzGsBean;
 import com.gzeic.smartcity01.bean.ZwSsBean;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -36,6 +40,7 @@ public class ZgzXqActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zgz_xq);
         initView();
         final String zwdata = getSP("zwdata");
@@ -53,28 +58,29 @@ public class ZgzXqActivity extends BaseActivity {
         lxr.setText(rowsDTO.getContacts());
         zwms.setText(rowsDTO.getObligation());
         gznx.setText(rowsDTO.getNeed());
-        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/company/" + rowsDTO.getCompanyId(), new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
 
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String string = response.body().string();
-                ZgzGsBean zgzGsBean = new Gson().fromJson(string, ZgzGsBean.class);
-                if (zgzGsBean.getCode() == 200) {
-                    final ZgzGsBean.DataDTO data = zgzGsBean.getData();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            gsxx.setText(data.getCompanyName());
-                            gsjj.setText(data.getIntroductory());
-                        }
-                    });
-                }
-            }
-        });
+//        getTools().sendGetRequest("http://" + getServerIp() + "/prod-api/api/job/post/" + rowsDTO.getCompanyId(), new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                String string = response.body().string();
+//                ZgzGsBean zgzGsBean = new Gson().fromJson(string, ZgzGsBean.class);
+//                if (zgzGsBean.getCode() == 200) {
+//                    final ZgzGsBean.DataDTO data = zgzGsBean.getData();
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            gsxx.setText(data.);
+//                            gsjj.setText(data.getIntroductory());
+//                        }
+//                    });
+//                }
+//            }
+//        });
 
         btnToudi.setOnClickListener(new View.OnClickListener() {
             @Override

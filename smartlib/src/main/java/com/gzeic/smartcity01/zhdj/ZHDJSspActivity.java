@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 
@@ -18,7 +20,7 @@ public class ZHDJSspActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj_ssp);
         initView();
         back.setOnClickListener(new View.OnClickListener() {
@@ -30,7 +32,7 @@ public class ZHDJSspActivity extends BaseActivity {
         fabu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ZHDJSspActivity.this, ZHDJSuiShouPaiActivity.class));
+                startActivity(new Intent(ZHDJSspActivity.this,ZHDJSuiShouPaiActivity.class));
             }
         });
     }

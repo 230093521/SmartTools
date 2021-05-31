@@ -2,7 +2,6 @@ package com.gzeic.smartcity01;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -23,13 +22,12 @@ import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.gzeic.smartcity01.bean.MyDataBean;
+import com.gzeic.smartcity01.bean.UsersBean;
 import com.xsonline.smartlib.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -37,7 +35,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListener {
-    MyDataBean.DataBean dataBean;
+    UsersBean.UserDTO dataBean;
     private RelativeLayout rlIcon;
     private ImageView ivIcon;
     private EditText etNickname;
@@ -49,16 +47,15 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
     private TextView tvSetSave;
     private String imageUri;
     private ImageView infoBase;
+    private EditText etEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_wo_ziliao);
-        SharedPreferences sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE);
-        String userdata = sharedPreferences.getString("userdata", null);
-        MyDataBean myDataBean = new Gson().fromJson(userdata, MyDataBean.class);
-        dataBean = myDataBean.getData();
+
+        dataBean = getUserdata();
         initView();
 
     }
@@ -72,14 +69,34 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
         sexNv = (RadioButton) findViewById(R.id.sex_nv);
         etZjh = (EditText) findViewById(R.id.et_zjh);
         etPhone = (EditText) findViewById(R.id.et_phone);
+        etEmail = (EditText) findViewById(R.id.et_email);
         tvSetSave = (TextView) findViewById(R.id.tv_set_save);
-        Glide.with(getApplicationContext()).load("http://" + getServerIp() + dataBean.getAvatar()).error(R.mipmap.ic_launcher).into(ivIcon);
+        if (etEmail.getText().toString().isEmpty()){
+            etEmail.setText("test@qq.com");
+        }else {
+            etEmail.setText(dataBean.getEmail());
+        }
+        Glide.with(getApplicationContext()).load("http://" + getServerIp() + dataBean.getAvatar()).error(R.drawable.icon2).into(ivIcon);
         etNickname.setText(dataBean.getNickName());
         String idCard = dataBean.getIdCard();
-        char[] chars = idCard.toCharArray();
-        String idc = chars[0]+chars[1]+chars[2]+"***********"+chars[chars.length-4]+chars[chars.length-3]+chars[chars.length-2]+chars[chars.length-1];
-        etZjh.setText(idc);
-        etPhone.setText(dataBean.getPhonenumber());
+        String idc = null;
+        try {
+            char[] chars = idCard.toCharArray();
+            idc = chars[0] + chars[1] + "***********" + chars[chars.length - 4] + chars[chars.length - 3] + chars[chars.length - 2] + chars[chars.length - 1];
+            etZjh.setText(idc);
+        } catch (Exception e) {
+            e.printStackTrace();
+            etZjh.setText("52************3682");
+        }
+        if (dataBean.getPhonenumber() == null) {
+            etPhone.setText("15888888888");
+        } else {
+            if (dataBean.getPhonenumber().isEmpty()) {
+                etPhone.setText("15888888888");
+            } else {
+                etPhone.setText(dataBean.getPhonenumber());
+            }
+        }
         if (dataBean.getSex().equals("0")) {
             sexNan.setChecked(true);
         } else {
@@ -89,7 +106,6 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
         tvSetSave.setOnClickListener(this);
         rlIcon.setOnClickListener(this);
         infoBase.setOnClickListener(this);
-
     }
 
 
@@ -105,34 +121,22 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
                 startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI), 200);
             }
         } else if (id == R.id.tv_set_save) {
-            File file = null;
-            if (imageUri != null) {
-                file = new File(imageUri);
-            }
-            Log.i(TAG, "onClick: " + imageUri);
             JSONObject jsonObject = new JSONObject();
-            int sex = 1;
+            int sex = 0;
+            if (sexNv.isChecked()) {
+                sex = 1;
+            }
             try {
-                jsonObject.put("userId", "1");
-                jsonObject.put("idCard", etZjh.getText().toString());
-                jsonObject.put("userName", dataBean.getUserName());
+                jsonObject.put("email", etEmail.getText().toString());
+                jsonObject.put("idCard", dataBean.getIdCard());
                 jsonObject.put("nickName", etNickname.getText().toString());
-                jsonObject.put("email", dataBean.getEmail());
                 jsonObject.put("phonenumber", etPhone.getText().toString());
-                if (!sexNan.isChecked()) {
-                    sex = 0;
-                }
                 jsonObject.put("sex", sex);
-                jsonObject.put("file", file);
-                jsonObject.put("remark", System.currentTimeMillis());
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            SharedPreferences sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
-            String token = sharedPreferences.getString("token", null);
-            //保存请求
-            final int finalSex = sex;
-            getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp() + "/system/user/updata", token, new Callback() {
+            getTools().sendPutRequestToken(jsonObject, "http://" + getServerIp() + "/prod-api/api/common/user", getToken(), new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
 
@@ -140,14 +144,74 @@ public class WoZiLiaoActivity extends BaseActivity implements View.OnClickListen
 
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-                    String json = response.body().string();
-                    Log.i(TAG, "onResponse6666666666: " + json);
-                    MyDataBean myDataBean = new Gson().fromJson(json, MyDataBean.class);
-                    dataBean.setNickName(etNickname.getText().toString());
-                    dataBean.setSex("1");
-                    dataBean.setPhonenumber(etPhone.getText().toString());
+                    String string = response.body().string();
+                    final UsersBean usersBean = new Gson().fromJson(string, UsersBean.class);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            showToast(usersBean.getMsg());
+                        }
+                    });
                 }
             });
+//                try {
+//                    File file = null;
+//                    if (imageUri != null) {
+//                        file = new File(imageUri);
+//                    }
+//                    Log.i(TAG, "onClick: " + imageUri);
+//                    int sex = 1;
+//                    RequestBody fileBody = RequestBody.create(MediaType.parse("application/from-data"), file);
+//                    MultipartBody multipartBody = new MultipartBody.Builder()
+//                            .setType(MultipartBody.FORM)
+//                            .addFormDataPart("userId", dataBean.getUserId()+"")
+//                            .addFormDataPart("idCard", etZjh.getText().toString())
+//                            .addFormDataPart("nickName", etNickname.getText().toString())
+//                            .addFormDataPart("email", dataBean.getEmail())
+//                            .addFormDataPart("phonenumber", etPhone.getText().toString())
+//                            .addFormDataPart("sex", sex+"")
+//                            .addFormDataPart("file", file.getName(), fileBody)
+//                            .addFormDataPart("remark", "备注")
+//                            .build();
+//                    Request request = new Request.Builder().url("http://" + getServerIp() + "/system/user/updata")
+//                            .header("Authorization",getToken()).post(multipartBody).build();
+//                    OkHttpClient okHttpClient = new OkHttpClient();
+//                    okHttpClient.newCall(request).enqueue(new Callback() {
+//                        @Override
+//                        public void onFailure(Call call, IOException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                        @Override
+//                        public void onResponse(Call call, Response response) throws IOException {
+//                            String json = response.body().string();
+//                            final MyDataBean myDataBean = new Gson().fromJson(json, MyDataBean.class);
+//                            try {
+//                                runOnUiThread(new Runnable() {
+//                                    @Override
+//                                    public void run() {
+//                                        if (myDataBean.getCode()==200){
+//                                            showToast("修改成功");
+//                                            finish();
+//                                        }else {
+//                                            showToast(myDataBean.getMsg());
+//                                        }
+//                                    }
+//                                });
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    });
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            showToast("未选择新头像");
+//                        }
+//                    });
+//                }
         }
     }
 

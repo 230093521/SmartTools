@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 
@@ -18,7 +20,7 @@ public class YlPgActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_yl_pg);
         initView();
         ivBase.setOnClickListener(new View.OnClickListener() {

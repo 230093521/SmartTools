@@ -1,13 +1,16 @@
 package com.gzeic.smartcity01.zhdj;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,18 +20,23 @@ import androidx.core.content.ContextCompat;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 
 public class ZHDJSuiShouPaiActivity extends BaseActivity {
 
     private ImageView newsBase;
     private ImageView yanshizhaopian;
-    private TextView xuanze;
-    private TextView paizhao;
+    private Button xuanze;
+    private Button paizhao;
+    private Button tijiao;
+    private TextView riqi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj_pai);
         initView();
         newsBase.setOnClickListener(new View.OnClickListener() {
@@ -68,13 +76,52 @@ public class ZHDJSuiShouPaiActivity extends BaseActivity {
             }
         });
 
+        riqi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog(ZHDJSuiShouPaiActivity.this,Calendar.getInstance(Locale.CHINA));
+            }
+        });
+
+        tijiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showToast("提交成功");
+                finish();
+            }
+        });
+
+    }
+
+    /**
+     * 日期选择
+     *
+     * @param activity
+     * @param calendar
+     */
+    public void showDatePickerDialog(final Activity activity, final Calendar calendar) {
+        // 直接创建一个DatePickerDialog对话框实例，并将它显示出来
+        new DatePickerDialog(activity, new DatePickerDialog.OnDateSetListener() {
+            // 绑定监听器(How the parent is notified that the date is set.)
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                // 此处得到选择的时间，可以进行你想要的操作
+                riqi.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth + "");
+            }
+        }
+                // 设置初始日期
+                , calendar.get(Calendar.YEAR)
+                , calendar.get(Calendar.MONTH)
+                , calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
     private void initView() {
         newsBase = (ImageView) findViewById(R.id.news_base);
-        yanshizhaopian = (ImageView) findViewById(R.id.yanshizhaopian);
-        xuanze = (TextView) findViewById(R.id.xuanze);
-        paizhao = (TextView) findViewById(R.id.paizhao);
+        yanshizhaopian = (ImageView) findViewById(R.id.zhaopian);
+        xuanze = (Button) findViewById(R.id.xuanze);
+        paizhao = (Button) findViewById(R.id.paizhao);
+        tijiao = (Button) findViewById(R.id.tijiao);
+        riqi = (TextView) findViewById(R.id.riqi);
     }
 
     @Override

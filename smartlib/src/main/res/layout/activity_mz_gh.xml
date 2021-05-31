@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"
@@ -36,30 +36,22 @@
             android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content">
-            <TextView
+            <Button
                 android:id="@+id/zhuanjia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
                 android:background="@drawable/btn_bg_bule"
                 android:text="专家号"
                 android:textColor="#FFF"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
                 />
-            <TextView
+            <Button
                 android:id="@+id/putong"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="40dp"
                 android:background="@drawable/btn_bg_bule"
                 android:text="普通号"
                 android:textColor="#FFF"
-                android:paddingLeft="30dp"
-                android:paddingRight="30dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
                 />
         </LinearLayout>
     </RelativeLayout>

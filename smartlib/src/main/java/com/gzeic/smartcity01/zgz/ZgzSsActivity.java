@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.ZwSsBean;
+import com.gzeic.smartcity01.bean.ZwrmBean;
 
 import java.io.IOException;
 import java.util.List;
@@ -32,7 +33,7 @@ public class ZgzSsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zgz_ss);
         initView();
         orderBase.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +43,7 @@ public class ZgzSsActivity extends BaseActivity {
             }
         });
         String zgzss = getSP("zgzss");
-        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/post/list?pageNum=1&pageSize=2&name=" + zgzss, new Callback() {
+        getTools().sendGetRequest("http://" + getServerIp() + " /prod-api/api/job/post/list?name=" + zgzss, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -51,9 +52,9 @@ public class ZgzSsActivity extends BaseActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String string = response.body().string();
-                ZwSsBean zwSsBean = new Gson().fromJson(string, ZwSsBean.class);
+                ZwrmBean zwSsBean = new Gson().fromJson(string, ZwrmBean.class);
                 if (zwSsBean.getCode() == 200) {
-                    final List<ZwSsBean.RowsDTO> zwSsBeanRows = zwSsBean.getRows();
+                    final List<ZwrmBean.RowsDTO> zwSsBeanRows = zwSsBean.getRows();
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -74,7 +75,6 @@ public class ZgzSsActivity extends BaseActivity {
                                         this.daiyu = (TextView) rootView.findViewById(R.id.daiyu);
                                         this.news_ll = (LinearLayout) rootView.findViewById(R.id.news_ll);
                                     }
-
                                 }
 
                                 @Override
@@ -94,8 +94,8 @@ public class ZgzSsActivity extends BaseActivity {
 
                                 @Override
                                 public View getView(int position, View convertView, ViewGroup parent) {
-                                    convertView = LayoutInflater.from(ZgzSsActivity.this).inflate(R.layout.item_zgz, null);
-                                    final ZwSsBean.RowsDTO rowsDTO = zwSsBeanRows.get(position);
+                                    convertView = LayoutInflater.from(ZgzSsActivity.this).inflate(R.layout.item_zgz_gw, null);
+                                    final ZwrmBean.RowsDTO rowsDTO = zwSsBeanRows.get(position);
                                     ViewHolder viewHolder = new ViewHolder(convertView);
                                     viewHolder.daiyu.setText(rowsDTO.getSalary());
                                     viewHolder.didian.setText(rowsDTO.getAddress());

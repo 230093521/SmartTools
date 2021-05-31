@@ -19,7 +19,7 @@ public class FpAlActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_fp_al);
         initView();
         metroBase.setOnClickListener(new View.OnClickListener() {
@@ -32,7 +32,7 @@ public class FpAlActivity extends AppCompatActivity {
         liebiao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FpAlActivity.this, FpAlxqActivity.class));
+                startActivity(new Intent(FpAlActivity.this,FpAlxqActivity.class));
             }
         });
     }

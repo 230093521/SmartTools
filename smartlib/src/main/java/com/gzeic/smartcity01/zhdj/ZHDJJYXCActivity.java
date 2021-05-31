@@ -1,6 +1,5 @@
 package com.gzeic.smartcity01.zhdj;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -42,7 +42,7 @@ public class ZHDJJYXCActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_zhdj_jyxc);
         initView();
         ivBase.setOnClickListener(new View.OnClickListener() {
@@ -52,8 +52,8 @@ public class ZHDJJYXCActivity extends BaseActivity implements View.OnClickListen
             }
         });
         ziyuanList = new ArrayList<>();
-        ziyuanList.add(new ZHDJDYXXXQActivity.testZiyuan("张三", "2020-12-22 12:30", "测试留言内容"));
-        ziyuanList.add(new ZHDJDYXXXQActivity.testZiyuan("李四", "2020-12-22 12:30", "测试留言内容"));
+        ziyuanList.add(new ZHDJDYXXXQActivity.testZiyuan("张三", "2020-12-22 12:30", "为加强基层党组织和群众的关系，进一步推进基层党员进社区活动，5月10日上午，崇文社区带领社区党员来到南京市雨花台烈士陵园进行参观，参观学习过程中，党员们互相交流经验，讨论了在生活当中群众遇到的热点难点问题，切实把人们的思想统一到党的十九大精神上来，把力量凝聚到实现党的十九大确定的任务中来。参观结束后，党员们回到社区进行座谈会，进一步巩固心得。"));
+        ziyuanList.add(new ZHDJDYXXXQActivity.testZiyuan("李四", "2020-12-22 12:30", "提升党性修养，弘扬爱国主义精神，践行社会主义核心价值观，增强“四个意识”、坚定“四个自信”、做到“两个维护”注入了一剂有力的“强心剂”"));
         plList.setAdapter(new MyAdapter());
     }
 
@@ -87,23 +87,6 @@ public class ZHDJJYXCActivity extends BaseActivity implements View.OnClickListen
     }
 
     class MyAdapter extends BaseAdapter {
-        class ViewHolder {
-            public View rootView;
-            public ImageView plx_image;
-            public TextView plx_nickname;
-            public TextView plx_time;
-            public TextView plx_content;
-
-            public ViewHolder(View rootView) {
-                this.rootView = rootView;
-                this.plx_image = (ImageView) rootView.findViewById(R.id.plx_image);
-                this.plx_nickname = (TextView) rootView.findViewById(R.id.plx_nickname);
-                this.plx_time = (TextView) rootView.findViewById(R.id.plx_time);
-                this.plx_content = (TextView) rootView.findViewById(R.id.plx_content);
-            }
-
-        }
-
         @Override
         public int getCount() {
             return ziyuanList.size();
@@ -121,13 +104,40 @@ public class ZHDJJYXCActivity extends BaseActivity implements View.OnClickListen
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_comment, null);
+            view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_xw_pl, null);
             ViewHolder viewHolder = new ViewHolder(view);
             viewHolder.plx_image.setImageResource(R.drawable.ic_icon);
             viewHolder.plx_nickname.setText(ziyuanList.get(i).getName());
             viewHolder.plx_content.setText(ziyuanList.get(i).getNeirong());
             viewHolder.plx_time.setText(ziyuanList.get(i).getTime());
+            viewHolder.dianzanll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showToast("点赞成功");
+                }
+            });
             return view;
+        }
+
+        class ViewHolder {
+            public View rootView;
+            public ImageView plx_image;
+            public TextView plx_nickname;
+            public TextView plx_time;
+            public TextView plx_content;
+            public TextView dianzanshu;
+            public LinearLayout dianzanll;
+
+            public ViewHolder(View rootView) {
+                this.rootView = rootView;
+                this.plx_image = (ImageView) rootView.findViewById(R.id.plx_image);
+                this.plx_nickname = (TextView) rootView.findViewById(R.id.plx_nickname);
+                this.plx_time = (TextView) rootView.findViewById(R.id.plx_time);
+                this.plx_content = (TextView) rootView.findViewById(R.id.plx_content);
+                this.dianzanshu = (TextView) rootView.findViewById(R.id.dianzanshu);
+                this.dianzanll = (LinearLayout) rootView.findViewById(R.id.dianzanll);
+            }
+
         }
     }
 

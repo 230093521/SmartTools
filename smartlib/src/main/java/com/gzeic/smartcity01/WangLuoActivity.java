@@ -1,6 +1,7 @@
 package com.gzeic.smartcity01;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -9,13 +10,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.xsonline.smartlib.R;
 
 
-public class WangLuoActivity extends AppCompatActivity implements View.OnClickListener {
+public class WangLuoActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText setAddress;
     private TextView setSave;
@@ -48,9 +48,13 @@ public class WangLuoActivity extends AppCompatActivity implements View.OnClickLi
                 SharedPreferences sharedPreferences = getSharedPreferences("address", MODE_PRIVATE);
                 sharedPreferences.edit().putString("add", s).apply();
                 Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
+                String[] split = s.split("\\:");
+                putSP("address2",split[0]+":10002");
+                startActivity(new Intent(WangLuoActivity.this,WoDenLuActivity.class));
                 finish();
             }
-        } else if (id == R.id.set_back) {//                startActivity(new Intent(SetNetworkActivity.this,GuideActivity.class));
+        } else if (id == R.id.set_back) {
+            //startActivity(new Intent(SetNetworkActivity.this,GuideActivity.class));
             finish();
         }
     }

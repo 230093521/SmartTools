@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="IP端口设置"
         android:onClick="onClick"
-        android:textColor="#2196F3"
+        android:textColor="#5F8BFA"
         android:layout_alignParentEnd="true"
         android:layout_margin="30dp"
         android:padding="5dp"

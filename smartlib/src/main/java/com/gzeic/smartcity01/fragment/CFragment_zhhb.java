@@ -97,7 +97,7 @@ public class CFragment_zhhb extends BaseFragment implements View.OnClickListener
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_news_time, null);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_xw_sj, null);
                 final ShowTestData showTestData = showTestDataList.get(position);
                 ViewHolder viewHolder = new ViewHolder(convertView);
                 viewHolder.news_title.setText(showTestData.title);

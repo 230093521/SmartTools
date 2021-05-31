@@ -23,8 +23,8 @@ public class ZHDJZZHDXQActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
-        setContentView(R.layout.activity_zhdj_xq);
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
+        setContentView(R.layout.activity_zhdj_hdxq);
         initView();
         String huodong = getSP("huodong");
         ZHDJActivity.testnews testnews = new Gson().fromJson(huodong, ZHDJActivity.testnews.class);

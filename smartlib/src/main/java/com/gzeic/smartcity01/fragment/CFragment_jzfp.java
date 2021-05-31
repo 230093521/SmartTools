@@ -98,7 +98,7 @@ public class CFragment_jzfp extends BaseFragment implements View.OnClickListener
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_news_time, null);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_xw_sj, null);
                 final ShowTestData showTestData = showTestDataList.get(position);
                 ViewHolder viewHolder = new ViewHolder(convertView);
                 viewHolder.news_title.setText(showTestData.title);
@@ -136,15 +136,19 @@ public class CFragment_jzfp extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.fpal) {
-            startActivity(new Intent(getContext(), FpAlActivity.class));
-        } else if (id == R.id.cqcm) {
-            startActivity(new Intent(getContext(), FpCqcmActivity.class));
-        } else if (id == R.id.gzt) {
-            startActivity(new Intent(getContext(), FpGztActivity.class));
-        } else if (id == R.id.xw) {
-            startActivity(new Intent(getContext(), FpXwActivity.class));
+        switch (v.getId()) {
+            case R.id.fpal:
+                startActivity(new Intent(getContext(), FpAlActivity.class));
+                break;
+            case R.id.cqcm:
+                startActivity(new Intent(getContext(), FpCqcmActivity.class));
+                break;
+            case R.id.gzt:
+                startActivity(new Intent(getContext(), FpGztActivity.class));
+                break;
+            case R.id.xw:
+                startActivity(new Intent(getContext(), FpXwActivity.class));
+                break;
         }
     }
 

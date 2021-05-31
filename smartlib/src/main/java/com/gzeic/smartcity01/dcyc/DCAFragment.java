@@ -3,9 +3,14 @@ package com.gzeic.smartcity01.dcyc;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,17 +23,23 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.load.engine.Resource;
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
 import com.xsonline.smartlib.R;
 import com.gzeic.smartcity01.bean.NctjBean;
 import com.gzeic.smartcity01.bean.SsqsjldBean;
+import com.gzeic.smartcity01.zhsq.SqWuYeActivity;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -63,6 +74,7 @@ public class DCAFragment extends BaseFragment {
     List<String> qulist;
     SsqsjldBean[] ssqsjldBeans;
     File file;
+    boolean flag = false;
     private ImageView tupian;
 
 
@@ -88,7 +100,36 @@ public class DCAFragment extends BaseFragment {
         tijiaoanniu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadForm(file, "http://" + getServerIp() + "/userinfo/caraction", new Callback() {
+                String chepai = chepaihao.getText().toString();
+                if (chepai.isEmpty()) {
+                    showToast("车牌号不能为空");
+                    return;
+                }
+                String xingmina = xinmin.getText().toString();
+                if (xingmina.isEmpty()) {
+                    showToast("姓名不能为空");
+                    return;
+                }
+                String shoujihao2 = shoujihao.getText().toString();
+                if (shoujihao2.isEmpty()) {
+                    showToast("手机号不能为空");
+                    return;
+                }
+                String shenfenzhenga = shenfenzheng.getText().toString();
+                if (shenfenzhenga.isEmpty()) {
+                    showToast("身份证号不能为空");
+                    return;
+                }
+                String xiangxixinxi = xiangxi.getText().toString();
+                if (xiangxixinxi.isEmpty()) {
+                    showToast("详细信息不能为空");
+                    return;
+                }
+                if (!flag){
+                    showToast("您还未拍照，请先拍照噢！");
+                    return;
+                }
+                getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/caraction", new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
 
@@ -97,7 +138,7 @@ public class DCAFragment extends BaseFragment {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         String string = response.body().string();
-                        Log.i(TAG, "onResponse: "+string);
+                        Log.i(TAG, "onResponse: " + string);
                         String json = "{\n" +
                                 " \"msg\": \"操作成功\",\n" +
                                 " \"code\": 200,\n" +
@@ -148,65 +189,66 @@ public class DCAFragment extends BaseFragment {
             //获取相机返回的数据，并转换为Bitmap图片格式，这是缩略图
             Bitmap bitmap = (Bitmap) bundle.get("data");
             tupian.setImageBitmap(bitmap);
+            flag = true;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void uploadForm(File file, String url, Callback callback) {
-        String chepai = chepaihao.getText().toString();
-        if (chepai.isEmpty()) {
-            showToast("车牌号不能为空");
-            return;
-        }
-        String xingmina = xinmin.getText().toString();
-        if (xingmina.isEmpty()) {
-            showToast("姓名不能为空");
-            return;
-        }
-        String shoujihao2 = shoujihao.getText().toString();
-        if (shoujihao2.isEmpty()) {
-            showToast("手机号不能为空");
-            return;
-        }
-        String shenfenzhenga = shenfenzheng.getText().toString();
-        if (shenfenzhenga.isEmpty()) {
-            showToast("身份证号不能为空");
-            return;
-        }
-        String xiangxixinxi = xiangxi.getText().toString();
-        if (xiangxixinxi.isEmpty()) {
-            showToast("详细信息不能为空");
-            return;
-        }
-        String shenfenxinxi = shenlist.get(shengfen.getSelectedItemPosition());
-        String shixinxi = shilist.get(shiqu.getSelectedItemPosition());
-        String diquxinxi = qulist.get(diqu.getSelectedItemPosition());
-//        if (file == null) {
-//            //ImageView中的图像转为BitmapDrawable再到bitmap
-//            BitmapDrawable drawable = (BitmapDrawable) tupian.getDrawable();
-//            Bitmap bitmap = drawable.getBitmap();
-//            file = getFile(bitmap);
+//    private void uploadForm(File file, String url, Callback callback) {
+//        String chepai = chepaihao.getText().toString();
+//        if (chepai.isEmpty()) {
+//            showToast("车牌号不能为空");
+//            return;
 //        }
-        RequestBody fileBody = RequestBody.create(MediaType.parse("application/from-data"), file);
-        MultipartBody multipartBody = new MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart("cardId", shenfenzhenga)
-                .addFormDataPart("names", xingmina)
-                .addFormDataPart("userId", "1")
-                .addFormDataPart("tel", shoujihao2)
-                .addFormDataPart("address", shenfenxinxi + shixinxi + diquxinxi + xiangxixinxi)
-                .addFormDataPart("plates", chepai)
-                .addFormDataPart("file", "")
-                .build();
-        Request request = new Request.Builder()
-                .url(url)
-                .header("Authorization",getToken())
-                .post(multipartBody)
-                .build();
-        OkHttpClient okHttpClient = new OkHttpClient();
-        okHttpClient.newCall(request).enqueue(callback);
-
-    }
+//        String xingmina = xinmin.getText().toString();
+//        if (xingmina.isEmpty()) {
+//            showToast("姓名不能为空");
+//            return;
+//        }
+//        String shoujihao2 = shoujihao.getText().toString();
+//        if (shoujihao2.isEmpty()) {
+//            showToast("手机号不能为空");
+//            return;
+//        }
+//        String shenfenzhenga = shenfenzheng.getText().toString();
+//        if (shenfenzhenga.isEmpty()) {
+//            showToast("身份证号不能为空");
+//            return;
+//        }
+//        String xiangxixinxi = xiangxi.getText().toString();
+//        if (xiangxixinxi.isEmpty()) {
+//            showToast("详细信息不能为空");
+//            return;
+//        }
+//        String shenfenxinxi = shenlist.get(shengfen.getSelectedItemPosition());
+//        String shixinxi = shilist.get(shiqu.getSelectedItemPosition());
+//        String diquxinxi = qulist.get(diqu.getSelectedItemPosition());
+////        if (file == null) {
+////            //ImageView中的图像转为BitmapDrawable再到bitmap
+////            BitmapDrawable drawable = (BitmapDrawable) tupian.getDrawable();
+////            Bitmap bitmap = drawable.getBitmap();
+////            file = getFile(bitmap);
+////        }
+////        RequestBody fileBody = RequestBody.create(MediaType.parse("application/from-data"), file);
+////        MultipartBody multipartBody = new MultipartBody.Builder()
+////                .setType(MultipartBody.FORM)
+////                .addFormDataPart("cardId", shenfenzhenga)
+////                .addFormDataPart("names", xingmina)
+////                .addFormDataPart("userId", "1")
+////                .addFormDataPart("tel", shoujihao2)
+////                .addFormDataPart("address", shenfenxinxi + shixinxi + diquxinxi + xiangxixinxi)
+////                .addFormDataPart("plates", chepai)
+////                .addFormDataPart("file", "")
+////                .build();
+////        Request request = new Request.Builder()
+////                .url(url)
+////                .header("Authorization",getToken())
+////                .post(multipartBody)
+////                .build();
+////        OkHttpClient okHttpClient = new OkHttpClient();
+////        okHttpClient.newCall(request).enqueue(callback);
+//
+//    }
 
 
     public void senPostFile(MultipartBody multipartBody, String url, File file, Callback callback) {

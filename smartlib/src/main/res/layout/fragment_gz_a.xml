@@ -56,12 +56,23 @@
                     android:background="@drawable/btn_sousuo"
                     />
             </RelativeLayout>
-            <GridView
+            <com.gzeic.smartcity01.Tools.MyGridView
                 android:id="@+id/gongge"
                 android:layout_width="match_parent"
                 android:numColumns="3"
                 android:gravity="center"
-                android:layout_height="200dp"/>
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="职位列表"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                />
             <com.gzeic.smartcity01.Tools.ListViewScrollView
                 android:id="@+id/listview"
                 android:layout_width="match_parent"

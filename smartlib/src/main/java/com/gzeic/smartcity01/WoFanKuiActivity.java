@@ -29,11 +29,12 @@ public class WoFanKuiActivity extends BaseActivity implements View.OnClickListen
     private EditText etFeedback;
     private TextView submit;
     private TextView tvZishu;
+    private EditText etFeedbackBiaoti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_wo_fk);
         initView();
     }
@@ -55,7 +56,7 @@ public class WoFanKuiActivity extends BaseActivity implements View.OnClickListen
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 Editable text = etFeedback.getText();
                 int len = text.length();
-                tvZishu.setText(len+""+"/150");
+                tvZishu.setText(len + "" + "/150");
             }
 
             @Override
@@ -64,6 +65,7 @@ public class WoFanKuiActivity extends BaseActivity implements View.OnClickListen
             }
         });
 
+        etFeedbackBiaoti = (EditText) findViewById(R.id.et_feedback_biaoti);
     }
 
 
@@ -74,16 +76,21 @@ public class WoFanKuiActivity extends BaseActivity implements View.OnClickListen
             finish();
         } else if (id == R.id.submit) {
             if (etFeedback.getText().toString().isEmpty()) {
+                showToast("内容不能为空");
+                return;
+            }
+            if (etFeedbackBiaoti.getText().toString().isEmpty()) {
+                showToast("标题不能为空");
                 return;
             }
             JSONObject jsonObject = new JSONObject();
             try {
                 jsonObject.put("content", etFeedback.getText().toString());
-                jsonObject.put("userId", 1);
+                jsonObject.put("title", etFeedbackBiaoti.getText().toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp() + "/userinfo/feedback", getToken(), new Callback() {
+            getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp() + "/prod-api/api/metro/feedback", getToken(), new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
 
@@ -98,6 +105,7 @@ public class WoFanKuiActivity extends BaseActivity implements View.OnClickListen
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                etFeedbackBiaoti.setText("");
                                 etFeedback.setText("");
                                 showToast("提交成功");
                             }

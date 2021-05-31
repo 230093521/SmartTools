@@ -2,8 +2,8 @@ package com.gzeic.smartcity01.mzyy;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,24 +28,29 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MzYyxqActivity extends BaseActivity {
-    List<YiYuanTuBean.RowsBean> rows;
+    List<YiYuanTuBean.DataDTO> rows;
     private ImageView metroBase;
     private Banner banner;
     private TextView mainNeirong;
     private Button btnYuyue;
     List<String> imageViewslist;
-    YiYuanBean.RowsBean rowsBean;
+    YiYuanBean.RowsDTO rowsBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_mz_yyxq);
         String json = getSP("yiyuan");
-        rowsBean = new Gson().fromJson(json, YiYuanBean.RowsBean.class);
+        rowsBean = new Gson().fromJson(json, YiYuanBean.RowsDTO.class);
         initView();
+        getLunbo();
+
+    }
+
+    private void getLunbo() {
         //轮播图
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/img/list?hospitalId=" + rowsBean.getId(), getToken(), new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/hospital/banner/list?hospitalId=" + rowsBean.getId(), getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -57,21 +62,20 @@ public class MzYyxqActivity extends BaseActivity {
                 YiYuanTuBean yiYuanBean = new Gson().fromJson(json, YiYuanTuBean.class);
                 if (yiYuanBean.getCode() == 200) {
                     imageViewslist=new ArrayList<>();
-                    rows = yiYuanBean.getRows();
-                    for (YiYuanTuBean.RowsBean row : rows) {
+                    rows = yiYuanBean.getData();
+                    for (YiYuanTuBean.DataDTO row : rows) {
                         imageViewslist.add("http://"+getServerIp()+row.getImgUrl());
                     }
-                    initTu();
+                    getyyxq();
 
                 }
             }
         });
-
     }
 
-    private void initTu() {
+    private void getyyxq() {
         //详细信息
-        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/registration/" + rowsBean.getId(), new Callback() {
+        getTools().sendGetRequest("http://" + getServerIp() + "/prod-api/api/hospital/hospital/" + rowsBean.getId(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -88,7 +92,7 @@ public class MzYyxqActivity extends BaseActivity {
                             banner.setImageLoader(new GlideImageLoader());
                             banner.setImages(imageViewslist);
                             banner.start();
-                            mainNeirong.setText(yiYuanXqBean.getData().getBrief());
+                            mainNeirong.setText(Html.fromHtml(yiYuanXqBean.getData().getBrief()));
                         }
                     });
                 }

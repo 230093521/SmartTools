@@ -11,7 +11,6 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
 import com.xsonline.smartlib.R;
@@ -44,19 +43,19 @@ public class MzYydActivity extends BaseActivity implements View.OnClickListener 
     SimpleDateFormat simpleDateFormat;
     //获取日期格式器对象
     Calendar calendar = Calendar.getInstance(Locale.CHINA);
-    KaPianBean.RowsBean rowsBean;
-    KeShiBean.RowsBean rowsBean1;
+    KaPianBean.RowsDTO rowsBean;
+    KeShiBean.RowsDTO rowsBean1;
     String leixin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_mz_yyd);
         String kapian = getSP("kapian");
         String keshis = getSP("keshi");
         leixin = getSP("leixin");
-        rowsBean = new Gson().fromJson(kapian, KaPianBean.RowsBean.class);
-        rowsBean1 = new Gson().fromJson(keshis, KeShiBean.RowsBean.class);
+        rowsBean = new Gson().fromJson(kapian, KaPianBean.RowsDTO.class);
+        rowsBean1 = new Gson().fromJson(keshis, KeShiBean.RowsDTO.class);
         initView();
         simpleDateFormat  = new SimpleDateFormat("HH:mm");
         name.setText(rowsBean.getName());
@@ -110,16 +109,15 @@ public class MzYydActivity extends BaseActivity implements View.OnClickListener 
         } else if (id == R.id.queding) {
             JSONObject jsonObject = new JSONObject();
             try {
-                jsonObject.put("patientName", name.getText().toString());
-                jsonObject.put("divisionId", rowsBean1.getId());
-                jsonObject.put("typesId", leixin);
-                jsonObject.put("moeny", rowsBean1.getMoney());
-                jsonObject.put("startime", riqi.getText().toString() + " " + shijian.getText().toString());
-                jsonObject.put("userId", rowsBean.getUserId());
+                jsonObject.put("categoryId", rowsBean1.getId());
+                jsonObject.put("money", rowsBean1.getMoney());
+                jsonObject.put("patientName", rowsBean.getName());
+                jsonObject.put("type", rowsBean1.getType());
+                jsonObject.put("reserveTime", riqi.getText().toString() + " " + shijian.getText().toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp() + "/userinfo/order", getToken(), new Callback() {
+            getTools().sendPostRequestToken(jsonObject, "http://" + getServerIp() + "/prod-api/api/hospital", getToken(), new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
 

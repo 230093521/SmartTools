@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#03A9F4">
+        android:background="#5F8BFA">
         <ImageView
             android:id="@+id/metro_base"
             android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:text="缴费单位"
                 android:textSize="15sp"
-                android:textColor="#673AB7"
+                android:textColor="#FDD876"
                 android:layout_marginLeft="20dp"
                 />
             <TextView
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:text="缴费户号"
                 android:textSize="15sp"
-                android:textColor="#673AB7"
+                android:textColor="#FDD876"
                 android:layout_marginLeft="20dp"
                 />
             <TextView
@@ -160,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:text="缴费金额"
                 android:textSize="15sp"
-                android:textColor="#673AB7"
+                android:textColor="#FDD876"
                 android:layout_marginStart="20dp"
                 />
             <EditText
@@ -192,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:text="户名"
                 android:textSize="15sp"
-                android:textColor="#673AB7"
+                android:textColor="#FDD876"
                 android:layout_marginStart="20dp"
                 />
             <TextView
@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:text="可用余额"
                 android:textSize="15sp"
-                android:textColor="#673AB7"
+                android:textColor="#FDD876"
                 android:layout_marginLeft="20dp"
                 />
             <TextView

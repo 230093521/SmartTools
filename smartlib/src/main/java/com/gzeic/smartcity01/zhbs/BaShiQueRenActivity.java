@@ -1,17 +1,15 @@
 package com.gzeic.smartcity01.zhbs;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseActivity;
-import com.gzeic.smartcity01.DinDanActivity;
 import com.xsonline.smartlib.R;
+import com.gzeic.smartcity01.WoDinDanActivity;
 import com.gzeic.smartcity01.bean.BashiBean;
 
 import org.json.JSONException;
@@ -31,35 +29,44 @@ public class BaShiQueRenActivity extends BaseActivity {
     private EditText scdd;
     private EditText xcdd;
     private Button btnNext;
-    BashiBean.RowsBean rowsBean;
+    BashiBean.RowsDTO rowsBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#03A9F4"));
+        getWindow().setStatusBarColor(getColor(R.color.colorPrimary));
         setContentView(R.layout.activity_ba_shi_que_ren);
         initView();
         String xianlu = getSP("xianlu");
-        rowsBean = new Gson().fromJson(xianlu, BashiBean.RowsBean.class);
-
+        name.setText(getSP("ccrxm"));
+        phone.setText(getSP("ccrsjh"));
+        scdd.setText(getSP("scdd"));
+        xcdd.setText(getSP("xcdd"));
+        rowsBean = new Gson().fromJson(xianlu, BashiBean.RowsDTO.class);
+        metroBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 JSONObject jsonObject = new JSONObject();
                 try {
-                    jsonObject.put("start",rowsBean.getFirst());
-                    jsonObject.put("end",rowsBean.getEnd());
+                    jsonObject.put("start",getSP("scdd"));
+                    jsonObject.put("end",getSP("xcdd"));
                     jsonObject.put("userName",name.getText().toString());
                     jsonObject.put("userTel",phone.getText().toString());
                     jsonObject.put("price",rowsBean.getPrice());
                     jsonObject.put("path",rowsBean.getName());
-                    jsonObject.put("status","1");
-                    jsonObject.put("userId","1");
+                    jsonObject.put("status",0);
+                    jsonObject.put("userId",getUserdata().getUserId());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-                getTools().sendPostRequestToken(jsonObject, "http://"+getServerIp()+"/userinfo/busOrders", getToken(), new Callback() {
+                getTools().sendPostRequestToken(jsonObject, "http://"+getServerIp()+"/prod-api/api/bus/order", getToken(), new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
 
@@ -73,7 +80,7 @@ public class BaShiQueRenActivity extends BaseActivity {
                                 @Override
                                 public void run() {
                                     showToast("提交成功");
-                                    startActivity(new Intent(BaShiQueRenActivity.this, DinDanActivity.class));
+                                    startActivity(new Intent(BaShiQueRenActivity.this, WoDinDanActivity.class));
                                 }
                             });
                         }

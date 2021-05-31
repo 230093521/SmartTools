@@ -32,7 +32,18 @@ public class JCCFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_jc_c, container, false);
         initView(view);
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/apt/list?userId=2&pageNum=1&pageSize=10", getToken(), new Callback() {
+        show();
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        show();
+    }
+
+    public void show(){
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/userinfo/apt/list?userId="+getUserdata().getUserId()+"&pageNum=1&pageSize=10", getToken(), new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -80,7 +91,7 @@ public class JCCFragment extends BaseFragment {
 
                                 @Override
                                 public View getView(int position, View convertView, ViewGroup parent) {
-                                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_jcwdyy, null);
+                                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_yyjc_wdyy, null);
                                     YydindBean.RowsDTO rowsDTO = yydindBeanRows.get(position);
                                     ViewHolder viewHolder = new ViewHolder(convertView);
                                     viewHolder.chepai.setText(rowsDTO.getPlateNum());
@@ -95,7 +106,6 @@ public class JCCFragment extends BaseFragment {
             }
         });
 
-        return view;
     }
 
     private void initView(View view) {

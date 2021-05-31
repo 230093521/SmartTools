@@ -1,117 +1,134 @@
 package com.gzeic.smartcity01.fragment;
 
-import android.content.Context;
+
+import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 
 import com.bumptech.glide.Glide;
-import com.google.gson.Gson;
 import com.gzeic.smartcity01.BaseFragment;
 import com.xsonline.smartlib.R;
-import com.gzeic.smartcity01.WoDenLuActivity;
 import com.gzeic.smartcity01.WoDinDanActivity;
 import com.gzeic.smartcity01.WoFanKuiActivity;
+import com.gzeic.smartcity01.WoGywmActivity;
 import com.gzeic.smartcity01.WoMiMaActivity;
 import com.gzeic.smartcity01.WoZiLiaoActivity;
-import com.gzeic.smartcity01.bean.MyDataBean;
+import com.gzeic.smartcity01.bean.UsersBean;
+import com.gzeic.smartcity01.x_csdt.CsdtCcxzActivity;
+import com.gzeic.smartcity01.x_csdt.CsdtSwzlActivity;
 
-import java.io.IOException;
+public class EFragment extends BaseFragment {
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
-
-public class EFragment extends BaseFragment implements View.OnClickListener{
 
     private ImageView ivIcon;
     private TextView tvNickname;
-    private RelativeLayout rlSetting;
-    private RelativeLayout rlDindan;
-    private RelativeLayout rlSetpass;
-    private RelativeLayout rlYijian;
-    private TextView tvExit;
-    private MyDataBean.DataBean dataBean;
+    private ImageView xwzl;
+    private ImageView ccxz;
+    private ImageView dtrx;
+    private RelativeLayout rlYjfk;
+    private RelativeLayout rlGywm;
+    private RelativeLayout rlGrsz;
+    private RelativeLayout rlXgmm;
+    private Button tvExit;
+    private RelativeLayout rlWddd;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_e, container, false);
         initView(view);
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("token", Context.MODE_PRIVATE);
-        String token = sharedPreferences.getString("token", null);
-        getTools().sendGetRequestToken("http://" + getServerIp() + "/system/user/1", token, new Callback() {
+        UsersBean.UserDTO userdata = getUserdata();
+        Glide.with(getContext()).load("http://" + getServerIp() + userdata.getAvatar()).error(R.drawable.icon2).into(ivIcon);
+        tvNickname.setText(userdata.getNickName());
+        tvExit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(Call call, IOException e) {
-
+            public void onClick(View v) {
+                showToast("退出成功");
+                getActivity().finish();
             }
-
+        });
+        xwzl.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String json = response.body().string();
-                SharedPreferences userdata = getActivity().getSharedPreferences("userdata", Context.MODE_PRIVATE);
-                userdata.edit().putString("userdata",json).apply();
-                MyDataBean myDataBean = new Gson().fromJson(json, MyDataBean.class);
-                if (myDataBean.getCode() == 200) {
-                    dataBean = myDataBean.getData();
-                    showData();
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), CsdtSwzlActivity.class));
+            }
+        });
+        ccxz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), CsdtCcxzActivity.class));
+            }
+        });
+        rlWddd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WoDinDanActivity.class));
+            }
+        });
+        dtrx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    showToast("请授予拨打电话权限");
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE}, 1);
                 } else {
-
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:0755-01126341"));
+                    startActivity(intent);
                 }
             }
         });
+        rlYjfk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WoFanKuiActivity.class));
+            }
+        });
+        rlGywm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WoGywmActivity.class));
+            }
+        });
+        rlGrsz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WoZiLiaoActivity.class));
+            }
+        });
+        rlXgmm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), WoMiMaActivity.class));
+            }
+        });
+
 
         return view;
     }
 
-    public void showData() {
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Glide.with(getContext()).load("http://" + getServerIp() + dataBean.getAvatar()).error(R.mipmap.ic_launcher).into(ivIcon);
-                tvNickname.setText(dataBean.getNickName());
-            }
-        });
-    }
 
     private void initView(View view) {
         ivIcon = (ImageView) view.findViewById(R.id.iv_icon);
         tvNickname = (TextView) view.findViewById(R.id.tv_nickname);
-        rlSetting = (RelativeLayout) view.findViewById(R.id.rl_setting);
-        rlDindan = (RelativeLayout) view.findViewById(R.id.rl_dindan);
-        rlSetpass = (RelativeLayout) view.findViewById(R.id.rl_setpass);
-        rlYijian = (RelativeLayout) view.findViewById(R.id.rl_yijian);
-        tvExit = (TextView) view.findViewById(R.id.tv_exit);
-        rlSetting.setOnClickListener(this);
-        rlDindan.setOnClickListener(this);
-        rlSetpass.setOnClickListener(this);
-        rlYijian.setOnClickListener(this);
-        tvExit.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-        if (id == R.id.rl_setting) {
-            startActivity(new Intent(getContext(), WoZiLiaoActivity.class));
-        } else if (id == R.id.rl_dindan) {
-            startActivity(new Intent(getContext(), WoDinDanActivity.class));
-        } else if (id == R.id.rl_setpass) {
-            startActivity(new Intent(getContext(), WoMiMaActivity.class));
-        } else if (id == R.id.rl_yijian) {
-            startActivity(new Intent(getContext(), WoFanKuiActivity.class));
-        } else if (id == R.id.tv_exit) {
-            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("token", Context.MODE_PRIVATE);
-            sharedPreferences.edit().putString("token", "").apply();
-            startActivity(new Intent(getContext(), WoDenLuActivity.class));
-            getActivity().finish();
-        }
+        xwzl = (ImageView) view.findViewById(R.id.xwzl);
+        ccxz = (ImageView) view.findViewById(R.id.ccxz);
+        dtrx = (ImageView) view.findViewById(R.id.dtrx);
+        rlYjfk = (RelativeLayout) view.findViewById(R.id.rl_yjfk);
+        rlGywm = (RelativeLayout) view.findViewById(R.id.rl_gywm);
+        rlGrsz = (RelativeLayout) view.findViewById(R.id.rl_grsz);
+        rlXgmm = (RelativeLayout) view.findViewById(R.id.rl_xgmm);
+        tvExit = (Button) view.findViewById(R.id.tv_exit);
+        rlWddd = (RelativeLayout) view.findViewById(R.id.rl_wddd);
     }
 }

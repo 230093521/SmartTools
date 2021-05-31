@@ -2,6 +2,7 @@ package com.gzeic.smartcity01.zgz;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,7 @@ public class GZAFragment extends BaseFragment {
                 startActivity(new Intent(getContext(), ZgzSsActivity.class));
             }
         });
-        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/profession/list", new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/job/profession/list", getToken(),new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -105,7 +106,7 @@ public class GZAFragment extends BaseFragment {
 
                                 @Override
                                 public View getView(int position, View convertView, ViewGroup parent) {
-                                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_zw, null);
+                                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_zgz_zw, null);
                                     final ZwBean.RowsDTO rowsDTO = zwrmBeanRows.get(position);
                                     ViewHolder viewHolder = new ViewHolder(convertView);
                                     viewHolder.fw_text.setText(rowsDTO.getProfessionName());
@@ -128,7 +129,7 @@ public class GZAFragment extends BaseFragment {
     }
 
     private void getZwList(final String num) {
-        getTools().sendGetRequest("http://" + getServerIp() + "/userinfo/post/list?pageNum=1&pageSize=2&professionId=" + num, new Callback() {
+        getTools().sendGetRequestToken("http://" + getServerIp() + "/prod-api/api/job/post/list?professionId=" + num, getToken(),new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
 
@@ -137,6 +138,7 @@ public class GZAFragment extends BaseFragment {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String string = response.body().string();
+                Log.i(TAG, "onResponse:xxxxxxx "+string);
                 ZwrmBean zwrmBean = new Gson().fromJson(string, ZwrmBean.class);
                 if (zwrmBean.getCode() == 200) {
                     final List<ZwrmBean.RowsDTO> zwrmBeanRows = zwrmBean.getRows();
@@ -178,7 +180,7 @@ public class GZAFragment extends BaseFragment {
 
                                 @Override
                                 public View getView(int position, View convertView, ViewGroup parent) {
-                                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_zgz, null);
+                                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_zgz_gw, null);
                                     ViewHolder viewHolder = new ViewHolder(convertView);
                                     final ZwrmBean.RowsDTO rowsDTO = zwrmBeanRows.get(position);
                                     viewHolder.daiyu.setText(rowsDTO.getSalary());
@@ -189,7 +191,7 @@ public class GZAFragment extends BaseFragment {
                                         @Override
                                         public void onClick(View v) {
                                             putSP("zwdata",new Gson().toJson(rowsDTO));
-                                            startActivity(new Intent(getContext(), ZgzXqActivity.class));
+                                            startActivity(new Intent(getContext(),ZgzXqActivity.class));
                                         }
                                     });
                                     return convertView;
