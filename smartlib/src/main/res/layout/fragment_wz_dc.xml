@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".x_wz.WZDbFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="常见问题"
+        android:textColor="#333"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        />
+    <com.gzeic.smartcity01.Tools.ListViewScrollView
+        android:id="@+id/fw"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.gzeic.smartcity01.Tools.ListViewScrollView>
+</LinearLayout>

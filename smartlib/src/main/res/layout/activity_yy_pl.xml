@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".x_yy.YyPlActivity">
+    <RelativeLayout
+        android:id="@+id/toplan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5F8BFA"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="影片详情"
+            android:textColor="#FFF" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="评分"
+            android:textSize="25sp"
+            android:textColor="#2196F3"
+            android:layout_height="wrap_content"/>
+        <RatingBar
+            android:id="@+id/pf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.1"/>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="left"
+        android:background="@drawable/edit_search_shape"
+        android:hint="请输入内容"
+        android:layout_margin="10dp"
+        android:padding="5dp"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_sousuo"
+        android:text="提交"
+        android:textColor="#FFF" />
+</LinearLayout>

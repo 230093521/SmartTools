@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E2135"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/jine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="缴费金额:50元"
+                    android:textColor="#E0F1FF" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/sfh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="水费号:1888888888"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#FFF"
+                        />
+                    <TextView
+                        android:id="@+id/jfsj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="交费时间:2021-05-08 13:14"
+                        android:layout_marginStart="10dp"
+                        android:textColor="#FFF"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

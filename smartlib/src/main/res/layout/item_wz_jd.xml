@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="20dp"
+        android:background="#FFF"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/che"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="流水号："
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/lsh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="111111111111"
+                        android:textSize="12sp"
+                        android:textColor="#5F8BFA"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="申请时间："
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/sqsj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20200202"
+                            android:textSize="12sp"
+                            android:textColor="#5F8BFA"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="受理进度："
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/cljd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="罚款200元"
+                            android:textSize="12sp"
+                            android:textColor="#5F8BFA"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="处罚单号："
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/cfdh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11111112222"
+                            android:textSize="12sp"
+                            android:textColor="#5F8BFA"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="违章行为："
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/wzxw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="驾驶人未系安全带"
+                            android:textSize="12sp"
+                            android:textColor="#5F8BFA"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="处罚日期："
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/cfxx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2222222222"
+                            android:textSize="12sp"
+                            android:textColor="#5F8BFA"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="违章地点："
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/wzdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="未处理"
+                            android:textSize="12sp"
+                            android:textColor="#5F8BFA"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

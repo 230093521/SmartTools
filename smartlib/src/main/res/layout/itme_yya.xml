@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ceshi" />
+    <TextView
+        android:id="@+id/bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:textColor="#494949"
+        android:maxEms="8"
+        android:maxLines="1"
+        android:text="标题标题标题标题标题标题标题标题"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_margin="2dp"
+        android:text="购票"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_bule"
+        android:textSize="12sp" />
+</LinearLayout>

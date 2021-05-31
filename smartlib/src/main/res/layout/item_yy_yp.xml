@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/news_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/tupian"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:text="影片名称" />
+
+            <TextView
+                android:id="@+id/ypleixing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="影片类型：喜剧"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/bfleixing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="播放类型：3D"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="影院评分："
+                    android:textSize="14sp" />
+
+                <RatingBar
+                    android:id="@+id/pingfen"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:rating="5" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            >
+            <Button
+                android:id="@+id/goupiao"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="2dp"
+                android:text="购票"
+                android:textColor="#FFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_bule2"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable-v24\\ic_launcher_foreground.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\drawable-v24\\df_bg.xml",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\drawable-v24\\df_bg.xml"
+    }
+]

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/biaoti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textColor="#000"
+            android:textSize="15sp"
+            />
+        <TextView
+            android:id="@+id/shijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020-02-02 17:20:02"
+            android:textSize="10sp"
+            />
+        <TextView
+            android:id="@+id/neirong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主内容主内容主内容主内容主内容主内容主内容主内容主内容容主内容主内容主内容主内容主内容主内容主内容主内容容主内容主内容主内容主内容主内容主内容主内容主内容"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            />
+    </LinearLayout>
+</LinearLayout>

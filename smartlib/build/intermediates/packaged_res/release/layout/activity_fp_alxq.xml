@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/home_toprl"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#03A9F4">
+
+            <ImageView
+                android:id="@+id/news_base"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="扶贫案例详情"
+                android:textColor="#FFF" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="扶贫案例标题"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#0C0C0C" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_marginStart="20dp"
+                android:text="发布人：张三"
+                android:textColor="#272727" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_marginStart="20dp"
+                android:text="发布时间：2020-02-02 14:33"
+                android:textColor="#272727" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#CDE6EA"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/news_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_margin="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/jzfp1" />
+
+            <TextView
+                android:id="@+id/news_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/news_image"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="点击扶贫案例可切换到扶贫案例页面，页面内容展示所有扶贫案例信息包括标题、图片、扶贫主要参与人、日期，日期最近的优先展示，点击扶贫案例进入扶贫详情页面，页面内容展示标题、发布者、图片、内容、发布日期、查看人数、点赞人数，点击“点赞”按钮可为该扶贫案例点赞。"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+
+                android:layout_marginEnd="20dp"
+                android:text="3335人已看"
+                android:textColor="#9A9A9A" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_gravity="right"
+                android:text="2501个赞"
+                android:textColor="#03A9F4" />
+            <ImageView
+                android:id="@+id/zan"
+                android:layout_width="18sp"
+                android:layout_height="18sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_zan"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/home_toprl"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#5F8BFA">
+
+            <ImageView
+                android:id="@+id/news_base"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="资讯详情"
+                android:textColor="#FFF" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="标题"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#0C0C0C" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="13sp"
+            android:text="发布时间：2020-02-02 14:33"
+            android:textColor="#272727" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#CDE6EA"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/news_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_margin="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/jzfp1" />
+
+            <TextView
+                android:id="@+id/news_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/news_image"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="村情况介绍：点击村情村貌信息可进入详情页面，页面内容为：村名称，村情况介绍，村环境照片展示，发布时间，发布人，查看数量，点击“我要扶贫”按钮填写扶贫初步方案资料，包括：标题、方案简介、扶贫方案内容，点击“确定”按钮可提交申请。"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_marginEnd="20dp"
+                android:text="3335人已看"
+                android:textColor="#9A9A9A" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="评论"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#0C0C0C" />
+        <com.gzeic.smartcity01.Tools.ListViewScrollView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="50dp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_toStartOf="@id/home_search_base"
+            android:background="@drawable/edit_search_shape"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/iv_mei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:visibility="invisible"
+                android:src="@drawable/ic_search" />
+            <EditText
+                android:id="@+id/home_edit_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/iv_mei"
+                android:layout_toLeftOf="@+id/btn_sousuo"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:maxLines="1"
+                android:hint="输入评论内容"
+                android:textSize="15sp"/>
+            <Button
+                android:id="@+id/btn_sousuo"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="提交"
+                android:textColor="#FFF"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_sousuo"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/home_search_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:text="取消"
+            android:textColor="#333"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

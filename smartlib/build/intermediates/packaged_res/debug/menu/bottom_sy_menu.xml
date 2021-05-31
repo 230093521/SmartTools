@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_sy" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_b" />
+
+    <item
+        android:id="@+id/navigation_dang"
+        android:icon="@drawable/dang"
+        android:title="@string/title_dang"
+        />
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_shequ"-->
+<!--        android:icon="@drawable/shequ"-->
+<!--        android:title="@string/title_shequ"-->
+<!--        />-->
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_huanbao"-->
+<!--        android:icon="@drawable/ic_zhhb"-->
+<!--        android:title="@string/title_huanbao"-->
+<!--        />-->
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_jzfp"-->
+<!--        android:icon="@drawable/fp"-->
+<!--        android:title="@string/title_jzfp"-->
+<!--        />-->
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_zhyl"-->
+<!--        android:icon="@drawable/zhylt"-->
+<!--        android:title="@string/title_zhyl"-->
+<!--        />-->
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_d" />
+
+    <item
+        android:id="@+id/navigation_my"
+        android:icon="@drawable/ic_my_24"
+        android:title="@string/title_f" />
+
+</menu>

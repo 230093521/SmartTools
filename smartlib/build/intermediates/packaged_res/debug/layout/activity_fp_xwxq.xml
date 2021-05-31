@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/home_toprl"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#03A9F4">
+
+            <ImageView
+                android:id="@+id/news_base"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="新闻详情"
+                android:textColor="#FFF" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="新闻标题"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#0C0C0C" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_marginStart="20dp"
+                android:text="发布者：张三"
+                android:textColor="#272727" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="13sp"
+                android:layout_marginStart="20dp"
+                android:text="发布时间：2020-02-02 14:33"
+                android:textColor="#272727" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#CDE6EA"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/news_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_margin="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ceshi" />
+
+            <TextView
+                android:id="@+id/news_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/news_image"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="点击新闻切换到新闻页，展示所有新闻信息，置顶新闻与日期最近的优先显示，点击新闻信息可跳转到新闻详情页面，详情页面包含新闻标题、新闻发布者、发布时间、内容、图片、查看人数" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:layout_gravity="right"
+            android:layout_marginEnd="20dp"
+            android:text="3335人已看"
+            android:textColor="#272727" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

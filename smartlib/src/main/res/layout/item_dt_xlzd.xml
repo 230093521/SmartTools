@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/line_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="线路名称"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/line_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="时间"
+        android:gravity="right"
+        android:paddingRight="10dp"
+        android:textColor="#5F8BFA"/>
+    <TextView
+        android:id="@+id/line_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下一站"
+        android:textColor="#000"
+        android:layout_margin="10dp"
+        />
+</LinearLayout>

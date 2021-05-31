@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#5F8BFA">
+        <ImageView
+            android:id="@+id/metro_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_back" />
+        <TextView
+            android:id="@+id/weizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="位置"
+            android:textColor="#FFF" />
+        <TextView
+            android:id="@+id/tcjl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="停车记录"
+            android:textColor="#FFF" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <com.gzeic.smartcity01.Tools.ListViewScrollView
+                android:id="@+id/list_tinche"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="#FFF"
+                android:dividerHeight="0dp"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".x_jf.JfSjActivity">
+
+    <RelativeLayout
+        android:id="@+id/home_toprl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#5F8BFA">
+
+        <ImageView
+            android:id="@+id/home_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="电费缴费"
+            android:textColor="#FFF" />
+
+        <TextView
+            android:id="@+id/lishi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:text="缴费历史"
+            android:textColor="#FFF" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/jfdq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="交费地区：东城区"
+        android:textSize="17sp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/sfh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="电费号：1888888888888"
+        android:textSize="17sp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:textColor="#000000" />
+    <TextView
+        android:id="@+id/qfje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="欠费金额：16.66元"
+        android:textSize="17sp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:textColor="#000000" />
+    <Button
+        android:id="@+id/btn_zhifu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="去支付"
+        android:textColor="#FFF"
+        android:background="@drawable/btn_bule"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        />
+
+</LinearLayout>

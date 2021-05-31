@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\raw\\video01.mp4",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\raw\\video01.mp4"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\build\\intermediates\\res\\merged\\release\\raw\\city.txt",
+        "source": "D:\\AndroidStudioProjects\\SmartTools\\smartlib\\src\\main\\res\\raw\\city.txt"
+    }
+]

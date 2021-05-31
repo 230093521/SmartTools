@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_hui"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <VideoView
+                android:id="@+id/video"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <ImageView
+                android:id="@+id/img"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:id="@+id/bofangbtn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_bofang"
+                />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/name"
+            android:text="影片名称"
+            android:textColor="#3C3C3C"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/home_toprl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#03A9F4">
+
+        <ImageView
+            android:id="@+id/iv_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="活动留言"
+            android:textColor="#FFF" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        android:padding="6dp">
+        <EditText
+            android:id="@+id/et_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/edit_search_shape"
+            android:hint="请填写留言内容"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:gravity="left|top"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tv_zishu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/105"
+            android:textColor="#9C9C9C"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:background="@drawable/btn_bule"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
+
+</LinearLayout>

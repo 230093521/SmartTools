@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+    <string name="app_name">智慧城市</string>
+    <string name="title_activity_test">MainActivity</string>
+    <string name="title_b">全部服务</string>
+    <string name="title_clgl">车辆管理</string>
+    <string name="title_d">新闻</string>
+    <string name="title_dang">智慧党建</string>
+    <string name="title_f">我的</string>
+    <string name="title_huanbao">智慧环保</string>
+    <string name="title_jzfp">精准扶贫</string>
+    <string name="title_ljyy">立即预约</string>
+    <string name="title_shequ">智慧社区</string>
+    <string name="title_sy">首页</string>
+    <string name="title_wdyy">我的预约</string>
+    <string name="title_yyxz">预约须知</string>
+    <string name="title_zhyl">智慧养老</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

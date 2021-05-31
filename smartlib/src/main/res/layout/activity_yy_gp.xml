@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toplan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5F8BFA"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="购票"
+            android:textColor="#FFF" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toplan">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/tupian"
+                        android:layout_width="100dp"
+                        android:layout_height="150dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dyxx1" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="5dp"
+                            android:text="长征"
+                            android:textSize="16sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="#000000" />
+                        <TextView
+                            android:id="@+id/lx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="5dp"
+                            android:text="类型：战争片"
+                            android:textSize="14sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="#5E5E5E" />
+                        <TextView
+                            android:id="@+id/sc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="5dp"
+                            android:text="时长：2小时13分"
+                            android:textSize="14sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="#5E5E5E" />
+                        <TextView
+                            android:id="@+id/sysj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="5dp"
+                            android:text="上映时间：2020年12月23日"
+                            android:textSize="14sp"
+                            android:layout_marginStart="10dp"
+                            android:textColor="#5E5E5E" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            >
+
+
+                            <TextView
+                                android:id="@+id/pf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="5dp"
+                                android:text="评分：8.8分"
+                                android:textSize="14sp"
+                                android:layout_marginStart="10dp"
+                                android:textColor="#5E5E5E" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:text="上映影院"
+                android:layout_marginStart="10dp"
+                android:textColor="#303030" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/shijianxuanze"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="50dp">
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#B3B3B3"/>
+                </LinearLayout>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#B3B3B3"/>
+                </LinearLayout>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#B3B3B3"/>
+                </LinearLayout>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#B3B3B3"/>
+                </LinearLayout>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#B3B3B3"/>
+                </LinearLayout>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="#B3B3B3"/>
+                </LinearLayout>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="时间"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="@drawable/home_table_selector"/>
+                </LinearLayout>
+            </LinearLayout>
+            <com.gzeic.smartcity01.Tools.ListViewScrollView
+                android:id="@+id/yingyuanliebiao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="100dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
